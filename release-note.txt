@@ -1,0 +1,19 @@
+Release v0.1.1
+
+- 69014fe chore: aciona release v0.1.1
+- 648e45c chore: gera artefato v0.1.1
+- e54d0d8 chore: prepara release v0.1.1
+- 125e1f8 conclui TODO
+- b6f8ab3 sincroniza validação
+- 8b2f255 valida documentação
+- 3e9ff3b prepara rastreabilidade
+- b8a2ead sincroniza RCF
+- 190df41 fortalece comentários
+- f3a75bd normatiza comentários
+- 62f6587 inicia política de comentários
+- c764918 adicionado equalizer
+- 4d4fd27 compulsório
+- 15d6e2e aprimora todo de ajuste de comentários
+- 62dd492 ajuste
+- 055b767 solicitado melhjoria a documentação.
+- 853550c ajuste: sincroniza governanca v0.1.0
