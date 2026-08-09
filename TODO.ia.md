@@ -27,7 +27,7 @@
   - Toda alteração que implique em alteração no modo de codificar markdown, deve ser devidamente documentada em modo de uso.
   - Esta TO-DO é perene: NÃO PODE ser marcada como concluída nem removida e nem editada. Sua existência é perene; sua contabilização somente é necessária quando houver ao menos uma TO-DO por ela regida.
 
-* [ ] Derivar do `/_RCF.md` (equivalente ao "RCF atual" que será substituído pelo novo `/RCF.md`) um novo `/RCF.md` para biblioteca TypeScript de funções utilitárias universais
+* [x] Derivar do `/_RCF.md` (equivalente ao "RCF atual" que será substituído pelo novo `/RCF.md`) um novo `/RCF.md` para biblioteca TypeScript de funções utilitárias universais
   - Usar o RCF atual como **base normativa, arquitetural e operacional**, preservando, naquilo que se aplica ao novo projeto, o mesmo rigor, força normativa, precedência documental, governança, modularização, contratos públicos, builds, distribuição, segurança, dependências, cadeia de suprimentos, versionamento, manifestos, documentação, testes, CI, observabilidade e modus operandi.
 
   - O novo RCF DEVE ser **equivalente em rigor e abrangência, mas não uma cópia**: remover integralmente especializações exclusivas da DSL — gramática, parser, seletores, resolução de expressões, fontes DSL e contratos correlatos — e substituir esse núcleo pela finalidade abaixo. Demais normas aplicáveis DEVEM ser adaptadas, não descartadas.

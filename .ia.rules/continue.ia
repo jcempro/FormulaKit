@@ -19,18 +19,20 @@ aceite=RCF autossuficiente sem especializações DSL; README veraz e conciso; TO
   1/3 Ler fonte e normas aplicáveis [concluído]
   2/3 Conciliar objetivo, precedência, dependências e terminologia [concluído]
   3/3 Separar normatização e implementação [concluído]
-2/4 Derivação do RCF [em andamento]
-  1/3 Preservar contratos transversais do RCF-base [em andamento]
-  2/3 Substituir o domínio DSL pelo catálogo FormulaKit [pendente]
-  3/3 Registrar requisitos futuros com marcador material pendente [pendente]
-3/4 Documentação e rastreabilidade [pendente]
-  1/3 Refatorar README sem anunciar implementação inexistente [pendente]
-  2/3 Atualizar TODO e retirar o RCF-base transitório [pendente]
-  3/3 Atualizar estado canônico e projeção de handoff [pendente]
-4/4 Validação e encerramento normativo [pendente]
-  1/3 Validar cobertura, links, licença, autoria e ausência de código [pendente]
-  2/3 Revisar diff e comprovar estado Git [pendente]
-  3/3 Commitar, publicar dev e interromper antes do código [pendente]
+validacao_focada=agent:rcf OK; rcf-trace 103/103; DOC_CONTRACT_OK; links, licença, autoria, TODO e ausência de DSL residual verificados
+validacao_global=agent:verify e npm test bloqueados por TSCONFIG_AUSENTE; gate técnico esperado antes da FT-002, não aprovação global
+2/4 Derivação do RCF [concluído]
+  1/3 Preservar contratos transversais do RCF-base [concluído]
+  2/3 Substituir o domínio DSL pelo catálogo FormulaKit [concluído]
+  3/3 Registrar requisitos futuros com marcador material pendente [concluído]
+3/4 Documentação e rastreabilidade [concluído]
+  1/3 Refatorar README sem anunciar implementação inexistente [concluído]
+  2/3 Atualizar TODO e retirar o RCF-base transitório [concluído]
+  3/3 Atualizar estado canônico e projeção de handoff [concluído]
+4/4 Validação e encerramento normativo [em andamento]
+  1/3 Validar cobertura, links, licença, autoria e ausência de código [concluído]
+  2/3 Revisar diff e comprovar estado Git [concluído]
+  3/3 Commitar, publicar dev e interromper antes do código [em andamento]
 
 FT-002|nome=Implementação técnica do FormulaKit|tipo=implementacao_codigo|escopo=tecnico|status=pendente|criado_em=2026-08-09T20:47:40-03:00
 objetivo=Implementar, testar, empacotar e publicar a biblioteca FormulaKit em conformidade com RCF.md.
