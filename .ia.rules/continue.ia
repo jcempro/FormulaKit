@@ -1,0 +1,71 @@
+schema=agents-continue/v1
+repositorio=FormulaKit
+branch=dev
+fonte=TODO.ia.md
+fonte_hash_sha256=6a5d8097a69e7d86f8b38706b50710c309ea68faa534650d885d96b66745e0b7
+equalizer=perene_intocado
+objetivo_global=Normatizar e, somente após nova autorização humana, implementar a biblioteca TypeScript universal FormulaKit.
+
+FT-001|nome=Derivação normativa do FormulaKit|tipo=implementacao_normativa|escopo=normativo|status=em_andamento|criado_em=2026-08-09T20:47:39-03:00
+objetivo=Derivar de _RCF.md um RCF autossuficiente para a biblioteca FormulaKit, atualizar a documentação e preservar rastreabilidade integral com TODO.ia.md.
+origem=TODO.ia.md:30
+origem_hash=6a5d8097a69e7d86f8b38706b50710c309ea68faa534650d885d96b66745e0b7
+rcf=RCF.md
+dependencias=nenhuma
+prioridade=alta
+nao_escopo=código funcional, dependências, build, testes executáveis, workflows, pacote e release
+aceite=RCF autossuficiente sem especializações DSL; README veraz e conciso; TODO subordinado concluído; _RCF.md removido; validação documental e rastreabilidade aprovadas; commit e push comprovados
+1/4 Equalização e decomposição [concluído]
+  1/3 Ler fonte e normas aplicáveis [concluído]
+  2/3 Conciliar objetivo, precedência, dependências e terminologia [concluído]
+  3/3 Separar normatização e implementação [concluído]
+2/4 Derivação do RCF [em andamento]
+  1/3 Preservar contratos transversais do RCF-base [em andamento]
+  2/3 Substituir o domínio DSL pelo catálogo FormulaKit [pendente]
+  3/3 Registrar requisitos futuros com marcador material pendente [pendente]
+3/4 Documentação e rastreabilidade [pendente]
+  1/3 Refatorar README sem anunciar implementação inexistente [pendente]
+  2/3 Atualizar TODO e retirar o RCF-base transitório [pendente]
+  3/3 Atualizar estado canônico e projeção de handoff [pendente]
+4/4 Validação e encerramento normativo [pendente]
+  1/3 Validar cobertura, links, licença, autoria e ausência de código [pendente]
+  2/3 Revisar diff e comprovar estado Git [pendente]
+  3/3 Commitar, publicar dev e interromper antes do código [pendente]
+
+FT-002|nome=Implementação técnica do FormulaKit|tipo=implementacao_codigo|escopo=tecnico|status=pendente|criado_em=2026-08-09T20:47:40-03:00
+objetivo=Implementar, testar, empacotar e publicar a biblioteca FormulaKit em conformidade com RCF.md.
+origem=TODO.ia.md:30
+origem_hash=6a5d8097a69e7d86f8b38706b50710c309ea68faa534650d885d96b66745e0b7
+rcf=RCF.md
+dependencias=FT-001 concluída e nova autorização humana explícita
+prioridade=alta
+nao_escopo=alterar a Norma Operacional gerenciada ou antecipar capacidades não normatizadas
+aceite=implementação, contratos, testes, builds, pacote npm, GitHub Release, documentação e validação externa conformes ao RCF
+1/7 Decisões e arquitetura executável [pendente]
+  1/3 Resolver decisões humanas pendentes [pendente]
+  2/3 Definir catálogo inicial e matriz de capacidades [pendente]
+  3/3 Materializar estrutura, manifestos e schemas [pendente]
+2/7 Núcleo e famílias funcionais [pendente]
+  1/3 Implementar primitivas e contratos comuns [pendente]
+  2/3 Implementar famílias priorizadas sem duplicação semântica [pendente]
+  3/3 Documentar API pública e divergências deliberadas [pendente]
+3/7 Ambientes e superfície pública [pendente]
+  1/3 Segregar núcleo, browser, worker e Node [pendente]
+  2/3 Definir exports e importação granular [pendente]
+  3/3 Validar tipos e compatibilidade entre entry points [pendente]
+4/7 Build e distribuição [pendente]
+  1/3 Implementar target ECMAScript temporal determinístico [pendente]
+  2/3 Produzir artefatos justificados e otimizados [pendente]
+  3/3 Medir tamanhos e fixar budgets após baseline aprovado [pendente]
+5/7 Qualidade e segurança [pendente]
+  1/3 Implementar vetores unitários, de borda e regressão [pendente]
+  2/3 Validar cadeia de suprimentos, licenças e segredos [pendente]
+  3/3 Certificar browser, Node, formatos e consumo externo [pendente]
+6/7 Automação e publicação [pendente]
+  1/3 Implementar CI seletiva e verificações reproduzíveis [pendente]
+  2/3 Validar tarball e projeto consumidor limpo [pendente]
+  3/3 Publicar npm e GitHub Release somente após aceite [pendente]
+7/7 Integração e sincronização causal [pendente]
+  1/3 Auditar regressões e objetivo global [pendente]
+  2/3 Sincronizar assinaturas RCF com commits materiais [pendente]
+  3/3 Convergir branches e concluir a FT [pendente]
