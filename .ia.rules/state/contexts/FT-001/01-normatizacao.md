@@ -1,7 +1,7 @@
 # Subcontexto 01 — Normatização do FormulaKit
 
 - Identidade: FT-001, etapa normativa, ordem 1/2 do objetivo global.
-- Estado: entregáveis e validação focada concluídos; commit e push em andamento.
+- Estado: concluído e publicado em `origin/dev` pelo commit `86df563f817a590c596d89ccf5eca8f2b8acec9b`.
 - Objetivo: produzir `RCF.md` autossuficiente, atualizar documentação e encerrar a demanda normativa sem iniciar código.
 - Entradas: `TODO.ia.md`, `_RCF.md`, `AGENTS.md`, índice normativo, autoridade, papéis Final e Construtor, ciclo de solicitação, recusas e rastreabilidade.
 - Dependências: triagem de recusas vazia; FT-001 e FT-002 registradas; branch `dev` ativa.

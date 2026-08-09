@@ -37,7 +37,7 @@ FT-001 precede FT-002. A FT-001 cobre derivação, documentação, rastreabilida
 
 ## Estado e aceite global
 
-- Estado atual: artefatos e validação focada da FT-001 concluídos; commit e push normativos em andamento; FT-002 pendente de autorização.
+- Estado atual: FT-001 concluída e publicada em `origin/dev` pelo commit `86df563f817a590c596d89ccf5eca8f2b8acec9b`; FT-002 pendente de autorização.
 - Validação focada: `agent:rcf` aprovado; mapa causal com 103/103 sentenças; contrato documental, links, licença, autoria, TODO e ausência de especialização DSL residual aprovados.
 - Gate global: `agent:verify` e `npm test` encerraram em `TSCONFIG_AUSENTE`, pois a configuração e a implementação TypeScript pertencem à FT-002 ainda não autorizada; o resultado permanece degradado e não é declarado como aprovação global.
 - Aceite FT-001: cobertura semântica integral, ausência de especialização DSL residual, referências válidas, documentação veraz, validação executada, commits segregados e push comprovado.
