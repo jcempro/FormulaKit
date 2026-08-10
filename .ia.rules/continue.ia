@@ -157,3 +157,59 @@ reter_ate=2026-08-24T21:54:39-03:00
   1/3 Validar cobertura origem→RCF→FT e preservação [concluído]
   2/3 Atualizar documentação, mapa causal e handoff [concluído]
   3/3 Commitar norma e iniciar FT-002 conforme autorização expressa [concluído]
+
+FT-005|nome=Convergência do gate gerenciado|tipo=manutencao_operacional|escopo=governanca_consumidora|status=em_andamento|criado_em=2026-08-09T23:20:07-03:00
+objetivo=Atualizar a governança pelo mecanismo oficial, comprovar a persistência do gate incompatível e encaminhar proposta upstream genérica e sanitizada sem alterar o núcleo gerenciado no consumidor.
+origem=prompt de retomada de 2026-08-09
+rcf=RCF.md
+dependencias=FT-002 concluída; autorização humana expressa para resolução upstream; papel Final preservado
+prioridade=alta
+nao_escopo=editar diretamente a fonte upstream, tratar a própria issue como Construtor, substituir mecanismo oficial ou publicar segredo/evidência exclusiva do consumidor
+aceite=update:agents oficial aplicado e publicado; agent:verify reexecutado; lacuna reproduzível registrada; proposta upstream preparada/publicada pelo comando canônico; regressões locais do atualizador revertidas somente na superfície do produto; estado e backup preservados
+evidencia_inicial=update:agents detectou e aplicou release v0.1.2 no commit 01fdc32; push automático falhou por credencial indisponível no sandbox; agent:verify ainda encerra em MANIFESTO_FONTE_AUSENTE; package.json teve build/check/test/prepare do produto substituídos pelo merge gerenciado; backup criado em agents-governance-backups/2026-08-10/
+1/4 Atualização e reprodução [em andamento]
+  1/3 Consultar atualização oficial [concluído]
+  2/3 Aplicar release upstream pelo update:agents [concluído]
+  3/3 Reproduzir gate e auditar regressões de merge [concluído]
+2/4 Proposta upstream [pendente]
+  1/3 Configurar papel consumidor e produzir evidência sanitizada [pendente]
+  2/3 Preparar e validar proposta pelo comando oficial [pendente]
+  3/3 Publicar proposta autorizada e registrar URL [pendente]
+3/4 Preservação do produto [pendente]
+  1/3 Restaurar scripts públicos alterados pelo atualizador [pendente]
+  2/3 Validar FormulaKit e ausência de alteração no núcleo [pendente]
+  3/3 Publicar commits pendentes na branch dev [pendente]
+4/4 Encerramento [pendente]
+  1/3 Registrar resultado upstream e condição de retomada [pendente]
+  2/3 Atualizar handoff derivado [pendente]
+  3/3 Concluir FT sem declarar o gate aprovado enquanto incompatível [pendente]
+
+FT-006|nome=Primeira publicação remota do FormulaKit|tipo=release|escopo=distribuicao|status=em_andamento|criado_em=2026-08-09T23:20:08-03:00
+objetivo=Publicar manualmente o pacote npm inicial @jcempro/formulakit@0.1.0 e, após confirmação do registro, publicar o GitHub Release v0.1.0 com o mesmo artefato, latest e convergência Git comprovados.
+origem=prompt de retomada de 2026-08-09
+rcf=RCF.md
+dependencias=FT-002 concluída; autorização humana expressa; FT-005 deve registrar o gate gerenciado e não pode ser contornada; primeira publicação npm exige bootstrap manual de autenticação/identidade
+prioridade=alta
+nao_escopo=publicar versão diferente, retentar npm publish mutável implicitamente, expor credencial, substituir pacote existente, criar tag/release antes da confirmação npm ou anunciar sucesso parcial
+aceite=worktree limpo e dev publicado; suíte do produto aprovada; tarball único identificado por SHA-256; npm 0.1.0 publicado manualmente e confirmado; tag/GitHub Release v0.1.0 com o mesmo tarball e latest confirmado; dev/main/remotos convergidos; RCF, estado e handoff sincronizados
+evidencia_inicial=npm whoami retorna E401 mesmo fora do sandbox; GitHub CLI autenticado como JeanCarloEM; origin/dev estava em 5dfbbca antes do update oficial
+1/5 Preparação [em andamento]
+  1/3 Ratificar versão, pacote, branches, remotos e inexistência de colisões [pendente]
+  2/3 Resolver regressão local do update e validar suíte completa [pendente]
+  3/3 Gerar exatamente um tarball final e registrar hash [pendente]
+2/5 npm manual [pendente]
+  1/3 Autenticar/bootstrapar manualmente a identidade npm [pendente]
+  2/3 Publicar uma única vez sem retry implícito [pendente]
+  3/3 Confirmar versão, digest e dist-tag latest por leitura [pendente]
+3/5 GitHub Release [pendente]
+  1/3 Criar tag v0.1.0 no commit validado [pendente]
+  2/3 Publicar release latest com notas e tarball idêntico [pendente]
+  3/3 Confirmar tag, asset, hash e latest remotamente [pendente]
+4/5 Convergência [pendente]
+  1/3 Convergir dev para main preservando histórico [pendente]
+  2/3 Publicar dev e main e comprovar refs remotas [pendente]
+  3/3 Revalidar estado limpo e pacote remoto [pendente]
+5/5 Encerramento [pendente]
+  1/3 Atualizar RCF/README somente com fatos remotos comprovados [pendente]
+  2/3 Atualizar continue.ia e handoff [pendente]
+  3/3 Commitar encerramento e confirmar release completa [pendente]
