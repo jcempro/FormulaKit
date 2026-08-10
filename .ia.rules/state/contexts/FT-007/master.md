@@ -36,3 +36,12 @@ Corrigir a dívida documental da API pública, substituir comentários sumários
 - `npm audit --audit-level=moderate`: zero vulnerabilidades.
 - gerador: SHA-256 documental `e42f9d3ce67ccf485868c1c1f0f3f831d0f05c35e75a9a4ef3e0a62e415ace27`.
 - o wrapper oficial `agent:git-add` retornou `COMMAND_DEGRADED` sem mutação; commits locais usam Git direto e preservam o fluxo, sem alteração no núcleo gerenciado.
+
+## Evidência de conclusão
+
+- commit material: `5e9136482f9ec1ba52680062d543cf73bb0902bd`.
+- sincronização causal: `c6d84ebfefbaeb8873e5b8cf741cf83e807934a5`.
+- workflow documental: execução `31353801539`, jobs `build` e `deploy` aprovados sobre `c6d84eb`.
+- publicação: `http://formulakit.jcem.pro/` respondeu HTTP 200, com título `FormulaKit — API` e hash documental presente.
+- HTTPS: o GitHub Pages ainda reporta certificado do domínio customizado no estado externo `new`; o provisionamento não altera nem invalida o artefato publicado.
+- convergência intermediária necessária ao primeiro despacho: `dev` e `main` receberam `c6d84eb` antes da execução manual, porque o GitHub somente reconhece novo workflow após presença na branch padrão.

@@ -226,7 +226,7 @@ reter_ate=2026-08-25T00:20:00-03:00
   2/3 Atualizar continue.ia e handoff [concluído]
   3/3 Commitar encerramento e confirmar release completa [concluído]
 
-FT-007|nome=Documentação pública automática|tipo=implementacao_normativa_tecnica|escopo=documentacao|status=em_andamento|criado_em=2026-08-10T00:00:00-03:00
+FT-007|nome=Documentação pública automática|tipo=implementacao_normativa_tecnica|escopo=documentacao|status=concluido|criado_em=2026-08-10T00:00:00-03:00
 objetivo=Corrigir a dívida documental da API pública, padronizar comentários TSDoc/JSDoc, gerar referência navegável determinística e publicá-la automaticamente após cada GitHub Release publicado.
 origem=.ia.rules/state/requests/FT-007/request.md
 rcf=RCF.md
@@ -234,6 +234,15 @@ dependencias=FT-002 e FT-006 concluídas; autorização humana expressa no promp
 prioridade=alta
 nao_escopo=publicar nova versão npm, criar tag/Release, alterar a Norma Operacional gerenciada ou substituir o workflow de release
 aceite=RCF e README sincronizados; comentários públicos documentais; gerador open source e mantido; referência HTML reproduzível; gate local/CI; workflow release.published e manual; validações aprovadas; dev/main convergidos
+commit_ft=13f8878
+commit_normativo=76b7f2e
+commit_material=5e9136482f9ec1ba52680062d543cf73bb0902bd
+commit_rastreabilidade=c6d84ebfefbaeb8873e5b8cf741cf83e807934a5
+validacao_focada=npm run check OK com 15/15 testes, 524 artefatos, 185 medições e 166 declarações documentadas; validate:package OK com 529 arquivos; npm audit sem vulnerabilidades; agent:rcf e rcf-trace 169/168 OK
+validacao_global=agent:verify alcança TYPECHECK_OK e permanece bloqueado em MANIFESTO_FONTE_AUSENTE, lacuna gerenciada já registrada na issue upstream #11 e não declarada aprovada
+publicacao_documental=workflow 31353801539 aprovado; Pages respondeu HTTP 200 em formulakit.jcem.pro com título e hash esperados; certificado HTTPS externo ainda em estado new
+concluido_em=2026-08-10T00:54:00-03:00
+reter_ate=2026-08-25T00:54:00-03:00
 1/5 Captura e equalização [concluído]
   1/3 Preservar solicitação integral [concluído]
   2/3 Triar recusas e contratos aplicáveis [concluído]
@@ -250,7 +259,7 @@ aceite=RCF e README sincronizados; comentários públicos documentais; gerador o
   1/3 Integrar comandos ao pacote e CI [concluído]
   2/3 Criar workflow acionado por release.published [concluído]
   3/3 Validar artefato e configuração GitHub Pages [concluído]
-5/5 Validação e encerramento [em andamento]
-  1/3 Executar testes, build, pacote e RCF [em andamento]
-  2/3 Auditar diff, documentação e regressões [pendente]
-  3/3 Commitar, publicar e convergir branches [pendente]
+5/5 Validação e encerramento [concluído]
+  1/3 Executar testes, build, pacote e RCF [concluído]
+  2/3 Auditar diff, documentação e regressões [concluído]
+  3/3 Commitar, publicar e convergir branches [concluído]

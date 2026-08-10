@@ -101,6 +101,7 @@ A primeira publicação foi concluída: [pacote npm](https://www.npmjs.com/packa
 O workflow `Documentação da API` gera e publica a referência no GitHub Pages após todo GitHub Release publicado e também aceita execução manual. Ele não altera pacote, versão, tag, Release ou branches; a fonte documental permanece nos comentários públicos da implementação.
 
 - [Referência da API](./docs/API.md)
+- [Referência navegável publicada](https://formulakit.jcem.pro/)
 - [RCF](./RCF.md): contratos normativos e critérios de aceite.
 - [AGENTS.md](./AGENTS.md): processo e precedência operacional.
 - [handoff.md](./handoff.md): estado operacional derivado.
