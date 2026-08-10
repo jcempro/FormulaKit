@@ -95,19 +95,21 @@ dependencias=FT-001 concluída
 prioridade=alta
 nao_escopo=código funcional, dependências, build, testes executáveis, workflows, pacote e release
 aceite=RCF e README explicitam escopos, níveis cumulativos, artefatos, máscaras, validação e lógica variádica; FT-002 conciliada; rastreabilidade e validação focada aprovadas; commit e push comprovados
+validacao_focada=agent:rcf OK; rcf-trace 147/147; FT003_COVERAGE_OK; DOC_LINKS_AND_SOURCE_OK; preservação literal 102/103 e ordem de implementação anterior integralmente ampliada
+validacao_global=agent:verify e npm test bloqueados por TSCONFIG_AUSENTE; gate técnico mantido para FT-002, não aprovação global
 1/4 Captura e equalização [concluído]
   1/3 Preservar fonte integral e hash [concluído]
   2/3 Triar recusas e conflitos [concluído]
   3/3 Conciliar FT-002 sem antecipar código [concluído]
-2/4 Escopos, níveis e distribuição [em andamento]
-  1/3 Normatizar identidade e cumulatividade [em andamento]
-  2/3 Normatizar exports, builds e bundles [pendente]
-  3/3 Integrar tipos, maps, tree-shaking e ECMAScript [pendente]
-3/4 Contratos funcionais ampliados [pendente]
-  1/3 Normatizar máscaras declarativas [pendente]
-  2/3 Normatizar validadores reutilizáveis e seguros [pendente]
-  3/3 Normatizar operadores lógicos variádicos [pendente]
-4/4 Validação e encerramento [pendente]
-  1/3 Validar preservação e cobertura origem→RCF→FT [pendente]
-  2/3 Atualizar rastreabilidade e documentação [pendente]
-  3/3 Commitar, publicar dev e interromper antes do código [pendente]
+2/4 Escopos, níveis e distribuição [concluído]
+  1/3 Normatizar identidade e cumulatividade [concluído]
+  2/3 Normatizar exports, builds e bundles [concluído]
+  3/3 Integrar tipos, maps, tree-shaking e ECMAScript [concluído]
+3/4 Contratos funcionais ampliados [concluído]
+  1/3 Normatizar máscaras declarativas [concluído]
+  2/3 Normatizar validadores reutilizáveis e seguros [concluído]
+  3/3 Normatizar operadores lógicos variádicos [concluído]
+4/4 Validação e encerramento [em andamento]
+  1/3 Validar preservação e cobertura origem→RCF→FT [concluído]
+  2/3 Atualizar rastreabilidade e documentação [concluído]
+  3/3 Commitar, publicar dev e interromper antes do código [em andamento]

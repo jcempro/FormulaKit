@@ -12,5 +12,16 @@
   "rcfTargets": [
     "RCF.md"
   ],
-  "incorporation": "pending"
+  "incorporation": "incorporated",
+  "incorporatedAt": "2026-08-09T21:37:44-03:00",
+  "evidence": [
+    "RCF.md#31-escopos-funcionais-e-níveis-de-capacidade",
+    "RCF.md#51-máscaras-declarativas",
+    "RCF.md#101-operadores-lógicos-variádicos",
+    "RCF.md#11-validação-formatação-codificação-e-conversão",
+    "RCF.md#17-ecmascript-build-e-otimização",
+    "RCF.md#18-distribuição-consumo-e-versionamento",
+    "README.md#distribuição-planejada",
+    ".ia.rules/continue.ia#FT-002"
+  ]
 }

@@ -33,6 +33,24 @@ O núcleo NÃO DEVE incorporar DOM, framework, rede, armazenamento, processo, si
 - **manifesto público**: inventário verificável de funções, contratos, estabilidade, imports e compatibilidade; [PENDENTE-CODIGO]
 - **vetor canônico**: caso offline compartilhado que fixa entrada, opções, resultado ou falha e efeitos observáveis. [PENDENTE-CODIGO]
 
+### 3.1 Escopos funcionais e níveis de capacidade
+
+Cada família funcional DEVE constituir um **escopo** público, rastreável e importável, com identificador estável, namespace compartilhado, catálogo próprio e vínculo explícito aos artefatos; os escopos iniciais previstos incluem `math`, `logic`, `text`, `statistics`, `finance`, `datetime`, `collections`, `validation`, `conversion`, `spreadsheet` e `br`. [PENDENTE-CODIGO]
+
+Escopo com volume suficiente DEVE expor níveis cumulativos `basic` e `advanced`; `basic` contém o subconjunto essencial e sustentável, enquanto `advanced` contém integralmente a mesma API de `basic` e acrescenta capacidades avançadas sem redefinir ou divergir das anteriores. [PENDENTE-CODIGO]
+
+Um terceiro nível canônico `specialized` só PODE existir quando métricas de volume, complexidade, dependência, tamanho ou perfil de consumidor demonstrarem benefício objetivo; ele DEVE conter integralmente `advanced`, registrar a justificativa no manifesto e preservar a cadeia `basic ⊆ advanced ⊆ specialized`. [PENDENTE-CODIGO]
+
+Escopo pequeno PODE declarar nível único; nesse caso, o nível canônico é `basic`, o import do escopo raiz é projeção equivalente e a futura adição de `advanced` NÃO DEVE alterar a semântica ou os tipos existentes. [PENDENTE-CODIGO]
+
+Cumulatividade significa inclusão integral de exports, assinaturas, tipos, documentação, vetores e comportamento, mas NÃO exige duplicação física: reexportação, composição de chunks e compartilhamento interno DEVEM impedir código repetido e preservar tree-shaking. [PENDENTE-CODIGO]
+
+O import de nível DEVE usar subpath estável equivalente a `<pacote>/<escopo>/<nível>`; `<pacote>/<escopo>` DEVE resolver ao maior nível estável declarado para o escopo, e qualquer mudança desse default exige compatibilidade SemVer e manifesto explícito. [PENDENTE-CODIGO]
+
+RCF, README, `exports`, `.d.ts` e manifesto público DEVEM declarar para cada escopo seus níveis, relação cumulativa, funções acrescentadas por nível, entry points, formatos, targets, bundles e estado; divergência entre essas projeções bloqueia build e publicação. [PENDENTE-CODIGO]
+
+Nome, casing e identidade de função DEVEM permanecer iguais entre níveis do mesmo escopo e entre import granular, bundle combinado e bundle completo; adaptação ambiental PODE alterar somente o invólucro autorizado, nunca o contrato funcional. [PENDENTE-CODIGO]
+
 Cada função candidata DEVE demonstrar utilidade generalizável, diferença semântica material, assinatura previsível e família proprietária antes de integrar o catálogo; aliases só PODEM existir por compatibilidade comprovada e DEVEM apontar para um contrato único. [PENDENTE-CODIGO]
 
 Capacidade nativa suficiente DEVE ser usada internamente; quando a operação integrar o catálogo, um wrapper mínimo DEVE manter a superfície uniforme sem duplicar algoritmo ou mascarar a semântica da plataforma. [PENDENTE-CODIGO]
@@ -64,6 +82,24 @@ Normalização Unicode DEVE exigir forma explícita ou default documentado entre
 Busca, comparação e ordenação dependentes de locale DEVEM receber locale/opções explícitos ou usar política canônica fixa; locale do processo, navegador ou sistema NÃO DEVE alterar resultado silenciosamente. [PENDENTE-CODIGO]
 
 Substituição textual DEVE diferenciar literal e expressão regular, tratar `$`, barras e grupos sem interpolação acidental e impedir execução dinâmica. [PENDENTE-CODIGO]
+
+### 5.1 Máscaras declarativas
+
+O escopo `text` DEVE oferecer compilação e aplicação de máscaras declarativas mais gerais que máscaras convencionais de planilha, separando parse/compilação, aplicação, validação e diagnóstico para permitir reutilização e cache. [PENDENTE-CODIGO]
+
+A gramática canônica DEVE seguir `mask = alternative`, `alternative = sequence { "|" sequence }`, `sequence = { term }`, `term = atom [ quantifier ] [ transform ]`, `atom = quoted-literal | escaped-literal | class | "(" alternative ")"`, `quantifier = "?" | "*" | "+" | "{" min [ "," [ max ] ] "}"` e `transform = ":" name [ "(" arguments ")" ]`; espaços fora de literais são proibidos salvo opção lexical expressa. [PENDENTE-CODIGO]
+
+Literais citados e escapados DEVEM representar conteúdo fixo, inclusive prefixos e sufixos; classes DEVEM cobrir ao menos dígito ASCII, letra Unicode, letra ou número Unicode, qualquer ponto de código permitido e classe explícita negável, sem interpretar conteúdo como código. [PENDENTE-CODIGO]
+
+Opcionais, repetições, grupos e alternativas DEVEM possuir precedência e associatividade documentadas; repetição aberta é limitada pelo tamanho da entrada e pelo limite global de saída, e alternativa DEVE escolher deterministicamente por ordem declarada sem backtracking exponencial. [PENDENTE-CODIGO]
+
+Transformações DEVEM usar allowlist versionada, inicialmente apta a caixa, trim, normalização Unicode e preenchimento inicial/final com largura e literal explícitos; transformação desconhecida, argumento inválido ou resultado acima do limite DEVE falhar na compilação ou aplicação com código estável. [PENDENTE-CODIGO]
+
+A aplicação DEVE permitir política explícita para entrada excedente, incompleta e caractere incompatível e DEVE distinguir resultado formatado de resultado estruturado com validade, posição de entrada, posição da máscara, grupos e motivo seguro. [PENDENTE-CODIGO]
+
+Compilação DEVE produzir plano imutável, serializável quando seguro e independente de runtime; cache DEVE usar chave composta pela máscara normalizada, versão da gramática e opções semânticas, possuir limite/evicção e nunca crescer globalmente sem controle. [PENDENTE-CODIGO]
+
+O compilador NÃO DEVE usar `eval`, `Function`, regex dinâmica não auditada nem recursão/alocação ilimitada; comprimento, profundidade, alternativas, grupos, quantificadores e saída DEVEM possuir limites publicados no manifesto e testes de abuso. [PENDENTE-CODIGO]
 
 ## 6. Números, matemática e arredondamento
 
@@ -121,9 +157,39 @@ Agrupamento, indexação e associação DEVEM declarar comportamento diante de c
 
 Seleção, paginação, janela, chunk, flatten e transformação DEVEM validar limites e profundidade, preservando o tipo mais específico que o contrato puder representar sem falsidade. [PENDENTE-CODIGO]
 
+### 10.1 Operadores lógicos variádicos
+
+O escopo `logic` DEVE disponibilizar operadores variádicos idiomáticos equivalentes a AND, OR e XOR, com quantidade arbitrária de operandos, retorno booleano e contratos separados para avaliação estrita, truthiness opt-in e retorno orientado a valor. [PENDENTE-CODIGO]
+
+No perfil estrito, somente booleanos são válidos; `null`, `undefined` e qualquer outro tipo DEVEM falhar como entrada inválida, `all()` sem argumentos retorna `true`, `any()` sem argumentos retorna `false` e `xor()` sem argumentos retorna `false`. [PENDENTE-CODIGO]
+
+`xor` variádico DEVE significar paridade ímpar de valores verdadeiros; a semântica “exatamente um” DEVE ser função distinta, para impedir ambiguidade quando três ou mais operandos forem verdadeiros. [PENDENTE-CODIGO]
+
+O perfil truthiness DEVE ser selecionado explicitamente por função ou opção cujo nome o evidencie e aplicar exatamente `Boolean(value)` do ECMAScript homologado; ele NÃO DEVE contaminar defaults do perfil estrito. [PENDENTE-CODIGO]
+
+Funções eager recebem valores já avaliados e PODEM interromper somente a inspeção interna; curto-circuito de avaliação DEVE usar variantes lazy com thunks tipados, invocados da esquerda para a direita e nunca após resultado conclusivo. [PENDENTE-CODIGO]
+
+AND lazy PODE encerrar no primeiro falso e OR lazy no primeiro verdadeiro; XOR por paridade DEVE avaliar todos os operandos válidos, enquanto “exatamente um” PODE encerrar ao encontrar o segundo verdadeiro. [PENDENTE-CODIGO]
+
+Variantes orientadas a valor DEVEM ser separadas das booleanas: `allValue` retorna o primeiro valor reprovado ou o último aprovado, `anyValue` retorna o primeiro aprovado ou o último reprovado e a variante de “exatamente um” DEVE retornar união discriminada que diferencie ausência, unicidade e multiplicidade; XOR de paridade NÃO DEVE retornar valor bruto ambíguo. [PENDENTE-CODIGO]
+
+Nomes finais PODEM ser refinados no catálogo antes da implementação, mas semântica, namespace, imports, tipos e documentação DEVEM permanecer consistentes entre níveis e formatos. [PENDENTE-CODIGO]
+
 ## 11. Validação, formatação, codificação e conversão
 
 Validador booleano DEVE retornar somente validade; função que precise explicar falhas DEVE oferecer resultado estruturado separado com código, caminho e mensagem segura. [PENDENTE-CODIGO]
+
+O escopo `validation` DEVE fornecer validadores prontos para padrões comuns, validação por regex do consumidor, composição lógica e adaptadores para máscaras, documentos e predicados tipados, sem converter validação em coerção implícita. [PENDENTE-CODIGO]
+
+Validador pronto DEVE declarar padrão, versão/fonte, normalização aceita, locale, limites e falsos pressupostos; regra regulatória ou externa mutável DEVE manter data de referência e vetores históricos. [PENDENTE-CODIGO]
+
+Regex fornecida pelo consumidor DEVE ser clonada ou compilada sem mutar `lastIndex`, separar padrão de flags, rejeitar flag ou construção não homologada e distinguir perfil confiável de perfil não confiável. [PENDENTE-CODIGO]
+
+Regex não confiável DEVE possuir limite de tamanho e complexidade, análise preventiva proporcional e execução em engine segura ou isolamento com timeout quando disponível; se o runtime não puder conter padrão potencialmente abusivo, a validação DEVE rejeitá-lo em vez de executá-lo sincronicamente sem limite. [PENDENTE-CODIGO]
+
+Composição DEVE incluir equivalentes tipados a `allOf`, `anyOf`, `oneOf` e `not`, preservar ordem determinística, curto-circuito configurado e caminho do validador; composição cíclica ou profundidade acima do limite é inválida. [PENDENTE-CODIGO]
+
+Cada validação DEVE possuir fachada booleana e, quando diagnóstico for material, resultado discriminado com `valid`, código, motivo seguro, posição/faixa, caminho e filhos; a fachada booleana DEVE derivar do mesmo núcleo sem executar a regra duas vezes. [PENDENTE-CODIGO]
 
 Normalização NÃO DEVE ser confundida com validação: corrigir representação PODE preceder validação somente quando a transformação for explícita, reversível ou documentadamente lossy e coberta por teste. [PENDENTE-CODIGO]
 
@@ -173,6 +239,10 @@ Perfis previstos são `core`, `browser`, `worker`, `node`, `server`, `build` e `
 
 Cada export público DEVE constar no catálogo, possuir documentação TSDoc, tipo verificável, estabilidade e caminho de importação suportado; exportação acidental NÃO adquire estabilidade. [PENDENTE-CODIGO]
 
+Exports de nível superior DEVEM ser união cumulativa verificável dos níveis inferiores do mesmo escopo, e os tipos de uma função compartilhada DEVEM possuir identidade estrutural e nominal compatível em todos os subpaths e bundles. [PENDENTE-CODIGO]
+
+O pipeline DEVE rejeitar função presente em `advanced` e ausente em `basic` quando marcada como básica, símbolo duplicado com assinatura divergente, reexport circular, subpath sem tipos ou tipos que resolvam duas cópias incompatíveis da mesma identidade. [PENDENTE-CODIGO]
+
 O `.d.ts` DEVE representar integralmente funções, overloads, generics, parâmetros, opções, retornos, falhas tipadas e deprecações e DEVE ser validado contra exports e implementação. [PENDENTE-CODIGO]
 
 Se houver manifesto canônico separado, manifesto, `.d.ts` e exports reais DEVEM ter uma única autoridade derivável ou validação automática bidirecional; manutenção manual concorrente é proibida. [PENDENTE-CODIGO]
@@ -209,9 +279,25 @@ Otimização DEVE preservar comportamento, nomes públicos, tipos, maps e licen�
 
 Artefatos relevantes DEVEM medir tamanho bruto, minificado, gzip e Brotli de modo reproduzível; budget só PODE ser fixado após baseline real aprovado e alterado com causa, quantificação e decisão explícita. [PENDENTE-CODIGO]
 
+A matriz de transpilação DEVE cruzar escopo, nível, combinação, formato e target a partir de um grafo canônico único; duas células equivalentes NÃO DEVEM recompilar sem necessidade nem produzir conteúdo semanticamente divergente. [PENDENTE-CODIGO]
+
+O target primário DEVE obedecer à fórmula ECMAScript dinâmica deste RCF; target adicional só PODE existir para consumidor comprovado, DEVE ser nomeado e manifestado e NÃO PODE rebaixar silenciosamente o target primário nem introduzir API/polyfill ausente nos demais builds. [PENDENTE-CODIGO]
+
+Cada artefato por escopo/nível DEVE preservar tree-shaking, `.d.ts`, sourcemap, banner, hash e vínculo à fonte; bundle combinado e completo DEVEM reutilizar chunks sem importar escopo alheio ao conjunto declarado. [PENDENTE-CODIGO]
+
 ## 18. Distribuição, consumo e versionamento
 
 FormulaKit DEVE ser distribuído por npm e GitHub Release com seleção equivalente e verificável de fontes TypeScript consumíveis, JavaScript executável, `.d.ts`, source maps apropriados, licença, metadados e manifestos. [PENDENTE-CODIGO]
+
+O GitHub Release DEVE disponibilizar, conforme a matriz aplicável e sem artefato redundante, builds individuais por escopo/nível, bundles combinados por perfil de consumidor, bundle completo e formatos/targets homologados, inclusive `.js`, `.mjs` e `.cjs` quando seus módulos correspondentes forem materialmente distintos e testados. [PENDENTE-CODIGO]
+
+Bundle combinado DEVE declarar lista ordenada de escopos e nível escolhido em cada um; bundle completo DEVE conter exatamente o maior nível estável de todos os escopos públicos, sem capacidades experimentais implícitas. [PENDENTE-CODIGO]
+
+Diretórios PODEM organizar artefatos por escopo, nível, formato e target quando aumentarem clareza, mas path físico NÃO DEVE vazar como import público nem quebrar subpath estável; manifesto é a autoridade da projeção path→identidade. [PENDENTE-CODIGO]
+
+O npm DEVE expor por `exports`/subpaths toda granularidade homologada, incluindo escopo raiz e nível, com condições e tipos correspondentes, permitindo consumir somente o necessário sem carregar inicialização ou código de escopo alheio. [PENDENTE-CODIGO]
+
+O manifesto DEVE enumerar inclusões cumulativas, arquivos, hashes, tamanhos, entry points, formatos, targets, condições, tipos e sourcemaps de cada artefato e provar que npm e Release representam a mesma identidade funcional. [PENDENTE-CODIGO]
 
 ESM, CommonJS, `.mjs`, `.cjs`, subpaths granulares, browser, Node e bundle otimizado PODEM integrar a distribuição somente quando consumidor, runtime e valor material forem comprovados; extensões redundantes que representem o mesmo formato sem necessidade são proibidas. [PENDENTE-CODIGO]
 
@@ -241,6 +327,14 @@ Cada função pública DEVE possuir testes unitários, vetores de borda e regres
 
 Validação DEVE comparar TypeScript, JavaScript e todos os formatos publicados, incluindo exports, `.d.ts`, browser real, worker quando suportado, Node, client/server, tree-shaking, importação granular, tamanhos, build reproduzível e consumo externo. [PENDENTE-CODIGO]
 
+Testes de distribuição DEVEM verificar para cada escopo `basic ⊆ advanced ⊆ specialized` quando aplicável, equivalência do escopo raiz, ausência de escopos alheios no bundle, paridade de tipos e resultados entre build individual, combinado e completo. [PENDENTE-CODIGO]
+
+Máscaras DEVEM possuir vetores de gramática, precedência, literal, classe, opcional, repetição, grupo, alternativa, prefixo/sufixo, preenchimento, transformação, diagnóstico, cache, limites e entradas adversariais. [PENDENTE-CODIGO]
+
+Validadores DEVEM testar padrões prontos, regex confiável/não confiável, composição, posição/motivo, curto-circuito e contenção de abuso; teste de segurança que dependa de isolamento inexistente DEVE bloquear a capacidade correspondente. [PENDENTE-CODIGO]
+
+Operadores lógicos DEVEM testar aridade zero e arbitrária, estrito, truthiness, paridade XOR, exatamente um, valores orientados, `null`, `undefined`, tipo inválido e ordem/curto-circuito eager/lazy. [PENDENTE-CODIGO]
+
 `npm test` DEVE orquestrar conjuntos determinísticos com mocks e fixtures locais; integração externa real DEVE ser opt-in e sua falha só PODE afetar o aceite quando demonstrar causa no produto. [PENDENTE-CODIGO]
 
 Execução local e CI DEVEM preservar severidade, caso, duração e erro em estrutura estável; cor e animação são permitidas localmente, mas DEVEM ser desativadas em CI e nunca substituir dados parseáveis. [PENDENTE-CODIGO]
@@ -267,7 +361,7 @@ Sentenças implementáveis usam `[PENDENTE-CODIGO]` até a FT técnica produzir 
 
 Antes da implementação material, decisão humana DEVE aprovar o nome do pacote npm, o catálogo mínimo da primeira versão e os formatos de distribuição que possuam consumidor comprovado. [PENDENTE-CODIGO]
 
-A implementação DEVE seguir: decisões e catálogo → schemas/manifesto → primitivas → famílias priorizadas → API/exports/tipos → builds → testes multiformato → baseline/budgets → tarball consumidor → CI → publicação autorizada → sincronização causal. [PENDENTE-CODIGO]
+A implementação DEVE seguir: decisões e catálogo → schemas/manifesto → escopos/níveis → primitivas → famílias priorizadas → máscaras/validação/lógica → API/exports/tipos → builds granulares/combinados/completo → testes multiformato → baseline/budgets → tarball consumidor → CI → publicação autorizada → sincronização causal. [PENDENTE-CODIGO]
 
 Prioridade inicial DEVERIA favorecer contratos transversais e famílias com maior reutilização — texto, números, coleções, datas, validação e dígitos — antes de expandir a cobertura financeira ou equivalências extensas de planilhas. [PENDENTE-CODIGO]
 
