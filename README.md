@@ -84,10 +84,11 @@ Object.isFrozen(manifests); // true
 ```sh
 npm ci --ignore-scripts
 npm run check
+npm run docs
 npm pack --dry-run
 ```
 
-`npm run check` compila, testa funções e distribuição, verifica equivalência das assinaturas e gera a medição determinística de tamanhos. Qualquer divergência entre fonte, `.d.ts`, exports, assinatura embutida, registro do navegador ou manifesto superior invalida o gate.
+`npm run docs` gera uma referência HTML navegável diretamente da fonte TypeScript e dos blocos TSDoc/JSDoc. `npm run check` também valida o contrato documental, compila, testa funções e distribuição, verifica equivalência das assinaturas e gera a medição determinística de tamanhos. Qualquer divergência entre fonte, documentação, `.d.ts`, exports, assinatura embutida, registro do navegador ou manifesto superior invalida o gate.
 
 ## Release
 
@@ -96,6 +97,8 @@ A primeira publicação de `@jeancarloem/formulakit` no npm é manual. Depois de
 Somente após esse vínculo, `npm run release:trigger -- 0.1.0` cria o arquivo-gatilho `release`. O workflow valida e empacota uma única vez, publica ou confirma bytes idênticos no npm, cria o GitHub Release `v0.1.0`, remove o gatilho e converge `dev` em `main`.
 
 A primeira publicação foi concluída: [pacote npm](https://www.npmjs.com/package/@jeancarloem/formulakit) e [GitHub Release v0.1.0](https://github.com/jcempro/FormulaKit/releases/tag/v0.1.0).
+
+O workflow `Documentação da API` gera e publica a referência no GitHub Pages após todo GitHub Release publicado e também aceita execução manual. Ele não altera pacote, versão, tag, Release ou branches; a fonte documental permanece nos comentários públicos da implementação.
 
 - [Referência da API](./docs/API.md)
 - [RCF](./RCF.md): contratos normativos e critérios de aceite.

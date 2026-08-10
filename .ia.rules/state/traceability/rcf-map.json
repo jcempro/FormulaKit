@@ -2642,6 +2642,40 @@
     },
     {
       "artifacts": [
+        ".github/workflows/documentation.yml",
+        "RCF.md",
+        "README.md",
+        "constructor/documentation.mjs",
+        "src"
+      ],
+      "commit": "",
+      "ft": "FT-007",
+      "id": "b5487583ffe4d44c712d96a6",
+      "line": 390,
+      "rcf": "RCF.md",
+      "sentenceSha256": "554f07f6756a3df268ffaf266837e69e90475de27c2baf97ade207dd8b13fa8c",
+      "state": "pending",
+      "syncCommit": ""
+    },
+    {
+      "artifacts": [
+        ".github/workflows/documentation.yml",
+        "RCF.md",
+        "README.md",
+        "constructor/documentation.mjs",
+        "src"
+      ],
+      "commit": "",
+      "ft": "FT-007",
+      "id": "c9b7a8783579f6463ec1458a",
+      "line": 392,
+      "rcf": "RCF.md",
+      "sentenceSha256": "0fe0bf550732c388cc9d958b53a6899bca377bd5196eaf677564ba8271d32144",
+      "state": "pending",
+      "syncCommit": ""
+    },
+    {
+      "artifacts": [
         "README.md",
         "constructor/build.mjs",
         "constructor/measure.mjs",
@@ -2662,6 +2696,23 @@
     },
     {
       "artifacts": [
+        ".github/workflows/documentation.yml",
+        "RCF.md",
+        "README.md",
+        "constructor/documentation.mjs",
+        "src"
+      ],
+      "commit": "",
+      "ft": "FT-007",
+      "id": "fc410bc53e58bcfaff17d4e5",
+      "line": 394,
+      "rcf": "RCF.md",
+      "sentenceSha256": "38df36507a89788738f2cd87e59bf023d0720489ffefb9939d65adbe4ee16983",
+      "state": "pending",
+      "syncCommit": ""
+    },
+    {
+      "artifacts": [
         "README.md",
         "constructor/build.mjs",
         "constructor/measure.mjs",
@@ -2678,6 +2729,23 @@
       "rcf": "RCF.md",
       "sentenceSha256": "562879f525de65cf4bb47ee48ca231ca426c37825124e58445c4730f7f549272",
       "state": "synchronized",
+      "syncCommit": ""
+    },
+    {
+      "artifacts": [
+        ".github/workflows/documentation.yml",
+        "RCF.md",
+        "README.md",
+        "constructor/documentation.mjs",
+        "src"
+      ],
+      "commit": "",
+      "ft": "FT-007",
+      "id": "69aaf79aeb443df2a986bfa5",
+      "line": 396,
+      "rcf": "RCF.md",
+      "sentenceSha256": "3b29c099966f292163597a7c9a9b1b529c18d1e6ceeb1c00a130450de9f9e9b0",
+      "state": "pending",
       "syncCommit": ""
     }
   ]
