@@ -13,6 +13,7 @@
 3. Builds de navegador comporão uma consulta global compartilhada, somente leitura, sem sobrescrever registros nem depender da ordem de carga.
 4. Colisão ou divergência entre fonte, tipos, exportações, assinatura e registro será erro bloqueante.
 5. O mecanismo será integrado ao build e aos entry points sem criar estado global mutável de negócio.
+6. `h` assina a forma canônica da superfície sem o próprio campo; o manifesto superior assina os bytes do arquivo, evitando autorreferência criptográfica.
 
 ## Ordem e integração
 

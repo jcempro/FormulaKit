@@ -1395,16 +1395,15 @@
     {
       "artifacts": [
         "constructor/build.mjs",
-        "package.json",
         "src/manifest.ts",
-        "tests/distribution.test.ts"
+        "tests/distribution.test.mjs"
       ],
       "commit": "",
       "ft": "FT-004",
-      "id": "d4a3aab1ed45eec17610b535",
+      "id": "5cb0f36eb7e5f0a1a4ee5651",
       "line": 254,
       "rcf": "RCF.md",
-      "sentenceSha256": "cbc4dfa01b6f4940e2ce43aa937b5e17546988adc0ccbf5b2b1ced022e06ed17",
+      "sentenceSha256": "d798cc36a0d0c8090d024063db227afaae18d46647c4162077430405ba903ede",
       "state": "pending",
       "syncCommit": ""
     },

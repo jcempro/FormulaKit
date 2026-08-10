@@ -130,6 +130,7 @@ aceite=RCF, README e FT-002 cobrem assinatura por artefato, mínima nominalidade
 autorizacao_posterior=prompt FT-004 autoriza expressamente iniciar e concluir FT-002 depois do commit normativo, sem nova pergunta
 validacao_focada=agent:rcf OK; rcf-trace 162/162; FT004_COVERAGE_OK; 146/147 sentenças anteriores preservadas literalmente e única ordem anterior estritamente ampliada
 commit_normativo=ce1f473840c91860bedaaa37df2653a49aa5faae
+correcao_normativa=integridade de assinatura sem autorreferência, identificada na arquitetura executável da FT-002
 concluido_em=2026-08-09T21:54:39-03:00
 reter_ate=2026-08-24T21:54:39-03:00
 1/4 Captura e conciliação [concluído]

@@ -251,7 +251,7 @@ Se houver manifesto canônico separado, manifesto, `.d.ts` e exports reais DEVEM
 
 Cada arquivo de código publicado no npm ou no GitHub Release — fonte consumível, módulo transpilado, entry point ou bundle — DEVE incorporar uma assinatura própria, exclusiva e claramente delimitada de sua superfície pública efetiva; arquivo auxiliar sem exports DEVE declarar superfície vazia ou vínculo inequívoco ao manifesto do contêiner, sem herdar exports de outro arquivo. [PENDENTE-CODIGO]
 
-A assinatura compacta usa o schema versionado `FormulaKitSignature/v1` e contém somente `v` (versão do schema), `id` (identidade canônica do artefato), `x` (exports), `t` (tipos customizados indispensáveis) e `h` (integridade do payload excluído o próprio bloco de assinatura); chaves, exports, overloads, uniões e campos DEVEM ser ordenados deterministicamente por ponto de código Unicode. [PENDENTE-CODIGO]
+A assinatura compacta usa o schema versionado `FormulaKitSignature/v1` e contém somente `v` (versão do schema), `id` (identidade canônica do artefato), `x` (exports), `t` (tipos customizados indispensáveis) e `h` (SHA-256 da forma canônica de `v`, `id`, `x` e `t`, excluído o próprio `h`); chaves, exports, overloads, uniões e campos DEVEM ser ordenados deterministicamente por ponto de código Unicode, enquanto a integridade byte a byte do arquivo permanece no manifesto superior para evitar autorreferência. [PENDENTE-CODIGO]
 
 Cada função em `x` DEVE representar a categoria função, sua sequência de overloads, os tipos posicionais de argumentos e o retorno, omitindo nomes de parâmetros; generics, opcionalidade, rest, `this`, construtores ou valores exportados só DEVEM aparecer quando integrarem a superfície real. [PENDENTE-CODIGO]
 
