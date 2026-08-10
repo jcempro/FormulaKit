@@ -18,7 +18,7 @@ O catálogo DEVE cobrir operações generalizáveis de texto, número, matemáti
 
 Equivalência com Excel, LibreOffice ou utilitários existentes significa reproduzir a funcionalidade pretendida por contrato idiomático JS/TS; nome, erro histórico, coerção peculiar, arredondamento legado ou comportamento acidental só PODE ser preservado quando deliberado, documentado, testado e justificado por compatibilidade. [a2d98f2]
 
-Estado documental em 2026-08-09: governança, licença, RCF, catálogo, implementação, dependências de desenvolvimento, testes, build e tarball npm validado existem; publicação remota no npm e no GitHub Release permanece condicionada ao aceite de release, ambiente e credenciais, e NÃO DEVE ser anunciada como concluída antes de sua comprovação. [2ad9117]
+Estado documental em 2026-08-10: governança, licença, RCF, catálogo, implementação, dependências de desenvolvimento, testes, build e tarball npm validado existem; `@jeancarloem/formulakit@0.1.0` e o GitHub Release `v0.1.0` foram comprovados remotamente com o mesmo artefato, e publicação posterior NÃO DEVE ser anunciada como concluída antes da respectiva comprovação. [PENDENTE-CODIGO]
 
 O núcleo NÃO DEVE incorporar DOM, framework, rede, armazenamento, processo, sistema de arquivos ou estado global quando a operação puder ser expressa como transformação determinística de entradas. [a2d98f2]
 

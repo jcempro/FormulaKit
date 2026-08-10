@@ -80,6 +80,21 @@
     },
     {
       "artifacts": [
+        ".ia.rules/continue.ia",
+        ".ia.rules/state/contexts/FT-006/master.md",
+        "README.md"
+      ],
+      "commit": "",
+      "ft": "FT-006",
+      "id": "556ac54306625167c542eb2f",
+      "line": 21,
+      "rcf": "RCF.md",
+      "sentenceSha256": "f2d3fc8dbccbaa693379071bddb3ff85f443b5b1a9692ea982e698f971b9b5f7",
+      "state": "pending",
+      "syncCommit": ""
+    },
+    {
+      "artifacts": [
         "src/catalog/manifest.json",
         "src/index.ts"
       ],

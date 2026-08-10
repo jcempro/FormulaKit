@@ -7,7 +7,7 @@ Biblioteca TypeScript universal de funções utilitárias, granular por escopo e
 
 ## Uso
 
-Após a publicação da versão `0.1.0`, a instalação será:
+A versão `0.1.0` está publicada no npm. Instale com:
 
 ```sh
 npm install @jeancarloem/formulakit
@@ -94,6 +94,8 @@ npm pack --dry-run
 A primeira publicação de `@jeancarloem/formulakit` no npm é manual. Depois dela, o Trusted Publisher do npm deve apontar para a organização `jcempro`, repositório `FormulaKit` e workflow `release.yml` (nome visível: `Release do pacote FormulaKit`), sem environment.
 
 Somente após esse vínculo, `npm run release:trigger -- 0.1.0` cria o arquivo-gatilho `release`. O workflow valida e empacota uma única vez, publica ou confirma bytes idênticos no npm, cria o GitHub Release `v0.1.0`, remove o gatilho e converge `dev` em `main`.
+
+A primeira publicação foi concluída: [pacote npm](https://www.npmjs.com/package/@jeancarloem/formulakit) e [GitHub Release v0.1.0](https://github.com/jcempro/FormulaKit/releases/tag/v0.1.0).
 
 - [Referência da API](./docs/API.md)
 - [RCF](./RCF.md): contratos normativos e critérios de aceite.
