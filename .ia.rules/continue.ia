@@ -225,3 +225,32 @@ reter_ate=2026-08-25T00:20:00-03:00
   1/3 Atualizar RCF/README somente com fatos remotos comprovados [concluído]
   2/3 Atualizar continue.ia e handoff [concluído]
   3/3 Commitar encerramento e confirmar release completa [concluído]
+
+FT-007|nome=Documentação pública automática|tipo=implementacao_normativa_tecnica|escopo=documentacao|status=em_andamento|criado_em=2026-08-10T00:00:00-03:00
+objetivo=Corrigir a dívida documental da API pública, padronizar comentários TSDoc/JSDoc, gerar referência navegável determinística e publicá-la automaticamente após cada GitHub Release publicado.
+origem=.ia.rules/state/requests/FT-007/request.md
+rcf=RCF.md
+dependencias=FT-002 e FT-006 concluídas; autorização humana expressa no prompt da FT-007 para corrigir e aplicar
+prioridade=alta
+nao_escopo=publicar nova versão npm, criar tag/Release, alterar a Norma Operacional gerenciada ou substituir o workflow de release
+aceite=RCF e README sincronizados; comentários públicos documentais; gerador open source e mantido; referência HTML reproduzível; gate local/CI; workflow release.published e manual; validações aprovadas; dev/main convergidos
+1/5 Captura e equalização [concluído]
+  1/3 Preservar solicitação integral [concluído]
+  2/3 Triar recusas e contratos aplicáveis [concluído]
+  3/3 Delimitar automação sem nova publicação [concluído]
+2/5 Normatização [em andamento]
+  1/3 Ampliar contrato documental no RCF [pendente]
+  2/3 Definir geração, gate e publicação Pages [pendente]
+  3/3 Sincronizar README e rastreabilidade [pendente]
+3/5 Fonte documental [pendente]
+  1/3 Converter comentários públicos para TSDoc/JSDoc [pendente]
+  2/3 Implementar gerador e validador determinísticos [pendente]
+  3/3 Gerar referência navegável [pendente]
+4/5 Automação [pendente]
+  1/3 Integrar comandos ao pacote e CI [pendente]
+  2/3 Criar workflow acionado por release.published [pendente]
+  3/3 Validar artefato e configuração GitHub Pages [pendente]
+5/5 Validação e encerramento [pendente]
+  1/3 Executar testes, build, pacote e RCF [pendente]
+  2/3 Auditar diff, documentação e regressões [pendente]
+  3/3 Commitar, publicar e convergir branches [pendente]
