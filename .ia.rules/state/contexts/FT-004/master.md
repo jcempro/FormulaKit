@@ -27,5 +27,5 @@ Executar captura/FT → RCF/README → validação normativa → commit → FT-0
 
 ## Estado e aceite
 
-- Estado: normatização em andamento; implementação técnica autorizada e dependente do commit normativo.
+- Estado: normatização validada e pronta para commit; implementação técnica autorizada e dependente desse commit normativo.
 - Aceite global: rastreabilidade completa da fonte ao RCF, implementação e artefatos; composição determinística e imutável; equivalência automatizada entre assinatura, registro, `.d.ts`, exports e código; build/release invalidado em divergência.

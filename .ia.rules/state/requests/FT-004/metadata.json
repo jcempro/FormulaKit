@@ -12,6 +12,15 @@
   "rcfTargets": [
     "RCF.md"
   ],
-  "incorporation": "pending",
+  "incorporation": "incorporated",
+  "incorporatedAt": "2026-08-09T21:52:31-03:00",
+  "evidence": [
+    "RCF.md#151-assinatura-pública-individual-de-artefato",
+    "RCF.md#17-ecmascript-build-e-otimização",
+    "RCF.md#18-distribuição-consumo-e-versionamento",
+    "RCF.md#20-testes-ci-observabilidade-e-aceite",
+    "README.md#distribuição-planejada",
+    ".ia.rules/continue.ia#FT-002"
+  ],
   "authorization": "implementacao_tecnica_expressamente_autorizada_no_mesmo_prompt_apos_commit_normativo"
 }

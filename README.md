@@ -22,6 +22,8 @@ Cada família será um escopo importável — como matemática, lógica, texto, 
 
 O plano prevê subpaths npm por escopo/nível e, no GitHub Release, builds individuais, combinações declaradas e bundle completo nos formatos/targets homologados. Essas distribuições ainda não estão disponíveis.
 
+Cada arquivo de código distribuído terá uma assinatura compacta exclusiva de seus exports reais, gerada e verificada contra TypeScript, `.d.ts` e implementação. Builds de navegador registrarão essas assinaturas em `globalThis.FormulaKit.manifests`: uma visão pública, ordenada e profundamente imutável, que preserva registros existentes e rejeita colisões sem sobrescrita. O manifesto superior de npm/Release continuará vinculando arquivos, hashes, formatos e assinaturas sem duplicar documentação.
+
 ## Autoria e licença
 
 - JeanCarloEM — [site](https://jeancarloem.com) — [e-mail](mailto:jeancarlo@jeancarloem.com)

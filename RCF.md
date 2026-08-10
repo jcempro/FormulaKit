@@ -247,6 +247,32 @@ O `.d.ts` DEVE representar integralmente funções, overloads, generics, parâme
 
 Se houver manifesto canônico separado, manifesto, `.d.ts` e exports reais DEVEM ter uma única autoridade derivável ou validação automática bidirecional; manutenção manual concorrente é proibida. [PENDENTE-CODIGO]
 
+### 15.1 Assinatura pública individual de artefato
+
+Cada arquivo de código publicado no npm ou no GitHub Release — fonte consumível, módulo transpilado, entry point ou bundle — DEVE incorporar uma assinatura própria, exclusiva e claramente delimitada de sua superfície pública efetiva; arquivo auxiliar sem exports DEVE declarar superfície vazia ou vínculo inequívoco ao manifesto do contêiner, sem herdar exports de outro arquivo. [PENDENTE-CODIGO]
+
+A assinatura compacta usa o schema versionado `FormulaKitSignature/v1` e contém somente `v` (versão do schema), `id` (identidade canônica do artefato), `x` (exports), `t` (tipos customizados indispensáveis) e `h` (integridade do payload excluído o próprio bloco de assinatura); chaves, exports, overloads, uniões e campos DEVEM ser ordenados deterministicamente por ponto de código Unicode. [PENDENTE-CODIGO]
+
+Cada função em `x` DEVE representar a categoria função, sua sequência de overloads, os tipos posicionais de argumentos e o retorno, omitindo nomes de parâmetros; generics, opcionalidade, rest, `this`, construtores ou valores exportados só DEVEM aparecer quando integrarem a superfície real. [PENDENTE-CODIGO]
+
+Tipos públicos DEVEM priorizar representação estrutural puramente tipada e mínima; `t` só PODE introduzir identificador ou nome de campo quando sua ausência prejudicar consumo, composição, referência recursiva, inferência, interoperabilidade ou semântica pública, e anonimização que torne dois contratos distintos indistinguíveis é proibida. [PENDENTE-CODIGO]
+
+A assinatura NÃO DEVE conter nomes dispensáveis de parâmetros ou tipos, documentação, descrição, exemplo, origem editorial, estabilidade repetida, path interno nem informação já disponível em camada superior; concisão NÃO autoriza omitir diferença que altere uso ou tipagem. [PENDENTE-CODIGO]
+
+Fonte TypeScript, catálogo público e `.d.ts` canônico constituem a entrada autoritativa do gerador; a assinatura embutida, o arquivo executável e seu registro em manifesto de distribuição são derivados e DEVEM corresponder exatamente aos exports materializados naquela célula da matriz. [PENDENTE-CODIGO]
+
+Build DEVE rejeitar símbolo ausente, excedente ou com categoria, overload, argumento posicional, retorno, generic, opcionalidade ou tipo customizado divergente entre fonte, catálogo, `.d.ts`, assinatura individual e exports executáveis. [PENDENTE-CODIGO]
+
+Artefato destinado a navegador DEVE registrar sua assinatura em `globalThis.FormulaKit.manifests`, namespace público único e compartilhado; `FormulaKit` e `manifests` DEVEM ser propriedades não configuráveis, e a consulta DEVE fornecer snapshot de protótipo nulo, profundamente congelado e ordenado por `id`, sem expor `Map`, setter, método de remoção ou referência ao armazenamento interno. [PENDENTE-CODIGO]
+
+O mecanismo interno de registro DEVE ser único, versionado, oculto da API pública documentada e restrito a acrescentar uma assinatura validada; cada artefato acrescenta exclusivamente seu próprio `id`, e qualquer `id` preexistente — ainda que o conteúdo pareça idêntico — DEVE lançar falha estável de colisão antes de alterar o registro. [PENDENTE-CODIGO]
+
+Registros preexistentes NÃO PODEM ser sobrescritos, removidos ou redefinidos; falha posterior DEVE conservar integralmente o snapshot anterior, e a visão resultante DEVE ser idêntica para o mesmo conjunto de artefatos independentemente da ordem de carregamento. [PENDENTE-CODIGO]
+
+O registro append-only de metadados no build de navegador é o único efeito global autorizado por este contrato, DEVE ser declarado granularmente para o bundler e NÃO PODE inicializar função, capturar dado do consumidor nem contaminar builds ESM/CommonJS destinados a Node, worker ou server. [PENDENTE-CODIGO]
+
+Biblioteca terceira PODE enumerar, consultar e reter snapshots das assinaturas, mas tentativa de atribuir, definir, apagar ou mutar namespace, coleção, registro ou valor aninhado DEVE falhar ou permanecer sem efeito conforme o modo ECMAScript, nunca alterar observação posterior. [PENDENTE-CODIGO]
+
 Falhas de contrato DEVEM usar códigos estáveis e mensagens seguras, sem segredo, dado pessoal, path local ou conteúdo integral da entrada; erro interno NÃO DEVE ser apresentado como resultado válido. [PENDENTE-CODIGO]
 
 Predicados `is*` DEVEM retornar `false` para valor estruturalmente inválido dentro do domínio declarado e NÃO DEVEM ocultar erro de configuração, algoritmo ou dependência. [PENDENTE-CODIGO]
@@ -285,6 +311,8 @@ O target primário DEVE obedecer à fórmula ECMAScript dinâmica deste RCF; tar
 
 Cada artefato por escopo/nível DEVE preservar tree-shaking, `.d.ts`, sourcemap, banner, hash e vínculo à fonte; bundle combinado e completo DEVEM reutilizar chunks sem importar escopo alheio ao conjunto declarado. [PENDENTE-CODIGO]
 
+O gerador de artefatos DEVE produzir e validar a assinatura individual depois da resolução exata de exports e antes de minificação/empacotamento final, preservando bloco delimitado e registro equivalente em `.js`, `.mjs`, `.cjs` ou formato executável homologado. [PENDENTE-CODIGO]
+
 ## 18. Distribuição, consumo e versionamento
 
 FormulaKit DEVE ser distribuído por npm e GitHub Release com seleção equivalente e verificável de fontes TypeScript consumíveis, JavaScript executável, `.d.ts`, source maps apropriados, licença, metadados e manifestos. [PENDENTE-CODIGO]
@@ -299,6 +327,8 @@ O npm DEVE expor por `exports`/subpaths toda granularidade homologada, incluindo
 
 O manifesto DEVE enumerar inclusões cumulativas, arquivos, hashes, tamanhos, entry points, formatos, targets, condições, tipos e sourcemaps de cada artefato e provar que npm e Release representam a mesma identidade funcional. [PENDENTE-CODIGO]
 
+O manifesto de distribuição DEVE vincular cada arquivo à sua `FormulaKitSignature/v1`, ao hash de payload e à superfície efetiva; assinatura individual não substitui o inventário superior e o inventário superior NÃO PODE ampliar implicitamente a superfície do arquivo. [PENDENTE-CODIGO]
+
 ESM, CommonJS, `.mjs`, `.cjs`, subpaths granulares, browser, Node e bundle otimizado PODEM integrar a distribuição somente quando consumidor, runtime e valor material forem comprovados; extensões redundantes que representem o mesmo formato sem necessidade são proibidas. [PENDENTE-CODIGO]
 
 O pacote e o Release DEVEM permitir consumo sem toolchain de desenvolvimento, sem path interno e sem importar runtime, função ou dependência não utilizada; instalação a partir de tarball local em projeto externo limpo integra o aceite. [PENDENTE-CODIGO]
@@ -307,7 +337,7 @@ O pacote e o Release DEVEM permitir consumo sem toolchain de desenvolvimento, se
 
 O projeto DEVE usar SemVer: mudança incompatível de assinatura, tipo, coerção, resultado, erro, precisão, default, ordenação ou export é major; adição compatível é minor; correção preservadora é patch. [PENDENTE-CODIGO]
 
-Nome definitivo do pacote npm e política de artefatos globais permanecem decisões humanas anteriores à primeira publicação; nenhum nome ou global é reservado por inferência. [PENDENTE-CODIGO]
+Nome definitivo do pacote npm permanece decisão humana anterior à primeira publicação; para artefatos de navegador, o prompt da FT-004 reserva expressamente apenas `globalThis.FormulaKit.manifests` e seu protocolo interno versionado, sem autorizar outro global público. [PENDENTE-CODIGO]
 
 ## 19. Dependências e cadeia de suprimentos
 
@@ -326,6 +356,8 @@ Atualização de dependência DEVE comprovar compatibilidade, diff de cadeia, te
 Cada função pública DEVE possuir testes unitários, vetores de borda e regressão que cubram tipos, coerção, limites, Unicode, locale, nulos, `NaN`, infinidade, precisão, arredondamento, mutabilidade, determinismo e erros conforme aplicabilidade. [PENDENTE-CODIGO]
 
 Validação DEVE comparar TypeScript, JavaScript e todos os formatos publicados, incluindo exports, `.d.ts`, browser real, worker quando suportado, Node, client/server, tree-shaking, importação granular, tamanhos, build reproduzível e consumo externo. [PENDENTE-CODIGO]
+
+Validação de distribuição DEVE extrair cada assinatura individual, comparar sua forma canônica com `.d.ts`, catálogo e exports reais, carregar em navegador todas as permutações materialmente distintas de artefatos e comprovar composição determinística, congelamento profundo, consulta externa, colisão segura e preservação dos registros anteriores. [PENDENTE-CODIGO]
 
 Testes de distribuição DEVEM verificar para cada escopo `basic ⊆ advanced ⊆ specialized` quando aplicável, equivalência do escopo raiz, ausência de escopos alheios no bundle, paridade de tipos e resultados entre build individual, combinado e completo. [PENDENTE-CODIGO]
 
@@ -361,8 +393,8 @@ Sentenças implementáveis usam `[PENDENTE-CODIGO]` até a FT técnica produzir 
 
 Antes da implementação material, decisão humana DEVE aprovar o nome do pacote npm, o catálogo mínimo da primeira versão e os formatos de distribuição que possuam consumidor comprovado. [PENDENTE-CODIGO]
 
-A implementação DEVE seguir: decisões e catálogo → schemas/manifesto → escopos/níveis → primitivas → famílias priorizadas → máscaras/validação/lógica → API/exports/tipos → builds granulares/combinados/completo → testes multiformato → baseline/budgets → tarball consumidor → CI → publicação autorizada → sincronização causal. [PENDENTE-CODIGO]
+A implementação DEVE seguir: decisões e catálogo → schemas/manifesto/assinatura → escopos/níveis → primitivas → famílias priorizadas → máscaras/validação/lógica → API/exports/tipos → builds granulares/combinados/completo e registro global → testes multiformato → baseline/budgets → tarball consumidor → CI → publicação autorizada → sincronização causal. [PENDENTE-CODIGO]
 
 Prioridade inicial DEVERIA favorecer contratos transversais e famílias com maior reutilização — texto, números, coleções, datas, validação e dígitos — antes de expandir a cobertura financeira ou equivalências extensas de planilhas. [PENDENTE-CODIGO]
 
-A FT-002 permanece pendente e NÃO é autorizada por este RCF; criação de código, instalação de dependência, build, workflow, pacote ou publicação exige nova solicitação humana explícita após a conclusão normativa.
+A FT-002 está expressamente autorizada pelo prompt da FT-004 para iniciar após o commit desta ampliação normativa e prosseguir até conclusão técnica; publicação remota continua condicionada a credenciais, ambiente e validações exigidas por este RCF. [PENDENTE-CODIGO]
