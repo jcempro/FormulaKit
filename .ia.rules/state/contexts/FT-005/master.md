@@ -14,3 +14,10 @@ Esta FT executa a atualização oficial e o compartilhamento upstream no papel d
 ## Limites
 
 A proposta deve abstrair o caso para qualquer consumidor com fonte/build próprios, sem expor nome, caminho, domínio ou hash do FormulaKit. A FT termina após registrar a proposta e preservar o produto; a incorporação upstream depende do mantenedor.
+
+## Conclusão
+
+- Proposta publicada pelo canal oficial: https://github.com/jcempro/agents.md/issues/11.
+- Atualização oficial: `01fdc32`; preservação local do produto: `96da455`.
+- O gate próprio passou com 12/12 testes, 524 artefatos e 185 medições.
+- `agent:verify` permanece corretamente declarado como bloqueado em `MANIFESTO_FONTE_AUSENTE` até incorporação upstream; nenhum arquivo do núcleo foi editado para fabricar aprovação.
