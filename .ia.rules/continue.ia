@@ -263,3 +263,60 @@ reter_ate=2026-08-25T00:54:00-03:00
   1/3 Executar testes, build, pacote e RCF [concluído]
   2/3 Auditar diff, documentação e regressões [concluído]
   3/3 Commitar, publicar e convergir branches [concluído]
+
+FT-008|nome=Histórico público de chaves de procedência|tipo=implementacao_normativa|escopo=seguranca_distribuicao|status=em_andamento|criado_em=2026-08-10T01:10:00-03:00
+objetivo=Normatizar a cadeia de keyIds e chaves públicas de procedência do FormulaKit, com histórico append-only, rotação verificável, fontes alternativas de obtenção e localização pública canônica.
+origem=.ia.rules/state/requests/FT-008/request.md
+origem_hash=6287bdd5cb8330f1128166d1dc540ed07780710e8ee1ba675989f979572008ba
+rcf=RCF.md
+dependencias=FT-004 e FT-006 concluídas
+prioridade=alta
+nao_escopo=gerar chaves privadas, assinar artefatos, alterar workflow, publicar release, modificar npm ou declarar procedência criptográfica já implementada
+aceite=RCF e README definem esquema, trust anchors, rotação, revogação, verificações, fontes alternativas e localização canônica; FT-009 recebe contrato executável segregado; rastreabilidade normativa validada e commitada
+autorizacao_codigo=ausente; a solicitação atual autoriza somente captura, planejamento e texto de instrução, não a implementação criptográfica
+1/4 Captura e conciliação [em andamento]
+  1/3 Preservar solicitação integral e triagem de recusas [concluído]
+  2/3 Delimitar cadeia de confiança, histórico e rotação [concluído]
+  3/3 Vincular FT normativa e FT de código sem antecipação [em andamento]
+2/4 Contrato normativo [pendente]
+  1/3 Definir documento canônico, esquema e fontes equivalentes [pendente]
+  2/3 Definir trust anchor, rotação, revogação e anti-downgrade [pendente]
+  3/3 Sincronizar RCF, README e rastreabilidade [pendente]
+3/4 Validação normativa [pendente]
+  1/3 Validar preservação e cobertura origem→RCF→FT [pendente]
+  2/3 Preparar contrato de aceitação para FT-009 [pendente]
+  3/3 Commitar norma e interromper antes do código [pendente]
+4/4 Transição técnica [pendente]
+  1/3 Registrar autorização humana necessária [pendente]
+  2/3 Atualizar estado canônico e handoff [pendente]
+  3/3 Entregar instrução interoperável para consumidor [pendente]
+
+FT-009|nome=Publicação automatizada do histórico de chaves|tipo=implementacao_codigo|escopo=seguranca_distribuicao|status=pendente|criado_em=2026-08-10T01:10:01-03:00
+objetivo=Materializar, validar, assinar e disponibilizar o histórico público de keyIds e chaves públicas em todas as superfícies de distribuição aprovadas, atualizando-o a cada release sem expor chave privada.
+origem=.ia.rules/state/requests/FT-009/request.md
+origem_hash=5ff59c119ad283e5c4e0341a46e121d069a5782a71cf73d9822f2f494ab6e47e
+rcf=RCF.md
+dependencias=FT-008 concluída e autorização humana explícita posterior
+prioridade=alta
+nao_escopo=alterar a Norma Operacional gerenciada, gerar ou exfiltrar segredos, publicar release não autorizado ou tratar um endpoint como fonte única de confiança
+aceite=gerador determinístico, cadeia de rotação validada, histórico assinado e append-only, presença sincronizada no pacote/Release/endpoint público, gates locais e CI, e teste de consumidor com chaves históricas aprovados
+1/5 Arquitetura executável [pendente]
+  1/3 Derivar schema e localizações da FT-008 [pendente]
+  2/3 Definir armazenamento seguro e injeção externa da chave privada [pendente]
+  3/3 Definir matriz de distribuição e recuperação [pendente]
+2/5 Geração e verificação [pendente]
+  1/3 Gerar histórico canônico e assinaturas [pendente]
+  2/3 Validar continuidade, rotação, revogação e hashes [pendente]
+  3/3 Expor verificador reutilizável ao consumidor [pendente]
+3/5 Integração de release [pendente]
+  1/3 Incluir histórico no pacote e asset do Release [pendente]
+  2/3 Publicar espelho web após release publicado [pendente]
+  3/3 Bloquear release diante de divergência [pendente]
+4/5 Testes e documentação [pendente]
+  1/3 Cobrir consumidor atual, histórico e rotação [pendente]
+  2/3 Documentar fontes e recuperação sem exclusividade [pendente]
+  3/3 Executar gates locais e CI [pendente]
+5/5 Integração e encerramento [pendente]
+  1/3 Auditar regressões e segredos [pendente]
+  2/3 Sincronizar rastreabilidade causal [pendente]
+  3/3 Commitar, publicar e convergir conforme autorização [pendente]
