@@ -1,13 +1,13 @@
 {
   "name": "@jeancarloem/formulakit",
   "version": "0.1.0",
-  "private": false,
   "files": [
     "dist/",
     "docs/",
     "README.md",
     "LICENSE"
   ],
+  "author": "JeanCarloEM (https://jeancarloem.com)",
   "license": "MPL-2.0",
   "description": "Biblioteca TypeScript universal de funções utilitárias granulares.",
   "main": "./dist/index.cjs",
