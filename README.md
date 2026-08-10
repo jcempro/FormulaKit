@@ -19,10 +19,10 @@ import { factorial } from "@jcempro/formulakit/math/advanced";
 import { and, orValue } from "@jcempro/formulakit/logic";
 import { applyMask } from "@jcempro/formulakit/text";
 
-clamp(15, 0, 10);                       // 10
-factorial(5);                            // 120
-and(true, true, false);                  // false
-orValue(undefined, "resultado");        // "resultado"
+clamp(15, 0, 10); // 10
+factorial(5); // 120
+and(true, true, false); // false
+orValue(undefined, "resultado"); // "resultado"
 applyMask("12345678901", "###.###.###-##");
 ```
 
@@ -49,14 +49,14 @@ Bundles combinados `core`, `data` e `business`, bundle completo, builds individu
 
 O compilador de máscaras é limitado, cacheável e não avalia código. A sintaxe compacta inclui:
 
-| Sintaxe | Significado |
-| --- | --- |
-| `#`, `A`, `X`, `@` | dígito, letra, alfanumérico e qualquer caractere |
-| `?`, `+`, `{n}`, `{n,m}` | opcional e repetições |
-| `(…)`, `\|` | grupo e alternativas ordenadas |
-| `>`, `<` | transformação para maiúsculas e minúsculas |
-| `~c{n}` | preenchimento com o caractere `c` |
-| `\c` | literal escapado |
+| Sintaxe                  | Significado                                      |
+| ------------------------ | ------------------------------------------------ |
+| `#`, `A`, `X`, `@`       | dígito, letra, alfanumérico e qualquer caractere |
+| `?`, `+`, `{n}`, `{n,m}` | opcional e repetições                            |
+| `(…)`, `\|`              | grupo e alternativas ordenadas                   |
+| `>`, `<`                 | transformação para maiúsculas e minúsculas       |
+| `~c{n}`                  | preenchimento com o caractere `c`                |
+| `\c`                     | literal escapado                                 |
 
 `compileMask` permite reutilizar a máscara compilada; `applyMask` oferece o caminho direto. Limites de entrada, saída, profundidade e estados protegem contra execução abusiva.
 
@@ -96,6 +96,6 @@ npm pack --dry-run
 
 ## Autoria e licença
 
-- JeanCarloEM — [site](https://jeancarloem.com) — [e-mail](mailto:jeancarlo@jeancarloem.com)
+- JeanCarloEM — [https://jeancarloem.com](https://www.jeancarloem.com)
 - Repositório: [jcempro/FormulaKit](https://github.com/jcempro/FormulaKit)
 - [Mozilla Public License 2.0](./LICENSE) — uso, cópia, modificação e distribuição conforme seus termos.
