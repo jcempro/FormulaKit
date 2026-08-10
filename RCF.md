@@ -387,13 +387,13 @@ README, referência da API, exemplos, manifesto e changelog DEVEM acompanhar a s
 
 Documentação de função DEVE explicar finalidade, parâmetros, retorno, efeitos, falhas, precisão, locale, mutabilidade, complexidade ou restrição relevante e incluir exemplo mínimo quando reduzir ambiguidade. [2ad9117]
 
-Cada declaração pública TypeScript DEVE possuir bloco TSDoc compatível com consumidores JSDoc, estruturalmente analisável e adjacente à declaração; comentário sumário de uma linha, assinatura tipada isolada ou descrição gerada sem contrato semântico NÃO satisfazem a documentação de função. [PENDENTE-CODIGO]
+Cada declaração pública TypeScript DEVE possuir bloco TSDoc compatível com consumidores JSDoc, estruturalmente analisável e adjacente à declaração; comentário sumário de uma linha, assinatura tipada isolada ou descrição gerada sem contrato semântico NÃO satisfazem a documentação de função. [b0902bd]
 
-A referência navegável da API DEVE ser derivada deterministicamente da fonte TypeScript e de seus blocos TSDoc por ferramenta open source mantida, sem catálogo manual concorrente; geração e validação DEVEM rejeitar declaração pública ausente, comentário inválido, parâmetro documental divergente, retorno aplicável sem contrato ou saída vazia. [PENDENTE-CODIGO]
+A referência navegável da API DEVE ser derivada deterministicamente da fonte TypeScript e de seus blocos TSDoc por ferramenta open source mantida, sem catálogo manual concorrente; geração e validação DEVEM rejeitar declaração pública ausente, comentário inválido, parâmetro documental divergente, retorno aplicável sem contrato ou saída vazia. [b0902bd]
 
-O repositório DEVE expor comando local único para gerar a documentação e gate equivalente para CI. O workflow documental DEVE usar Node.js 24 ou superior, permissões mínimas, artefato estático imutável e GitHub Pages; DEVE executar em todo evento `release.published`, permitir `workflow_dispatch`, não criar versão, pacote, tag ou Release e não modificar branches. [PENDENTE-CODIGO]
+O repositório DEVE expor comando local único para gerar a documentação e gate equivalente para CI. O workflow documental DEVE usar Node.js 24 ou superior, permissões mínimas, artefato estático imutável e GitHub Pages; DEVE executar em todo evento `release.published`, permitir `workflow_dispatch`, não criar versão, pacote, tag ou Release e não modificar branches. [b0902bd]
 
-Publicação de pacote/Release exige geração documental aprovada antes do empacotamento, e a publicação da referência correspondente DEVE ocorrer após o Release publicado; falha documental invalida o ciclo sem reescrever publicação remota já imutável. [PENDENTE-CODIGO]
+Publicação de pacote/Release exige geração documental aprovada antes do empacotamento, e a publicação da referência correspondente DEVE ocorrer após o Release publicado; falha documental invalida o ciclo sem reescrever publicação remota já imutável. [b0902bd]
 
 Fonte humana editável e artefato comentável DEVEM manter cabeçalho conforme `./AGENTS.md` e `./.ia.rules/resources/traceability.md`; build minificado DEVE preservar banner ultrassucinto. [2ad9117]
 
