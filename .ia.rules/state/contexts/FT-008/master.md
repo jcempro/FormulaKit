@@ -6,7 +6,7 @@ Normatizar como consumidores verificam a procedência de artefatos FormulaKit se
 
 ## Decisões registradas
 
-- Localização pública canônica futura: `https://formulakit.jcem.pro/.well-known/formulakit/keys/v1.json`.
+- Localização pública canônica futura: `https://raw.githubusercontent.com/jcempro/FormulaKit/main/provenance/keys/v1.json`; ela é independente do site de publicação e aponta diretamente ao conteúdo bruto da branch primária do repositório.
 - O mesmo conteúdo canônico será espelhado em subpath público do pacote, asset do GitHub Release e tag/repositório; URL, npm, GitHub e cache local são vias de descoberta, nunca fontes únicas de confiança.
 - A verificação parte de uma chave pública de confiança pré-fixada ou obtida por canal independente autenticado; o documento remoto não cria a própria confiança.
 - Cada registro inclui `keyId`, algoritmo, chave pública, intervalo de validade, primeiro/último release aplicável, estado e vínculos de rotação/revogação. A introdução de chave sucessora deve ser assinada ou coassinada por chave anteriormente confiada, formando cadeia verificável.
