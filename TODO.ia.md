@@ -180,3 +180,151 @@
   ## Resultado
 
   Criar um novo RCF autossuficiente, de alta densidade informacional, tomando o RCF atual como matriz metodológica. Preservar tudo que seja transversal a um projeto TypeScript profissional e remover exclusivamente especializações inerentes à DSL, substituindo-as pelos contratos desta biblioteca funcional. NÃO simplificar requisitos apenas porque o novo domínio é conceitualmente menor.
+
+- [ ] Disponibilizar funções utilitárias tipadas, condicionais, numéricas e de formatação com contratos explícitos e exemplos
+  - Inspecione integralmente a API, implementação, RCF, documentação, convenções e funções já existentes antes de alterar código.
+  - Preserve compatibilidade e normas vigentes; NÃO duplique funções equivalentes nem crie contratos conflitantes.
+  - As funções abaixo DEVEM integrar a API pública da biblioteca, com nomes exatamente conforme especificados, salvo conflito comprovado com contrato normativo anterior que DEVE ser reconciliado sem perda funcional:
+    - `isBool`
+    - `isTrue`
+    - `isNum`
+    - `isInt`
+    - `isFloat`
+    - `isStr`
+    - `isEmpty`
+    - `IF`
+    - `min`
+    - `max`
+
+  - **Contratos mínimos**
+    - `isBool(value)`
+      - DEVE identificar valores booleanos válidos.
+      - NÃO converter arbitrariamente valores truthy/falsy em booleano.
+      - Defina explicitamente, conforme arquitetura existente, se representações textuais de booleano são aceitas; NÃO inferir silenciosamente sem contrato.
+
+    - `isTrue(value)`
+      - DEVE retornar verdadeiro para, no mínimo:
+        - `true`;
+        - `1`.
+      - Demais equivalências somente PODEM ser aceitas se explicitamente normatizadas e não introduzirem coerção ambígua.
+
+    - `isNum(value)`
+      - DEVE validar se o valor:
+        - representa numericamente um número válido;
+        - é finito;
+        - pode ser interpretado inequivocamente como número mesmo quando fornecido como `string`.
+      - NÃO considerar `NaN`, `Infinity`, `-Infinity`, string vazia ou representação numérica inválida como número válido.
+      - Strings DEVEM ser normalizadas apenas segundo regras explicitamente suportadas; coerções permissivas do JavaScript NÃO DEVEM ser usadas como critério único de validade.
+
+    - `isInt(value)`
+      - DEVE **estender semanticamente `isNum`**, reutilizando sua validação-base em vez de duplicá-la.
+      - Somente retorna verdadeiro quando o número válido representar inteiro.
+
+    - `isFloat(value)`
+      - DEVE **estender semanticamente `isNum`**.
+      - DEVE reconhecer representação decimal válida.
+      - Tanto `.` quanto `,` DEVEM ser aceitos como potenciais separadores decimais.
+      - Quando disponível, a preferência/interpretação DEVE considerar locale/preferências fornecidos pelo navegador.
+      - A implementação NÃO DEVE depender exclusivamente do ambiente do navegador; em ambiente sem locale disponível, aplique fallback determinístico e documentado.
+      - Separadores de milhar e decimal NÃO DEVEM ser interpretados ambiguamente; adote regras consistentes com padrões consolidados de internacionalização.
+
+    - `isStr(value)`
+      - DEVE identificar string conforme contrato explícito da biblioteca.
+      - NÃO considerar coerção automática para string como prova de que o valor originalmente é string.
+
+    - `isEmpty(value, ...)`
+      - Para strings, DEVE aplicar `trim()` antes da avaliação, de modo que strings compostas apenas por espaços sejam vazias.
+      - DEVE possuir parâmetro para definir se `null` é considerado vazio:
+        - padrão: `true`.
+      - DEVE possuir parâmetro equivalente para `undefined`:
+        - padrão: `true`.
+      - A assinatura DEVE permanecer simples, clara e extensível; reutilize padrão de opções já adotado pela biblioteca se houver.
+      - Outros tipos somente DEVEM ser considerados vazios se houver regra normativa explícita; NÃO ampliar silenciosamente o conceito de vazio.
+
+    - `IF(...)`
+      - DEVE fornecer operação condicional equivalente a `if/else` conforme paradigma/API da biblioteca.
+      - Defina assinatura, coerção da condição e comportamento dos ramos de forma determinística.
+      - NÃO use truthiness implícita quando ela puder contrariar `isBool`/`isTrue` ou a semântica já estabelecida pela biblioteca.
+      - Avalie se os ramos DEVEM ser eager ou lazy conforme arquitetura real e impacto colateral; documente explicitamente o comportamento adotado.
+
+    - `min(...)` e `max(...)`
+      - DEVEM calcular respectivamente menor e maior valor conforme contrato numérico da biblioteca.
+      - DEVEM reutilizar as mesmas regras de validação/conversão numérica aplicáveis a `isNum`, evitando divergência semântica.
+      - Defina comportamento para argumentos inválidos, vazios, mistos ou ausentes de forma explícita e consistente com a política geral da biblioteca.
+
+  - **Internacionalização numérica**
+    - Audite o tratamento já existente de números, decimal, locale e máscaras.
+    - Priorize APIs/padrões consolidados, especialmente capacidades nativas como `Intl`, quando adequadas e disponíveis.
+    - Locale do navegador PODE orientar preferência por `,` ou `.`, mas NÃO deve tornar a mesma entrada arbitrariamente válida ou inválida sem regra documentada.
+    - Ambiguidades como `1.234`, `1,234`, `1.234,56` e `1,234.56` DEVEM possuir comportamento previsível, testado e documentado.
+
+  - **JSDoc e exemplos obrigatórios**
+    - Cada função pública DEVE possuir documentação de uso com pelo menos:
+      - finalidade;
+      - assinatura;
+      - parâmetros;
+      - retorno;
+      - comportamento relevante;
+      - edge cases;
+      - exemplo real de uso.
+    - Preferencialmente, essa documentação DEVE residir no próprio JSDoc da declaração, tornando código e contrato co-localizados.
+    - Quando uma função possuir múltiplos comportamentos relevantes, inclua exemplos suficientes para eliminar ambiguidade.
+    - A documentação externa, se existente, DEVE derivar ou permanecer coerente com esses contratos; NÃO mantenha exemplos divergentes.
+
+  - **Formatação e máscaras**
+    - Audite integralmente a funcionalidade de formatação por máscara já normatizada/implementada.
+    - Verifique sua aderência às melhores práticas e a padrões amplamente estabelecidos antes de expandi-la.
+    - NÃO substitua uma solução correta apenas por preferência estética ou tecnológica.
+    - Corrija ambiguidades, comportamentos ad hoc ou incompatibilidades comprovadas.
+    - A formatação por máscara DEVE ser amplamente exemplificada, pois admite muitas variantes.
+    - Documente exemplos representativos, incluindo, quando aplicáveis:
+      - inteiros;
+      - decimais;
+      - casas decimais fixas/variáveis;
+      - separadores de milhar;
+      - separador decimal `.` e `,`;
+      - locale;
+      - valores negativos;
+      - prefixos/sufixos;
+      - moeda;
+      - porcentagem;
+      - valores nulos/vazios;
+      - arredondamento;
+      - máscaras literais;
+      - entradas fornecidas como string.
+    - Exemplos DEVEM corresponder ao comportamento real da implementação e ser cobertos por testes sempre que viável.
+
+  - **Reuso e consistência**
+    - `isInt` e `isFloat` NÃO DEVEM implementar validação numérica paralela; DEVEM derivar de `isNum`.
+    - Funções que recebem números DEVEM compartilhar o mesmo mecanismo central de normalização/validação quando semanticamente aplicável.
+    - Regras de locale, decimal, finitude e coerção NÃO DEVEM ser replicadas com comportamentos distintos em cada função.
+    - Centralize microconceitos internos quando isso reduzir divergência sem inflar a API pública.
+
+  - **Testes obrigatórios**
+    - Cubra, no mínimo:
+      - booleanos reais;
+      - `1`, `0` e outros números em `isTrue`;
+      - números nativos e numéricos como string;
+      - `NaN`, infinitos e entradas inválidas;
+      - inteiros positivos/negativos;
+      - floats com `.` e `,`;
+      - locale com preferência decimal distinta;
+      - representações com separador de milhar;
+      - ambiguidades entre milhar e decimal;
+      - strings vazias e somente espaços;
+      - `null`/`undefined` com padrões e parâmetros invertidos;
+      - `IF` verdadeiro/falso e edge cases;
+      - `min`/`max` com diferentes quantidades e representações numéricas;
+      - máscaras e respectivas variantes documentadas.
+    - Todo exemplo público relevante DEVE possuir teste correspondente ou ser comprovadamente exercitado pela suíte existente.
+
+  - **Critérios de aceite**
+    - Todas as funções especificadas estão disponíveis publicamente e documentadas.
+    - `isNum` constitui a base semântica única para validações numéricas correlatas.
+    - `isInt` e `isFloat` estendem essa base sem duplicação divergente.
+    - `isFloat` aceita `.` e `,`, respeitando preferência de locale quando disponível e fallback determinístico quando não.
+    - `isEmpty` trata strings com `trim()` e considera `null` e `undefined` vazios por padrão, ambos configuráveis.
+    - `IF`, `min` e `max` possuem contratos inequívocos e coerentes com as demais funções.
+    - Cada função possui modo de uso e exemplos, preferencialmente no JSDoc da própria declaração.
+    - A formatação por máscara foi auditada contra práticas/padrões consolidados e está amplamente exemplificada.
+    - Documentação, implementação e testes permanecem coerentes entre si, sem regressões ou duplicação semântica.
