@@ -3,21 +3,51 @@
 // Licença: MPL-2.0 | https://www.mozilla.org/MPL/2.0/
 // RCF: ./RCF.md
 
-/** Diagnóstico reutilizável sem ecoar a entrada. */
+/**
+ * Diagnóstico reutilizável sem ecoar a entrada.
+ *
+ */
 export interface ValidationIssue { readonly code: string; readonly message: string; readonly position?: number; }
-/** Resultado discriminado de validação. */
+/**
+ * Resultado discriminado de validação.
+ *
+ */
 export type ValidationResult = Readonly<{ ok: true } | { ok: false; issues: readonly ValidationIssue[] }>;
-/** Contrato de validador booleano com diagnóstico associado. */
+/**
+ * Contrato de validador booleano com diagnóstico associado.
+ *
+ */
 export interface Validator<T> { readonly test: (value: T) => boolean; readonly inspect: (value: T) => ValidationResult; }
 
-/** Cria validador a partir de predicado total e diagnóstico estável. */
+/**
+ * Cria validador a partir de predicado total e diagnóstico estável.
+ *
+ * @typeParam T - Tipo preservado pela operação.
+ * @param predicate - Predicado aplicado a cada valor e índice.
+ * @param issue - Diagnóstico estável associado à rejeição.
+ * @returns Resultado correspondente à finalidade documentada: cria validador a partir de predicado total e diagnóstico estável.
+ */
 export function validator<T>(predicate: (value: T) => boolean, issue: ValidationIssue): Validator<T> {
   const inspect = (value: T): ValidationResult => predicate(value) ? Object.freeze({ ok: true }) : Object.freeze({ ok: false, issues: Object.freeze([Object.freeze({ ...issue })]) });
   return Object.freeze({ test: predicate, inspect });
 }
-/** Valida e retorna somente booleano. */
+/**
+ * Valida e retorna somente booleano.
+ *
+ * @typeParam T - Tipo preservado pela operação.
+ * @param value - Valor de entrada.
+ * @param rule - Validador aplicado ao valor.
+ * @returns `true` quando e retorna somente booleano; caso contrário, `false`.
+ */
 export const validate = <T>(value: T, rule: Validator<T>): boolean => rule.test(value);
-/** Valida e retorna diagnóstico estruturado. */
+/**
+ * Valida e retorna diagnóstico estruturado.
+ *
+ * @typeParam T - Tipo preservado pela operação.
+ * @param value - Valor de entrada.
+ * @param rule - Validador aplicado ao valor.
+ * @returns `true` quando e retorna diagnóstico estruturado; caso contrário, `false`.
+ */
 export const inspect = <T>(value: T, rule: Validator<T>): ValidationResult => rule.inspect(value);
 
 /** Valida endereço de e-mail prático, sem alegar conformidade SMTP completa. */

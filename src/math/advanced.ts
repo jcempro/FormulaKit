@@ -6,41 +6,109 @@
 export * from "./basic.js";
 import { finite, integer } from "../internal.js";
 
-/** Eleva uma base finita ao expoente finito. */
+/**
+ * Eleva uma base finita ao expoente finito.
+ *
+ * @param base - Valor-base da operação.
+ * @param exponent - Expoente finito.
+ * @returns Resultado correspondente à finalidade documentada: eleva uma base finita ao expoente finito.
+ */
 export const power = (base: number, exponent: number): number => finite(base, "base") ** finite(exponent, "exponent");
-/** Calcula raiz quadrada real não negativa. */
+/**
+ * Calcula raiz quadrada real não negativa.
+ *
+ * @param value - Valor de entrada.
+ * @returns Resultado correspondente à finalidade documentada: calcula raiz quadrada real não negativa.
+ * @throws Quando a entrada viola o contrato da operação (`RangeError`).
+ */
 export function sqrt(value: number): number { finite(value); if (value < 0) throw new RangeError("value must be non-negative"); return Math.sqrt(value); }
-/** Calcula raiz cúbica real. */
+/**
+ * Calcula raiz cúbica real.
+ *
+ * @param value - Valor de entrada.
+ * @returns Resultado correspondente à finalidade documentada: calcula raiz cúbica real.
+ */
 export const cbrt = (value: number): number => Math.cbrt(finite(value));
-/** Calcula fatorial exato enquanto o resultado permanece seguro. */
+/**
+ * Calcula fatorial exato enquanto o resultado permanece seguro.
+ *
+ * @param value - Valor de entrada.
+ * @returns Resultado correspondente à finalidade documentada: calcula fatorial exato enquanto o resultado permanece seguro.
+ */
 export function factorial(value: number): number {
   integer(value, "value", 0, 18); let result = 1;
   for (let index = 2; index <= value; index += 1) result *= index;
   return result;
 }
-/** Calcula combinações de n elementos em k posições. */
+/**
+ * Calcula combinações de n elementos em k posições.
+ *
+ * @param n - Quantidade total de elementos.
+ * @param k - Quantidade de posições escolhidas.
+ * @returns Resultado correspondente à finalidade documentada: calcula combinações de n elementos em k posições.
+ */
 export function combinations(n: number, k: number): number {
   integer(n, "n", 0, 1_000); integer(k, "k", 0, n); const size = Math.min(k, n - k); let result = 1;
   for (let index = 1; index <= size; index += 1) result = result * (n - size + index) / index;
   return result;
 }
-/** Calcula permutações sem repetição. */
+/**
+ * Calcula permutações sem repetição.
+ *
+ * @param n - Quantidade total de elementos.
+ * @param k - Quantidade de posições escolhidas.
+ * @returns Resultado correspondente à finalidade documentada: calcula permutações sem repetição.
+ */
 export function permutations(n: number, k: number): number {
   integer(n, "n", 0, 170); integer(k, "k", 0, n); let result = 1;
   for (let index = 0; index < k; index += 1) result *= n - index;
   return result;
 }
-/** Interpola linearmente entre dois valores. */
+/**
+ * Interpola linearmente entre dois valores.
+ *
+ * @param start - Limite inicial inclusivo.
+ * @param end - Limite final exclusivo.
+ * @param amount - Proporção usada na interpolação.
+ * @returns Resultado correspondente à finalidade documentada: interpola linearmente entre dois valores.
+ */
 export const lerp = (start: number, end: number, amount: number): number => finite(start) + (finite(end) - start) * finite(amount);
-/** Normaliza valor para a proporção de um intervalo. */
+/**
+ * Normaliza valor para a proporção de um intervalo.
+ *
+ * @param value - Valor de entrada.
+ * @param start - Limite inicial inclusivo.
+ * @param end - Limite final exclusivo.
+ * @returns Resultado correspondente à finalidade documentada: normaliza valor para a proporção de um intervalo.
+ * @throws Quando a entrada viola o contrato da operação (`RangeError`).
+ */
 export function normalizeRange(value: number, start: number, end: number): number {
   finite(value); finite(start); finite(end); if (start === end) throw new RangeError("range must not be empty"); return (value - start) / (end - start);
 }
-/** Converte graus em radianos. */
+/**
+ * Converte graus em radianos.
+ *
+ * @param degrees - Ângulo expresso em graus.
+ * @returns Resultado correspondente à finalidade documentada: converte graus em radianos.
+ */
 export const toRadians = (degrees: number): number => finite(degrees) * Math.PI / 180;
-/** Converte radianos em graus. */
+/**
+ * Converte radianos em graus.
+ *
+ * @param radians - Ângulo expresso em radianos.
+ * @returns Resultado correspondente à finalidade documentada: converte radianos em graus.
+ */
 export const toDegrees = (radians: number): number => finite(radians) * 180 / Math.PI;
-/** Compara números por tolerância absoluta e relativa explícitas. */
+/**
+ * Compara números por tolerância absoluta e relativa explícitas.
+ *
+ * @param left - Operando ou coleção à esquerda.
+ * @param right - Operando ou coleção à direita.
+ * @param absoluteTolerance - Tolerância absoluta não negativa.
+ * @param relativeTolerance - Tolerância relativa não negativa.
+ * @returns Resultado correspondente à finalidade documentada: compara números por tolerância absoluta e relativa explícitas.
+ * @throws Quando a entrada viola o contrato da operação (`RangeError`).
+ */
 export function approximatelyEqual(left: number, right: number, absoluteTolerance = 1e-12, relativeTolerance = 1e-9): boolean {
   finite(left); finite(right); finite(absoluteTolerance); finite(relativeTolerance);
   if (absoluteTolerance < 0 || relativeTolerance < 0) throw new RangeError("tolerances must be non-negative");

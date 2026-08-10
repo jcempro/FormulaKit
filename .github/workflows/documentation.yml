@@ -1,0 +1,63 @@
+# Autor: JeanCarloEM.com | https://jeancarloem.com
+# Repositório: https://github.com/jcempro/FormulaKit
+# Licença: MPL-2.0 | https://www.mozilla.org/MPL/2.0/
+# RCF: ./RCF.md
+
+name: Documentação da API
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+
+concurrency:
+  group: formulakit-documentation
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: read
+    steps:
+      - name: Obter fonte do Release
+        uses: actions/checkout@v6
+
+      - name: Preparar Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Instalar dependências sem scripts
+        run: npm ci --ignore-scripts
+
+      - name: Validar documentação versionada
+        run: npm run docs:check
+
+      - name: Gerar referência navegável
+        run: npm run docs
+
+      - name: Configurar GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Empacotar site estático
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: .tmp/docs-site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Publicar no GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

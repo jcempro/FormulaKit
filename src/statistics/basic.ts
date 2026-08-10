@@ -6,10 +6,26 @@
 import { average, max, min, sum } from "../math/basic.js";
 export { average as mean, max, min, sum };
 
-/** Calcula mediana sem mutar a entrada. */
+/**
+ * Calcula mediana sem mutar a entrada.
+ *
+ * @param values - Valores de entrada, preservados na ordem fornecida.
+ * @returns Resultado correspondente à finalidade documentada: calcula mediana sem mutar a entrada.
+ * @throws Quando a entrada viola o contrato da operação (`RangeError`).
+ */
 export function median(values: readonly number[]): number { if (!values.length) throw new RangeError("values must not be empty"); const sorted = [...values].sort((a, b) => a - b); const middle = Math.floor(sorted.length / 2); return sorted.length % 2 ? sorted[middle]! : (sorted[middle - 1]! + sorted[middle]!) / 2; }
-/** Retorna todas as modas em ordem crescente. */
+/**
+ * Retorna todas as modas em ordem crescente.
+ *
+ * @param values - Valores de entrada, preservados na ordem fornecida.
+ * @returns Todas as modas em ordem crescente.
+ */
 export function modes(values: readonly number[]): number[] { if (!values.length) return []; const counts = new Map<number, number>(); for (const value of values) counts.set(value, (counts.get(value) ?? 0) + 1); const peak = Math.max(...counts.values()); return [...counts].filter(([, count]) => count === peak).map(([value]) => value).sort((a, b) => a - b); }
-/** Retorna amplitude máxima menos mínima. */
+/**
+ * Retorna amplitude máxima menos mínima.
+ *
+ * @param values - Valores de entrada, preservados na ordem fornecida.
+ * @returns Amplitude máxima menos mínima.
+ */
 export const range = (values: readonly number[]): number => max(values) - min(values);
 

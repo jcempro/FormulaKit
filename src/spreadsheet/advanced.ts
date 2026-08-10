@@ -5,12 +5,46 @@
 
 export * from "./basic.js";
 
-/** Localiza chave exata em pares e retorna fallback opcional. */
+/**
+ * Localiza chave exata em pares e retorna fallback opcional.
+ *
+ * @typeParam K - Tipo preservado pela operação.
+ * @typeParam V - Tipo preservado pela operação.
+ * @param key - Chave procurada.
+ * @param entries - Pares de chave e valor pesquisáveis.
+ * @param fallback - Valor ou operação usada quando não há resultado principal.
+ * @returns Resultado correspondente à finalidade documentada: localiza chave exata em pares e retorna fallback opcional.
+ */
 export function lookup<K, V>(key: K, entries: readonly (readonly [K, V])[], fallback?: V): V | undefined { for (const [candidate, value] of entries) if (Object.is(candidate, key) || candidate === key) return value; return fallback; }
-/** Localiza chave na primeira coluna e retorna coluna baseada em zero. */
+/**
+ * Localiza chave na primeira coluna e retorna coluna baseada em zero.
+ *
+ * @typeParam T - Tipo preservado pela operação.
+ * @param key - Chave procurada.
+ * @param table - Matriz usada na busca.
+ * @param column - Índice de coluna baseado em zero.
+ * @returns Resultado correspondente à finalidade documentada: localiza chave na primeira coluna e retorna coluna baseada em zero.
+ * @throws Quando a entrada viola o contrato da operação (`RangeError`).
+ */
 export function vlookup<T>(key: T, table: readonly (readonly unknown[])[], column: number): unknown { if (!Number.isSafeInteger(column) || column < 0) throw new RangeError("invalid column"); const row = table.find((candidate) => Object.is(candidate[0], key) || candidate[0] === key); if (!row || column >= row.length) throw new RangeError("lookup not found"); return row[column]; }
-/** Localiza chave na primeira linha e retorna linha baseada em zero. */
+/**
+ * Localiza chave na primeira linha e retorna linha baseada em zero.
+ *
+ * @typeParam T - Tipo preservado pela operação.
+ * @param key - Chave procurada.
+ * @param table - Matriz usada na busca.
+ * @param row - Índice de linha baseado em zero.
+ * @returns Resultado correspondente à finalidade documentada: localiza chave na primeira linha e retorna linha baseada em zero.
+ * @throws Quando a entrada viola o contrato da operação (`RangeError`).
+ */
 export function hlookup<T>(key: T, table: readonly (readonly unknown[])[], row: number): unknown { if (!table.length || !Number.isSafeInteger(row) || row < 0 || row >= table.length) throw new RangeError("invalid row"); const column = table[0]!.findIndex((candidate) => Object.is(candidate, key) || candidate === key); if (column < 0) throw new RangeError("lookup not found"); return table[row]![column]; }
-/** Retorna índice baseado em zero de correspondência exata. */
+/**
+ * Retorna índice baseado em zero de correspondência exata.
+ *
+ * @typeParam T - Tipo preservado pela operação.
+ * @param value - Valor de entrada.
+ * @param values - Valores de entrada, preservados na ordem fornecida.
+ * @returns Índice baseado em zero de correspondência exata.
+ */
 export const match = <T>(value: T, values: readonly T[]): number => values.findIndex((candidate) => Object.is(candidate, value) || candidate === value);
 

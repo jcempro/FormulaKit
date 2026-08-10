@@ -97,7 +97,10 @@
   "scripts": {
     "build": "node constructor/build.mjs",
     "clean": "node constructor/clean.mjs",
-    "check": "npm run lint && npm test && npm run verify:dist && npm run size",
+    "check": "npm run lint && npm run docs:check && npm test && npm run verify:dist && npm run size",
+    "docs": "node constructor/documentation.mjs build",
+    "docs:check": "node constructor/documentation.mjs check",
+    "docs:normalize": "node constructor/documentation.mjs normalize",
     "lint": "tsc --noEmit",
     "typecheck": "tsc --noEmit",
     "prepare": "npm run build",
@@ -222,8 +225,12 @@
     "agent:query-data": "node .ia.rules/core/runtime/scripts/repo-tools.js agent:query-data"
   },
   "devDependencies": {
+    "@microsoft/tsdoc": "0.16.0",
     "esbuild": "0.28.2",
-    "typescript": "7.0.2"
+    "marked": "18.0.9",
+    "typescript": "7.0.2",
+    "typescript-api": "npm:typescript@6.0.2",
+    "yaml": "2.9.0"
   },
   "agentsGovernance": {
     "schema": 1,

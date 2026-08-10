@@ -5,13 +5,25 @@
 
 import { deepFreeze, integer } from "../internal.js";
 
-/** Opções limitadas do compilador de máscaras. */
+/**
+ * Opções limitadas do compilador de máscaras.
+ *
+ */
 export interface MaskOptions { readonly maxInputLength?: number; readonly maxOutputLength?: number; readonly maxDepth?: number; readonly maxStates?: number; }
-/** Diagnóstico posicional seguro de uma máscara. */
+/**
+ * Diagnóstico posicional seguro de uma máscara.
+ *
+ */
 export interface MaskDiagnostic { readonly code: "MASK_SYNTAX" | "MASK_INPUT" | "MASK_LIMIT"; readonly position: number; readonly message: string; }
-/** Resultado estruturado de aplicação e validação. */
+/**
+ * Resultado estruturado de aplicação e validação.
+ *
+ */
 export type MaskResult = Readonly<{ ok: true; value: string; consumed: number } | { ok: false; value: string; consumed: number; error: MaskDiagnostic }>;
-/** Plano compilado imutável e reutilizável. */
+/**
+ * Plano compilado imutável e reutilizável.
+ *
+ */
 export interface MaskPlan { readonly source: string; readonly format: (input: string) => MaskResult; readonly validate: (input: string) => boolean; }
 
 type Transform = "none" | "upper" | "lower";
@@ -30,17 +42,42 @@ const DEFAULTS = Object.freeze({ maxInputLength: 4096, maxOutputLength: 8192, ma
 const cache = new Map<string, MaskPlan>();
 const CACHE_LIMIT = 128;
 
-/** Analisa a gramática compacta sem avaliação dinâmica. */
+/**
+ * Analisa a gramática compacta sem avaliação dinâmica.
+ *
+ * @throws Quando a entrada viola o contrato da operação (`SyntaxError`).
+ */
 class Parser {
   private index = 0;
   public constructor(private readonly source: string, private readonly maxDepth: number) {}
-  /** Produz a raiz e rejeita tokens residuais. */
+  /**
+ * Produz a raiz e rejeita tokens residuais.
+ *
+ * @returns Resultado correspondente à finalidade documentada: produz a raiz e rejeita tokens residuais.
+ */
   public parse(): Node { const node = this.alternative(0, ""); if (this.index !== this.source.length) this.fail("unexpected token"); return node; }
-  /** Analisa alternativas separadas por barra vertical. */
+  /**
+ * Analisa alternativas separadas por barra vertical.
+ *
+ * @param depth - Profundidade atual da análise sintática.
+ * @param end - Limite final exclusivo.
+ * @returns Resultado correspondente à finalidade documentada: analisa alternativas separadas por barra vertical.
+ */
   private alternative(depth: number, end: string): Node { const branches: Node[] = [this.sequence(depth, end)]; while (this.source[this.index] === "|") { this.index += 1; branches.push(this.sequence(depth, end)); } return branches.length === 1 ? branches[0]! : { k: "alternative", nodes: branches }; }
-  /** Analisa sequência até delimitador, alternativa ou fim. */
+  /**
+ * Analisa sequência até delimitador, alternativa ou fim.
+ *
+ * @param depth - Profundidade atual da análise sintática.
+ * @param end - Limite final exclusivo.
+ * @returns Resultado correspondente à finalidade documentada: analisa sequência até delimitador, alternativa ou fim.
+ */
   private sequence(depth: number, end: string): Node { if (depth > this.maxDepth) this.fail("maximum depth exceeded"); const nodes: Node[] = []; while (this.index < this.source.length && this.source[this.index] !== end && this.source[this.index] !== "|") nodes.push(this.atom(depth)); return nodes.length === 1 ? nodes[0]! : { k: "sequence", nodes }; }
-  /** Analisa átomo, transformação e quantificador. */
+  /**
+ * Analisa átomo, transformação e quantificador.
+ *
+ * @param depth - Profundidade atual da análise sintática.
+ * @returns Resultado correspondente à finalidade documentada: analisa átomo, transformação e quantificador.
+ */
   private atom(depth: number): Node {
     const token = this.source[this.index++]; if (token === undefined) this.fail("missing atom"); let node: Node;
     if (token === "\\") { const value = this.source[this.index++]; if (value === undefined) this.fail("missing escaped literal"); node = { k: "literal", value }; }
@@ -56,15 +93,43 @@ class Parser {
     if (this.source[this.index] === "{") { const [min, max] = this.quantifier(false); return { k: "repeat", node, min, max }; }
     return node;
   }
-  /** Lê quantificador fechado e limitado. */
+  /**
+ * Lê quantificador fechado e limitado.
+ *
+ * @param required - Indica se o quantificador é obrigatório.
+ * @returns Resultado correspondente à finalidade documentada: lê quantificador fechado e limitado.
+ */
   private quantifier(required: boolean): [number, number] { if (this.source[this.index] !== "{") { if (required) this.fail("missing fill count"); return [1, 1]; } this.index += 1; const match = /^(\d+)(?:,(\d+))?\}/u.exec(this.source.slice(this.index)); if (!match) this.fail("invalid quantifier"); this.index += match![0].length; const min = integer(Number(match![1]), "min", 0, DEFAULTS.maxInputLength); const max = integer(Number(match![2] ?? match![1]), "max", min, DEFAULTS.maxInputLength); return [min, max]; }
-  /** Lança erro sintático com posição estável. */
+  /**
+ * Lança erro sintático com posição estável.
+ *
+ * @param message - Mensagem estável do diagnóstico.
+ * @returns Resultado correspondente à finalidade documentada: lança erro sintático com posição estável.
+ * @throws Quando a entrada viola o contrato da operação (`SyntaxError`).
+ */
   private fail(message: string): never { throw new SyntaxError(`MASK_SYNTAX:${this.index}:${message}`); }
 }
 
-/** Deduplica e limita estados para conter alternativas adversariais. */
+/**
+ * Deduplica e limita estados para conter alternativas adversariais.
+ *
+ * @param states - Estados candidatos produzidos pela avaliação.
+ * @param maxStates - Quantidade máxima de estados simultâneos.
+ * @returns Resultado correspondente à finalidade documentada: deduplica e limita estados para conter alternativas adversariais.
+ * @throws Quando a entrada viola o contrato da operação (`RangeError`).
+ */
 function bounded(states: readonly State[], maxStates: number): State[] { const seen = new Set<string>(); const result: State[] = []; for (const state of states) { const key = `${state.index}\0${state.output}`; if (!seen.has(key)) { seen.add(key); result.push(state); if (result.length > maxStates) throw new RangeError("MASK_LIMIT:state limit exceeded"); } } return result; }
-/** Aplica nó da AST de modo finito e determinístico. */
+/**
+ * Aplica nó da AST de modo finito e determinístico.
+ *
+ * @param node - Nó da árvore sintática a avaliar.
+ * @param input - Texto de entrada a processar.
+ * @param state - Estado corrente da aplicação da máscara.
+ * @param options - Opções explícitas da operação.
+ * @param transform - Transformação de caixa aplicada à saída.
+ * @returns Resultado correspondente à finalidade documentada: aplica nó da AST de modo finito e determinístico.
+ * @throws Quando a entrada viola o contrato da operação (`RangeError`).
+ */
 function run(node: Node, input: readonly string[], state: State, options: Required<MaskOptions>, transform: Transform = "none"): State[] {
   if (state.output.length > options.maxOutputLength) throw new RangeError("MASK_LIMIT:output limit exceeded");
   if (node.k === "literal") return [{ ...state, output: state.output + node.value }];
@@ -77,7 +142,17 @@ function run(node: Node, input: readonly string[], state: State, options: Requir
   return bounded(layers.slice(node.min).reverse().flat(), options.maxStates);
 }
 
-/** Compila máscara declarativa cacheável; classes são #, A, X e @, com grupos, alternativas, ?, +, {n,m}, literais, transformações >/< e preenchimento ~c{n}. */
+/**
+ * Compila máscara declarativa cacheável com classes `#`, `A`, `X` e `@`; grupos, alternativas, quantificadores `?`, `+` e `{n,m}`; transformações `>` e `<`; literais e preenchimento `~c{n}`.
+ *
+ * @param source - Texto-fonte declarativo.
+ * @param inputOptions - Limites opcionais do processamento.
+ * @returns Resultado correspondente à finalidade documentada: compila máscara declarativa cacheável com classes `#`, `A`, `X` e `@`; grupos, alternativas, quantificadores `?`, `+` e `{n,m}`; transformações `>` e `<`; literais e preenchimento `~c{n}`.
+ * @throws Quando a entrada viola o contrato da operação (`RangeError`).
+ * @example
+ * `const cpf = compileMask("###.###.###-##");`
+ * `cpf.format("12345678901");`
+ */
 export function compileMask(source: string, inputOptions: MaskOptions = {}): MaskPlan {
   const options: Required<MaskOptions> = { ...DEFAULTS, ...inputOptions }; const key = JSON.stringify([source, options]); const cached = cache.get(key); if (cached) return cached;
   if (!source || source.length > 4096) throw new RangeError("MASK_LIMIT:source length"); const root = deepFreeze(new Parser(source, options.maxDepth).parse());
@@ -85,7 +160,19 @@ export function compileMask(source: string, inputOptions: MaskOptions = {}): Mas
   const plan = deepFreeze<MaskPlan>({ source, format, validate: (input) => format(input).ok }); cache.set(key, plan); if (cache.size > CACHE_LIMIT) cache.delete(cache.keys().next().value!); return plan;
 }
 
-/** Aplica uma máscara compilada ou textual e retorna diagnóstico estruturado. */
+/**
+ * Aplica uma máscara compilada ou textual e retorna diagnóstico estruturado.
+ *
+ * @param input - Texto de entrada a processar.
+ * @param mask - Máscara textual ou plano previamente compilado.
+ * @param options - Opções explícitas da operação.
+ * @returns Resultado correspondente à finalidade documentada: aplica uma máscara compilada ou textual e retorna diagnóstico estruturado.
+ * @example
+ * `applyMask("12345678901", "###.###.###-##");`
+ */
 export const applyMask = (input: string, mask: string | MaskPlan, options?: MaskOptions): MaskResult => (typeof mask === "string" ? compileMask(mask, options) : mask).format(input);
-/** Limpa o cache limitado para testes ou ciclo de vida controlado. */
+/**
+ * Limpa o cache limitado para testes ou ciclo de vida controlado.
+ *
+ */
 export const clearMaskCache = (): void => { cache.clear(); };
