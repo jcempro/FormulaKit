@@ -5,7 +5,7 @@ Resumo operacional gerado de `.ia.rules/continue.ia`.
 
 ## FT-002 - Implementação técnica do FormulaKit
 
-Objetivo: Implementar, testar, empacotar e publicar a biblioteca FormulaKit em conformidade com RCF.md.
+Objetivo: Implementar, testar, transpilar, empacotar e publicar a biblioteca FormulaKit por escopo e nível de capacidade, em conformidade integral com RCF.md.
 
 <table>
 <thead><tr><th>Etapa</th><th>Tarefa</th><th>Status</th></tr></thead>
@@ -24,6 +24,19 @@ Objetivo: Implementar, testar, empacotar e publicar a biblioteca FormulaKit em c
 <td><span style="color:#64748b">&#9679;</span> pendente</td>
 </tr>
 <tr>
+<td rowspan="3">Escopos e níveis de capacidade</td>
+<td>Classificar cada família como escopo importável</td>
+<td><span style="color:#64748b">&#9679;</span> pendente</td>
+</tr>
+<tr>
+<td>Definir níveis basic, advanced e terceiro nível justificado</td>
+<td><span style="color:#64748b">&#9679;</span> pendente</td>
+</tr>
+<tr>
+<td>Garantir cumulatividade, identidade e rastreabilidade</td>
+<td><span style="color:#64748b">&#9679;</span> pendente</td>
+</tr>
+<tr>
 <td rowspan="3">Núcleo e famílias funcionais</td>
 <td>Implementar primitivas e contratos comuns</td>
 <td><span style="color:#64748b">&#9679;</span> pendente</td>
@@ -37,12 +50,25 @@ Objetivo: Implementar, testar, empacotar e publicar a biblioteca FormulaKit em c
 <td><span style="color:#64748b">&#9679;</span> pendente</td>
 </tr>
 <tr>
+<td rowspan="3">Máscaras, validação e lógica variádica</td>
+<td>Implementar compilador seguro e cacheável de máscaras</td>
+<td><span style="color:#64748b">&#9679;</span> pendente</td>
+</tr>
+<tr>
+<td>Implementar validadores prontos, regex e composição</td>
+<td><span style="color:#64748b">&#9679;</span> pendente</td>
+</tr>
+<tr>
+<td>Implementar operadores lógicos estritos, truthy e orientados a valor</td>
+<td><span style="color:#64748b">&#9679;</span> pendente</td>
+</tr>
+<tr>
 <td rowspan="3">Ambientes e superfície pública</td>
 <td>Segregar núcleo, browser, worker e Node</td>
 <td><span style="color:#64748b">&#9679;</span> pendente</td>
 </tr>
 <tr>
-<td>Definir exports e importação granular</td>
+<td>Definir exports e subpaths por escopo e nível</td>
 <td><span style="color:#64748b">&#9679;</span> pendente</td>
 </tr>
 <tr>
@@ -55,7 +81,7 @@ Objetivo: Implementar, testar, empacotar e publicar a biblioteca FormulaKit em c
 <td><span style="color:#64748b">&#9679;</span> pendente</td>
 </tr>
 <tr>
-<td>Produzir artefatos justificados e otimizados</td>
+<td>Produzir builds por escopo/nível, combinados e completo</td>
 <td><span style="color:#64748b">&#9679;</span> pendente</td>
 </tr>
 <tr>

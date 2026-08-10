@@ -1,0 +1,16 @@
+{
+  "schema": "agents-request-source/v1",
+  "id": "FT-003",
+  "origin": "prompt-humano-codex",
+  "capturedAt": "2026-08-09T21:31:38-03:00",
+  "source": ".ia.rules/state/requests/FT-003/request.md",
+  "sha256": "d298f6fe933fc3f78815ff88fa13621d3faf0c2bdd78b310bd33dacb7905747e",
+  "fronts": [
+    "FT-003",
+    "FT-002"
+  ],
+  "rcfTargets": [
+    "RCF.md"
+  ],
+  "incorporation": "pending"
+}
