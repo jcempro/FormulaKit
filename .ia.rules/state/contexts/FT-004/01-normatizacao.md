@@ -1,7 +1,7 @@
 # Subcontexto 01 — Assinatura por artefato
 
 - Identidade: FT-004, etapa normativa.
-- Estado: normatização validada e pronta para commit.
+- Estado: concluído no commit `ce1f473`.
 - Objetivo: atualizar `RCF.md`, `README.md`, FT-002 e rastreabilidade antes do código.
 - Entradas: fonte FT-004, RCF vigente, contrato de distribuição e autorização humana expressa.
 - Dependências: FTs 001 e 003 concluídas; branch `dev` limpa; acervo de recusas vazio.

@@ -13,7 +13,7 @@ Objetivo: Implementar, testar, transpilar, empacotar e publicar a biblioteca For
 <tr>
 <td rowspan="3">Decisões e arquitetura executável</td>
 <td>Resolver decisões humanas pendentes</td>
-<td><span style="color:#64748b">&#9679;</span> pendente</td>
+<td><span style="color:#ca8a04">&#9679;</span> em andamento</td>
 </tr>
 <tr>
 <td>Definir catálogo inicial e matriz de capacidades</td>
