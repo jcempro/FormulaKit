@@ -5,6 +5,7 @@
 
 import assert from "node:assert/strict";
 import childProcess from "node:child_process";
+import fs from "node:fs";
 import { createRequire } from "node:module";
 import { readFile } from "node:fs/promises";
 import path from "node:path";
@@ -34,6 +35,17 @@ test("assinaturas individuais correspondem exatamente aos exports ESM e CJS", as
     assert.deepEqual(Object.keys(module).sort(), Object.keys(artifact.signature.x).sort(), artifact.file);
     assert.equal(artifact.signature.v, 1); assert.match(artifact.signature.h, /^[a-f0-9]{64}$/u);
   }
+});
+
+test("tipos estruturais e sourcemaps permanecem assinados e inventariados", () => {
+  const text = manifest.artifacts.find((artifact) => artifact.file === "dist/text/advanced/index.d.ts"); const maps = manifest.artifacts.filter((artifact) => artifact.format === "sourcemap");
+  assert.ok(text.signature.t.MaskOptions[1].includes("maxInputLength?:number")); assert.ok(text.signature.t.MaskPlan[1].includes("format:(string)=>MaskResult"));
+  assert.ok(maps.length > 0); for (const map of maps) { assert.deepEqual(map.signature.x, {}); assert.deepEqual(map.signature.t, {}); assert.ok(map.container); }
+});
+
+test("wrappers de tipos resolvem declarações canônicas existentes", async () => {
+  const wrappers = manifest.artifacts.filter((artifact) => artifact.format === "types");
+  for (const wrapper of wrappers) { const file = path.join(root, wrapper.file); const content = await readFile(file, "utf8"); for (const match of content.matchAll(/from\s+"([^"]+)"/gu)) { const resolved = path.resolve(path.dirname(file), match[1].replace(/\.js$/u, ".d.ts")); assert.ok(fs.existsSync(resolved), `${wrapper.file} -> ${match[1]}`); } }
 });
 
 test("registro global é ordenado, somente leitura e rejeita colisão sem perda", async () => {

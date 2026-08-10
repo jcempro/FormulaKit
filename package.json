@@ -4,10 +4,9 @@
   "private": false,
   "files": [
     "dist/",
-    "src/",
+    "docs/",
     "README.md",
-    "LICENSE",
-    "release.json"
+    "LICENSE"
   ],
   "license": "MPL-2.0",
   "description": "Biblioteca TypeScript universal de funções utilitárias granulares.",
@@ -25,9 +24,31 @@
       "require": "./dist/index.cjs"
     },
     "./browser": {
-      "types": "./dist/index.d.ts",
+      "types": "./dist/browser/index.d.ts",
       "import": "./dist/browser/index.mjs"
     },
+    "./browser/combinations/*": {
+      "types": "./dist/combinations/*.d.ts",
+      "import": "./dist/browser/combinations/*.mjs"
+    },
+    "./browser/*/basic": {
+      "types": "./dist/*/basic/index.d.ts",
+      "import": "./dist/browser/*/basic/index.mjs"
+    },
+    "./browser/*/advanced": {
+      "types": "./dist/*/advanced/index.d.ts",
+      "import": "./dist/browser/*/advanced/index.mjs"
+    },
+    "./browser/*": {
+      "types": "./dist/*/index.d.ts",
+      "import": "./dist/browser/*/index.mjs"
+    },
+    "./combinations/*": {
+      "types": "./dist/combinations/*.d.ts",
+      "import": "./dist/combinations/*.mjs",
+      "require": "./dist/combinations/*.cjs"
+    },
+    "./source/*": "./dist/source/*",
     "./*/basic": {
       "types": "./dist/*/basic/index.d.ts",
       "import": "./dist/*/basic/index.mjs",
@@ -75,7 +96,7 @@
   "scripts": {
     "build": "node constructor/build.mjs",
     "clean": "node constructor/clean.mjs",
-    "check": "npm run lint && npm test && npm run verify:dist",
+    "check": "npm run lint && npm test && npm run verify:dist && npm run size",
     "lint": "tsc --noEmit",
     "typecheck": "tsc --noEmit",
     "prepare": "npm run build",

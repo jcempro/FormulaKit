@@ -1,28 +1,98 @@
 # FormulaKit
 
-Biblioteca TypeScript universal de funções utilitárias para client-side e server-side, atualmente em fase normativa.
+Biblioteca TypeScript universal de funções utilitárias, granular por escopo e nível, para navegador, Node.js e runtimes ECMAScript compatíveis.
 
-[![Status](https://img.shields.io/badge/status-normatizado-blue)](./RCF.md)
+[![Status](https://img.shields.io/badge/status-implementado-success)](./RCF.md)
 [![Licença](https://img.shields.io/badge/licen%C3%A7a-MPL--2.0-blue)](./LICENSE)
 
-- [RCF.md](./RCF.md): normas, contratos e requisitos do produto.
-- [AGENTS.md](./AGENTS.md): processo, precedência e atuação da IA.
-- [handoff.md](./handoff.md): implementação planejada e estado operacional derivado.
+## Uso
 
-Catálogo, código, testes, builds e pacotes ainda não foram implementados.
+Após a publicação da versão `0.1.0`, a instalação será:
 
-## Distribuição planejada
+```sh
+npm install @jcempro/formulakit
+```
 
-Cada família será um escopo importável — como matemática, lógica, texto, validação, datas, finanças e conversões — com identidade comum entre imports, tipos e bundles.
+```ts
+import { clamp } from "@jcempro/formulakit/math/basic";
+import { factorial } from "@jcempro/formulakit/math/advanced";
+import { and, orValue } from "@jcempro/formulakit/logic";
+import { applyMask } from "@jcempro/formulakit/text";
 
-- `basic`: núcleo essencial do escopo;
-- `advanced`: inclui integralmente `basic` e acrescenta funções avançadas;
-- `specialized`: terceiro nível opcional, somente com justificativa objetiva;
-- escopo pequeno: nível único `basic`.
+clamp(15, 0, 10);                       // 10
+factorial(5);                            // 120
+and(true, true, false);                  // false
+orValue(undefined, "resultado");        // "resultado"
+applyMask("12345678901", "###.###.###-##");
+```
 
-O plano prevê subpaths npm por escopo/nível e, no GitHub Release, builds individuais, combinações declaradas e bundle completo nos formatos/targets homologados. Essas distribuições ainda não estão disponíveis.
+O pacote oferece ESM e CommonJS com os mesmos exports e tipos. O entry point raiz retorna os namespaces dos 11 escopos; imports granulares evitam carregar escopos alheios.
 
-Cada arquivo de código distribuído terá uma assinatura compacta exclusiva de seus exports reais, gerada e verificada contra TypeScript, `.d.ts` e implementação. Builds de navegador registrarão essas assinaturas em `globalThis.FormulaKit.manifests`: uma visão pública, ordenada e profundamente imutável, que preserva registros existentes e rejeita colisões sem sobrescrita. O manifesto superior de npm/Release continuará vinculando arquivos, hashes, formatos e assinaturas sem duplicar documentação.
+## Escopos e níveis
+
+Os escopos disponíveis são `math`, `logic`, `text`, `statistics`, `finance`, `datetime`, `collections`, `validation`, `conversion`, `spreadsheet` e `br`.
+
+- `basic`: subconjunto essencial;
+- `advanced`: contém integralmente `basic` e acrescenta operações avançadas;
+- subpath sem nível, como `@jcempro/formulakit/math`: alias de `advanced`.
+
+Exemplo de cumulatividade:
+
+```ts
+import { add } from "@jcempro/formulakit/math/basic";
+import { add as sameAdd, factorial } from "@jcempro/formulakit/math/advanced";
+```
+
+Bundles combinados `core`, `data` e `business`, bundle completo, builds individuais e fontes TypeScript consumíveis são gerados em `dist/`. A matriz produz `.js`, `.mjs`, `.cjs`, `.d.ts` e sourcemaps quando aplicáveis, usando target ES2024, calculado pela política normativa de dois anos antes da edição ECMAScript publicada mais recente registrada.
+
+## Máscaras declarativas
+
+O compilador de máscaras é limitado, cacheável e não avalia código. A sintaxe compacta inclui:
+
+| Sintaxe | Significado |
+| --- | --- |
+| `#`, `A`, `X`, `@` | dígito, letra, alfanumérico e qualquer caractere |
+| `?`, `+`, `{n}`, `{n,m}` | opcional e repetições |
+| `(…)`, `\|` | grupo e alternativas ordenadas |
+| `>`, `<` | transformação para maiúsculas e minúsculas |
+| `~c{n}` | preenchimento com o caractere `c` |
+| `\c` | literal escapado |
+
+`compileMask` permite reutilizar a máscara compilada; `applyMask` oferece o caminho direto. Limites de entrada, saída, profundidade e estados protegem contra execução abusiva.
+
+## Validação e lógica
+
+O escopo `validation` inclui validadores de e-mail, UUID, IPv4, URL HTTP(S), Luhn e comprimento, além de regex fornecida pelo consumidor, composição `allOf`/`anyOf`/`oneOf`/`notRule`, retorno booleano e diagnóstico com motivo/posição. Regex potencialmente abusiva é rejeitada por padrão.
+
+O escopo `logic` separa variantes estritas (`and`, `or`, `xor`), truthy (`andTruthy`, `orTruthy`, `xorTruthy`), orientadas a valor (`andValue`, `orValue`, `exactlyOneValue`) e lazy (`lazyAnd`, `lazyOr`, `lazyXor`). Assim, coerção e curto-circuito nunca ficam implícitos.
+
+## Assinatura de cada artefato
+
+Cada arquivo de código, tipo ou fonte consumível gerado incorpora um bloco `FormulaKitSignature/v1` exclusivo da própria superfície. A assinatura ultracompacta omite nomes dispensáveis de parâmetros e contém somente identidade, exports, tipos estruturais indispensáveis e hash canônico. `dist/manifest.json` associa cada artefato ao SHA-256 de seus bytes, tamanho, formato, target e assinatura.
+
+Builds de navegador registram apenas a própria assinatura em `globalThis.FormulaKit.manifests`. A consulta retorna snapshots ordenados, de protótipo nulo e profundamente congelados; registros anteriores não são substituídos e qualquer colisão de identidade falha antes de alterar o conjunto.
+
+```js
+await import("@jcempro/formulakit/browser");
+const manifests = globalThis.FormulaKit.manifests;
+Object.keys(manifests); // identidades em ordem determinística
+Object.isFrozen(manifests); // true
+```
+
+## Desenvolvimento e verificação
+
+```sh
+npm ci --ignore-scripts
+npm run check
+npm pack --dry-run
+```
+
+`npm run check` compila, testa funções e distribuição, verifica equivalência das assinaturas e gera a medição determinística de tamanhos. Qualquer divergência entre fonte, `.d.ts`, exports, assinatura embutida, registro do navegador ou manifesto superior invalida o gate.
+
+- [Referência da API](./docs/API.md)
+- [RCF](./RCF.md): contratos normativos e critérios de aceite.
+- [AGENTS.md](./AGENTS.md): processo e precedência operacional.
+- [handoff.md](./handoff.md): estado operacional derivado.
 
 ## Autoria e licença
 
