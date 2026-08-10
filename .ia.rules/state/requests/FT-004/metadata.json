@@ -1,0 +1,17 @@
+{
+  "schema": "agents-request-source/v1",
+  "id": "FT-004",
+  "origin": "prompt-humano-codex",
+  "capturedAt": "2026-08-09T21:46:02-03:00",
+  "source": ".ia.rules/state/requests/FT-004/request.md",
+  "sha256": "db7758b17380a4a04fccbf27ae515babc568a2248b9309057848b7c4c3b348b6",
+  "fronts": [
+    "FT-004",
+    "FT-002"
+  ],
+  "rcfTargets": [
+    "RCF.md"
+  ],
+  "incorporation": "pending",
+  "authorization": "implementacao_tecnica_expressamente_autorizada_no_mesmo_prompt_apos_commit_normativo"
+}

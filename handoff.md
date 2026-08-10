@@ -20,7 +20,7 @@ Objetivo: Implementar, testar, transpilar, empacotar e publicar a biblioteca For
 <td><span style="color:#64748b">&#9679;</span> pendente</td>
 </tr>
 <tr>
-<td>Materializar estrutura, manifestos e schemas</td>
+<td>Materializar estrutura, manifestos, assinaturas e schemas</td>
 <td><span style="color:#64748b">&#9679;</span> pendente</td>
 </tr>
 <tr>
@@ -72,7 +72,7 @@ Objetivo: Implementar, testar, transpilar, empacotar e publicar a biblioteca For
 <td><span style="color:#64748b">&#9679;</span> pendente</td>
 </tr>
 <tr>
-<td>Validar tipos e compatibilidade entre entry points</td>
+<td>Validar tipos, assinaturas e compatibilidade entre entry points</td>
 <td><span style="color:#64748b">&#9679;</span> pendente</td>
 </tr>
 <tr>
@@ -81,7 +81,7 @@ Objetivo: Implementar, testar, transpilar, empacotar e publicar a biblioteca For
 <td><span style="color:#64748b">&#9679;</span> pendente</td>
 </tr>
 <tr>
-<td>Produzir builds por escopo/nível, combinados e completo</td>
+<td>Produzir builds por escopo/nível, combinados e completo com assinatura própria</td>
 <td><span style="color:#64748b">&#9679;</span> pendente</td>
 </tr>
 <tr>
@@ -98,7 +98,7 @@ Objetivo: Implementar, testar, transpilar, empacotar e publicar a biblioteca For
 <td><span style="color:#64748b">&#9679;</span> pendente</td>
 </tr>
 <tr>
-<td>Certificar browser, Node, formatos e consumo externo</td>
+<td>Certificar browser, registro global, Node, formatos e consumo externo</td>
 <td><span style="color:#64748b">&#9679;</span> pendente</td>
 </tr>
 <tr>

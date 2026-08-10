@@ -42,17 +42,17 @@ FT-002|nome=Implementação técnica do FormulaKit|tipo=implementacao_codigo|esc
 objetivo=Implementar, testar, transpilar, empacotar e publicar a biblioteca FormulaKit por escopo e nível de capacidade, em conformidade integral com RCF.md.
 origem=TODO.ia.md:30
 origem_hash=6a5d8097a69e7d86f8b38706b50710c309ea68faa534650d885d96b66745e0b7
-origem_adicional=.ia.rules/state/requests/FT-003/request.md
-origem_adicional_hash=d298f6fe933fc3f78815ff88fa13621d3faf0c2bdd78b310bd33dacb7905747e
+origens_adicionais=.ia.rules/state/requests/FT-003/request.md;.ia.rules/state/requests/FT-004/request.md
+origens_adicionais_hash=d298f6fe933fc3f78815ff88fa13621d3faf0c2bdd78b310bd33dacb7905747e;db7758b17380a4a04fccbf27ae515babc568a2248b9309057848b7c4c3b348b6
 rcf=RCF.md
-dependencias=FT-001 e FT-003 concluídas; nova autorização humana explícita após a ampliação normativa
+dependencias=FT-001, FT-003 e FT-004 concluídas; autorização humana expressa registrada no prompt FT-004 para prosseguir após o commit normativo
 prioridade=alta
 nao_escopo=alterar a Norma Operacional gerenciada ou antecipar capacidades não normatizadas
-aceite=escopos e níveis cumulativos implementados; máscaras, validação e lógica variádica conformes; contratos, testes, builds granulares/combinados/completo, npm, GitHub Release, documentação e validação externa conformes ao RCF
+aceite=escopos e níveis cumulativos implementados; máscaras, validação e lógica variádica conformes; assinatura exclusiva por artefato e registro global imutável conformes; contratos, testes, builds granulares/combinados/completo, npm, GitHub Release, documentação e validação externa conformes ao RCF
 1/9 Decisões e arquitetura executável [pendente]
   1/3 Resolver decisões humanas pendentes [pendente]
   2/3 Definir catálogo inicial e matriz de capacidades [pendente]
-  3/3 Materializar estrutura, manifestos e schemas [pendente]
+  3/3 Materializar estrutura, manifestos, assinaturas e schemas [pendente]
 2/9 Escopos e níveis de capacidade [pendente]
   1/3 Classificar cada família como escopo importável [pendente]
   2/3 Definir níveis basic, advanced e terceiro nível justificado [pendente]
@@ -68,15 +68,15 @@ aceite=escopos e níveis cumulativos implementados; máscaras, validação e ló
 5/9 Ambientes e superfície pública [pendente]
   1/3 Segregar núcleo, browser, worker e Node [pendente]
   2/3 Definir exports e subpaths por escopo e nível [pendente]
-  3/3 Validar tipos e compatibilidade entre entry points [pendente]
+  3/3 Validar tipos, assinaturas e compatibilidade entre entry points [pendente]
 6/9 Build e distribuição [pendente]
   1/3 Implementar target ECMAScript temporal determinístico [pendente]
-  2/3 Produzir builds por escopo/nível, combinados e completo [pendente]
+  2/3 Produzir builds por escopo/nível, combinados e completo com assinatura própria [pendente]
   3/3 Medir tamanhos e fixar budgets após baseline aprovado [pendente]
 7/9 Qualidade e segurança [pendente]
   1/3 Implementar vetores unitários, de borda e regressão [pendente]
   2/3 Validar cadeia de suprimentos, licenças e segredos [pendente]
-  3/3 Certificar browser, Node, formatos e consumo externo [pendente]
+  3/3 Certificar browser, registro global, Node, formatos e consumo externo [pendente]
 8/9 Automação e publicação [pendente]
   1/3 Implementar CI seletiva e verificações reproduzíveis [pendente]
   2/3 Validar tarball e projeto consumidor limpo [pendente]
@@ -117,3 +117,30 @@ reter_ate=2026-08-24T21:39:29-03:00
   1/3 Validar preservação e cobertura origem→RCF→FT [concluído]
   2/3 Atualizar rastreabilidade e documentação [concluído]
   3/3 Commitar, publicar dev e interromper antes do código [concluído]
+
+FT-004|nome=Assinatura pública por artefato|tipo=implementacao_normativa|escopo=normativo|status=em_andamento|criado_em=2026-08-09T21:46:02-03:00
+objetivo=Normatizar manifesto ultracompacto e exclusivo por arquivo distribuído, com registro global de consulta no navegador e validação bloqueante de equivalência.
+origem=.ia.rules/state/requests/FT-004/request.md
+origem_hash=db7758b17380a4a04fccbf27ae515babc568a2248b9309057848b7c4c3b348b6
+rcf=RCF.md
+dependencias=FT-001 e FT-003 concluídas
+prioridade=alta
+nao_escopo=código funcional no commit normativo; alteração da Norma Operacional gerenciada; publicação remota sem ambiente e credenciais válidos
+aceite=RCF, README e FT-002 cobrem assinatura por artefato, mínima nominalidade, namespace global imutável, composição determinística, colisão segura e equivalência bloqueante; rastreabilidade e validação focada aprovadas; commit normativo criado antes do código
+autorizacao_posterior=prompt FT-004 autoriza expressamente iniciar e concluir FT-002 depois do commit normativo, sem nova pergunta
+1/4 Captura e conciliação [em andamento]
+  1/3 Preservar fonte integral e hash [concluído]
+  2/3 Triar recusas e conflitos [concluído]
+  3/3 Conciliar FT-002 e autorização técnica [concluído]
+2/4 Contrato de assinatura individual [pendente]
+  1/3 Normatizar identidade e delimitação por artefato [pendente]
+  2/3 Normatizar representação tipada mínima [pendente]
+  3/3 Normatizar geração e equivalência automática [pendente]
+3/4 Registro global no navegador [pendente]
+  1/3 Normatizar namespace e consulta somente leitura [pendente]
+  2/3 Normatizar composição independente da ordem [pendente]
+  3/3 Normatizar colisão segura e ausência de mutação externa [pendente]
+4/4 Validação e transição técnica [pendente]
+  1/3 Validar cobertura origem→RCF→FT e preservação [pendente]
+  2/3 Atualizar documentação, mapa causal e handoff [pendente]
+  3/3 Commitar norma e iniciar FT-002 conforme autorização expressa [pendente]
