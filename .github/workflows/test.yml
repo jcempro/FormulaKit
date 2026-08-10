@@ -1,0 +1,52 @@
+# Autor: JeanCarloEM.com | https://jeancarloem.com
+# Repositório: https://github.com/jcempro/FormulaKit
+# Licença: MPL-2.0 | https://www.mozilla.org/MPL/2.0/
+# RCF: ./RCF.md
+
+name: test
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [dev, main]
+    paths:
+      - "src/**"
+      - "tests/**"
+      - "constructor/**"
+      - "config/**"
+      - "package.json"
+      - "package-lock.json"
+      - "tsconfig.json"
+      - ".github/workflows/test.yml"
+  pull_request:
+    paths:
+      - "src/**"
+      - "tests/**"
+      - "constructor/**"
+      - "config/**"
+      - "package.json"
+      - "package-lock.json"
+      - "tsconfig.json"
+      - ".github/workflows/test.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    strategy:
+      fail-fast: true
+      matrix:
+        node: [20, 22, 24]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - run: npm run check
+      - if: matrix.node == 22
+        run: npm pack --dry-run

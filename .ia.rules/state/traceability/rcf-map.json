@@ -508,7 +508,9 @@
     },
     {
       "artifacts": [
-        "src/number/index.ts"
+        "src/math/advanced.ts",
+        "src/math/basic.ts",
+        "src/math/index.ts"
       ],
       "commit": "",
       "ft": "FT-002",
@@ -521,7 +523,9 @@
     },
     {
       "artifacts": [
-        "src/number/index.ts"
+        "src/math/advanced.ts",
+        "src/math/basic.ts",
+        "src/math/index.ts"
       ],
       "commit": "",
       "ft": "FT-002",
@@ -534,7 +538,9 @@
     },
     {
       "artifacts": [
-        "src/number/index.ts"
+        "src/math/advanced.ts",
+        "src/math/basic.ts",
+        "src/math/index.ts"
       ],
       "commit": "",
       "ft": "FT-002",
@@ -547,7 +553,9 @@
     },
     {
       "artifacts": [
-        "src/number/index.ts"
+        "src/math/advanced.ts",
+        "src/math/basic.ts",
+        "src/math/index.ts"
       ],
       "commit": "",
       "ft": "FT-002",
@@ -560,7 +568,9 @@
     },
     {
       "artifacts": [
-        "src/number/index.ts"
+        "src/math/advanced.ts",
+        "src/math/basic.ts",
+        "src/math/index.ts"
       ],
       "commit": "",
       "ft": "FT-002",
@@ -1425,19 +1435,6 @@
     },
     {
       "artifacts": [
-        "src/internal/index.ts"
-      ],
-      "commit": "",
-      "ft": "FT-002",
-      "id": "28dfcd38700c98749e676690",
-      "line": 258,
-      "rcf": "RCF.md",
-      "sentenceSha256": "171bda248c78863023eb398de5d555de94f80fb12d8e0bdf7329570239b1277c",
-      "state": "pending",
-      "syncCommit": ""
-    },
-    {
-      "artifacts": [
         "constructor/build.mjs",
         "package.json",
         "src/manifest.ts",
@@ -1449,19 +1446,6 @@
       "line": 258,
       "rcf": "RCF.md",
       "sentenceSha256": "72360d9329b28ecd42be52de365ddbd3623bff75f7c02dff427ccb84f023a31c",
-      "state": "pending",
-      "syncCommit": ""
-    },
-    {
-      "artifacts": [
-        "src/internal/index.ts"
-      ],
-      "commit": "",
-      "ft": "FT-002",
-      "id": "0d5b6b60b2069ad70948f19d",
-      "line": 260,
-      "rcf": "RCF.md",
-      "sentenceSha256": "4973f7cfec752345df8f898cf6dc0b7d2a49e17b0385b7de2c02a3d5a17586f4",
       "state": "pending",
       "syncCommit": ""
     },
@@ -1483,19 +1467,6 @@
     },
     {
       "artifacts": [
-        "src/internal/index.ts"
-      ],
-      "commit": "",
-      "ft": "FT-002",
-      "id": "d3a0517d7b6e84b078fa14e7",
-      "line": 262,
-      "rcf": "RCF.md",
-      "sentenceSha256": "e42d8e0ee3badd84f3fa9302bb700259902f4c6c5e30be25eb490fa89d5278a3",
-      "state": "pending",
-      "syncCommit": ""
-    },
-    {
-      "artifacts": [
         "constructor/build.mjs",
         "package.json",
         "src/manifest.ts",
@@ -1512,19 +1483,6 @@
     },
     {
       "artifacts": [
-        "src/internal/index.ts"
-      ],
-      "commit": "",
-      "ft": "FT-002",
-      "id": "7b97cfd6d2fc11e829a4179c",
-      "line": 264,
-      "rcf": "RCF.md",
-      "sentenceSha256": "942100c6efd917fece5964345d08612de628db479efd2084af8ead3032de7b22",
-      "state": "pending",
-      "syncCommit": ""
-    },
-    {
-      "artifacts": [
         "constructor/build.mjs",
         "package.json",
         "src/manifest.ts",
@@ -1536,19 +1494,6 @@
       "line": 264,
       "rcf": "RCF.md",
       "sentenceSha256": "433fd746d345d01ffc54481d812ed9b0cf47e8225170c19145472facdc612a64",
-      "state": "pending",
-      "syncCommit": ""
-    },
-    {
-      "artifacts": [
-        "src/internal/index.ts"
-      ],
-      "commit": "",
-      "ft": "FT-002",
-      "id": "0c9a31568834949f9f465c91",
-      "line": 266,
-      "rcf": "RCF.md",
-      "sentenceSha256": "ec589ea8bf640cdf119bd9ce5783d044aa71f107740f4d408ad7c99f87b357a7",
       "state": "pending",
       "syncCommit": ""
     },
@@ -1586,20 +1531,6 @@
     },
     {
       "artifacts": [
-        "config/tsconfig.json",
-        "scripts/build.mjs"
-      ],
-      "commit": "",
-      "ft": "FT-002",
-      "id": "443d8b62eaa50a5f70a4030e",
-      "line": 270,
-      "rcf": "RCF.md",
-      "sentenceSha256": "d73530c6e60a5e8276a7eeda6735a8389c2bc316b87c0919095201274f85d0f5",
-      "state": "pending",
-      "syncCommit": ""
-    },
-    {
-      "artifacts": [
         "constructor/build.mjs",
         "package.json",
         "src/manifest.ts",
@@ -1611,20 +1542,6 @@
       "line": 270,
       "rcf": "RCF.md",
       "sentenceSha256": "0aa2730ae7514138cdbe7ab1f533546d4f0ad20dd9359b326d50ec0589699527",
-      "state": "pending",
-      "syncCommit": ""
-    },
-    {
-      "artifacts": [
-        "config/tsconfig.json",
-        "scripts/build.mjs"
-      ],
-      "commit": "",
-      "ft": "FT-002",
-      "id": "5edf46a8c6d02606542250e4",
-      "line": 272,
-      "rcf": "RCF.md",
-      "sentenceSha256": "21b95b2d00162601f3639a70830144672362a320eb510939b0c8281b1ff8d049",
       "state": "pending",
       "syncCommit": ""
     },
@@ -1646,20 +1563,6 @@
     },
     {
       "artifacts": [
-        "config/tsconfig.json",
-        "scripts/build.mjs"
-      ],
-      "commit": "",
-      "ft": "FT-002",
-      "id": "1f6f8c68d31ad68a877f05bf",
-      "line": 274,
-      "rcf": "RCF.md",
-      "sentenceSha256": "9900055d704410288e6d7b05ad1891a57016e8ec0dcab0f1ca9e143c60696111",
-      "state": "pending",
-      "syncCommit": ""
-    },
-    {
-      "artifacts": [
         "constructor/build.mjs",
         "package.json",
         "src/manifest.ts",
@@ -1676,85 +1579,61 @@
     },
     {
       "artifacts": [
-        "config/tsconfig.json",
-        "scripts/build.mjs"
+        "src/datetime/advanced.ts",
+        "src/internal.ts",
+        "src/validation/advanced.ts"
       ],
       "commit": "",
       "ft": "FT-002",
-      "id": "dc3daec928b9a59950aee84d",
-      "line": 276,
-      "rcf": "RCF.md",
-      "sentenceSha256": "8375b09bb96c0b4445eaf7933c0059103f4fb48def6884aecb2cf107599bac57",
-      "state": "pending",
-      "syncCommit": ""
-    },
-    {
-      "artifacts": [
-        "config/tsconfig.json",
-        "scripts/build.mjs"
-      ],
-      "commit": "",
-      "ft": "FT-002",
-      "id": "b3b6585700ec1a923fa99112",
-      "line": 278,
-      "rcf": "RCF.md",
-      "sentenceSha256": "034b272aae7367f7c23cc715d185a4443fe364c2e47b9ce7c51b52bc08d384b9",
-      "state": "pending",
-      "syncCommit": ""
-    },
-    {
-      "artifacts": [
-        "config/tsconfig.json",
-        "scripts/build.mjs"
-      ],
-      "commit": "",
-      "ft": "FT-002",
-      "id": "55fd1add37f0e3e1a03dfbbe",
-      "line": 280,
-      "rcf": "RCF.md",
-      "sentenceSha256": "395e97ea61b70249323f650a9f395c3875b20bcbeeddfc7b8c1ee6715d401b29",
-      "state": "pending",
-      "syncCommit": ""
-    },
-    {
-      "artifacts": [
-        "config/tsconfig.json",
-        "scripts/build.mjs"
-      ],
-      "commit": "",
-      "ft": "FT-002",
-      "id": "e4376d817cc8b05ad6b25c75",
-      "line": 282,
-      "rcf": "RCF.md",
-      "sentenceSha256": "8c7a462fd7cd8821ad6c107b3d8765a23f2dfc7668aca2fd3cf341314dc44408",
-      "state": "pending",
-      "syncCommit": ""
-    },
-    {
-      "artifacts": [
-        "config/tsconfig.json",
-        "scripts/build.mjs"
-      ],
-      "commit": "",
-      "ft": "FT-002",
-      "id": "748362cc48d1f3af96980a0b",
+      "id": "28dfcd38700c98749e676690",
       "line": 284,
       "rcf": "RCF.md",
-      "sentenceSha256": "72d6fd123e83208a6112794321779adb1a2ede79c81f9f5a2325303fa7de8334",
+      "sentenceSha256": "171bda248c78863023eb398de5d555de94f80fb12d8e0bdf7329570239b1277c",
       "state": "pending",
       "syncCommit": ""
     },
     {
       "artifacts": [
-        "config/tsconfig.json",
-        "scripts/build.mjs"
+        "src/datetime/advanced.ts",
+        "src/internal.ts",
+        "src/validation/advanced.ts"
       ],
       "commit": "",
       "ft": "FT-002",
-      "id": "ea1761a8a1fb5b201fd149f5",
+      "id": "0d5b6b60b2069ad70948f19d",
       "line": 286,
       "rcf": "RCF.md",
-      "sentenceSha256": "28be28ebb2151052102cf82ec5395ccbd18789c06bdbc91e7f65ab453a02a399",
+      "sentenceSha256": "4973f7cfec752345df8f898cf6dc0b7d2a49e17b0385b7de2c02a3d5a17586f4",
+      "state": "pending",
+      "syncCommit": ""
+    },
+    {
+      "artifacts": [
+        "src/datetime/advanced.ts",
+        "src/internal.ts",
+        "src/validation/advanced.ts"
+      ],
+      "commit": "",
+      "ft": "FT-002",
+      "id": "d3a0517d7b6e84b078fa14e7",
+      "line": 288,
+      "rcf": "RCF.md",
+      "sentenceSha256": "e42d8e0ee3badd84f3fa9302bb700259902f4c6c5e30be25eb490fa89d5278a3",
+      "state": "pending",
+      "syncCommit": ""
+    },
+    {
+      "artifacts": [
+        "src/datetime/advanced.ts",
+        "src/internal.ts",
+        "src/validation/advanced.ts"
+      ],
+      "commit": "",
+      "ft": "FT-002",
+      "id": "7b97cfd6d2fc11e829a4179c",
+      "line": 290,
+      "rcf": "RCF.md",
+      "sentenceSha256": "942100c6efd917fece5964345d08612de628db479efd2084af8ead3032de7b22",
       "state": "pending",
       "syncCommit": ""
     },
@@ -1769,6 +1648,21 @@
       "line": 290,
       "rcf": "RCF.md",
       "sentenceSha256": "b285a632f4275bbc9e2be8addff0e572fff4d12959e8606c429dec9811d9f5d0",
+      "state": "pending",
+      "syncCommit": ""
+    },
+    {
+      "artifacts": [
+        "src/datetime/advanced.ts",
+        "src/internal.ts",
+        "src/validation/advanced.ts"
+      ],
+      "commit": "",
+      "ft": "FT-002",
+      "id": "0c9a31568834949f9f465c91",
+      "line": 292,
+      "rcf": "RCF.md",
+      "sentenceSha256": "ec589ea8bf640cdf119bd9ce5783d044aa71f107740f4d408ad7c99f87b357a7",
       "state": "pending",
       "syncCommit": ""
     },
@@ -1802,6 +1696,22 @@
     },
     {
       "artifacts": [
+        "config/build.json",
+        "constructor/build.mjs",
+        "constructor/measure.mjs",
+        "package.json"
+      ],
+      "commit": "",
+      "ft": "FT-002",
+      "id": "443d8b62eaa50a5f70a4030e",
+      "line": 296,
+      "rcf": "RCF.md",
+      "sentenceSha256": "d73530c6e60a5e8276a7eeda6735a8389c2bc316b87c0919095201274f85d0f5",
+      "state": "pending",
+      "syncCommit": ""
+    },
+    {
+      "artifacts": [
         "package.json",
         "scripts/build.mjs"
       ],
@@ -1811,6 +1721,22 @@
       "line": 296,
       "rcf": "RCF.md",
       "sentenceSha256": "a4e59f9d29ae2f47a79ba0468de7bd7474f0bc2bb381600d908ed8e6323af36e",
+      "state": "pending",
+      "syncCommit": ""
+    },
+    {
+      "artifacts": [
+        "config/build.json",
+        "constructor/build.mjs",
+        "constructor/measure.mjs",
+        "package.json"
+      ],
+      "commit": "",
+      "ft": "FT-002",
+      "id": "5edf46a8c6d02606542250e4",
+      "line": 298,
+      "rcf": "RCF.md",
+      "sentenceSha256": "21b95b2d00162601f3639a70830144672362a320eb510939b0c8281b1ff8d049",
       "state": "pending",
       "syncCommit": ""
     },
@@ -1830,6 +1756,22 @@
     },
     {
       "artifacts": [
+        "config/build.json",
+        "constructor/build.mjs",
+        "constructor/measure.mjs",
+        "package.json"
+      ],
+      "commit": "",
+      "ft": "FT-002",
+      "id": "1f6f8c68d31ad68a877f05bf",
+      "line": 300,
+      "rcf": "RCF.md",
+      "sentenceSha256": "9900055d704410288e6d7b05ad1891a57016e8ec0dcab0f1ca9e143c60696111",
+      "state": "pending",
+      "syncCommit": ""
+    },
+    {
+      "artifacts": [
         "package.json",
         "scripts/build.mjs"
       ],
@@ -1839,6 +1781,22 @@
       "line": 300,
       "rcf": "RCF.md",
       "sentenceSha256": "710bb7c34d2a8b3c9c809d334084114b6291eca72c9a05420aa8f5418604a4ef",
+      "state": "pending",
+      "syncCommit": ""
+    },
+    {
+      "artifacts": [
+        "config/build.json",
+        "constructor/build.mjs",
+        "constructor/measure.mjs",
+        "package.json"
+      ],
+      "commit": "",
+      "ft": "FT-002",
+      "id": "dc3daec928b9a59950aee84d",
+      "line": 302,
+      "rcf": "RCF.md",
+      "sentenceSha256": "8375b09bb96c0b4445eaf7933c0059103f4fb48def6884aecb2cf107599bac57",
       "state": "pending",
       "syncCommit": ""
     },
@@ -1858,6 +1816,22 @@
     },
     {
       "artifacts": [
+        "config/build.json",
+        "constructor/build.mjs",
+        "constructor/measure.mjs",
+        "package.json"
+      ],
+      "commit": "",
+      "ft": "FT-002",
+      "id": "b3b6585700ec1a923fa99112",
+      "line": 304,
+      "rcf": "RCF.md",
+      "sentenceSha256": "034b272aae7367f7c23cc715d185a4443fe364c2e47b9ce7c51b52bc08d384b9",
+      "state": "pending",
+      "syncCommit": ""
+    },
+    {
+      "artifacts": [
         "package.json",
         "scripts/build.mjs"
       ],
@@ -1867,6 +1841,22 @@
       "line": 304,
       "rcf": "RCF.md",
       "sentenceSha256": "795e0cf03a7c8a590cc9d826e964368d3515cf98eb2f31f147e23869105fdb44",
+      "state": "pending",
+      "syncCommit": ""
+    },
+    {
+      "artifacts": [
+        "config/build.json",
+        "constructor/build.mjs",
+        "constructor/measure.mjs",
+        "package.json"
+      ],
+      "commit": "",
+      "ft": "FT-002",
+      "id": "55fd1add37f0e3e1a03dfbbe",
+      "line": 306,
+      "rcf": "RCF.md",
+      "sentenceSha256": "395e97ea61b70249323f650a9f395c3875b20bcbeeddfc7b8c1ee6715d401b29",
       "state": "pending",
       "syncCommit": ""
     },
@@ -1886,6 +1876,22 @@
     },
     {
       "artifacts": [
+        "config/build.json",
+        "constructor/build.mjs",
+        "constructor/measure.mjs",
+        "package.json"
+      ],
+      "commit": "",
+      "ft": "FT-002",
+      "id": "e4376d817cc8b05ad6b25c75",
+      "line": 308,
+      "rcf": "RCF.md",
+      "sentenceSha256": "8c7a462fd7cd8821ad6c107b3d8765a23f2dfc7668aca2fd3cf341314dc44408",
+      "state": "pending",
+      "syncCommit": ""
+    },
+    {
+      "artifacts": [
         "package.json",
         "scripts/build.mjs"
       ],
@@ -1895,6 +1901,38 @@
       "line": 308,
       "rcf": "RCF.md",
       "sentenceSha256": "93c61ae871fd2bae2bcd35a38993562e973af52df74f25e5fc9215788e62d6db",
+      "state": "pending",
+      "syncCommit": ""
+    },
+    {
+      "artifacts": [
+        "config/build.json",
+        "constructor/build.mjs",
+        "constructor/measure.mjs",
+        "package.json"
+      ],
+      "commit": "",
+      "ft": "FT-002",
+      "id": "748362cc48d1f3af96980a0b",
+      "line": 310,
+      "rcf": "RCF.md",
+      "sentenceSha256": "72d6fd123e83208a6112794321779adb1a2ede79c81f9f5a2325303fa7de8334",
+      "state": "pending",
+      "syncCommit": ""
+    },
+    {
+      "artifacts": [
+        "config/build.json",
+        "constructor/build.mjs",
+        "constructor/measure.mjs",
+        "package.json"
+      ],
+      "commit": "",
+      "ft": "FT-002",
+      "id": "ea1761a8a1fb5b201fd149f5",
+      "line": 312,
+      "rcf": "RCF.md",
+      "sentenceSha256": "28be28ebb2151052102cf82ec5395ccbd18789c06bdbc91e7f65ab453a02a399",
       "state": "pending",
       "syncCommit": ""
     },
@@ -1986,48 +2024,6 @@
     },
     {
       "artifacts": [
-        ".github/workflows/test.yml",
-        "tests/index.test.ts"
-      ],
-      "commit": "",
-      "ft": "FT-002",
-      "id": "da3df8330359132c4e1ff86f",
-      "line": 326,
-      "rcf": "RCF.md",
-      "sentenceSha256": "dad0a5fab9664d23472ccc041bd7b6a2911a98aa7e29cdd365be513cdc50e8ba",
-      "state": "pending",
-      "syncCommit": ""
-    },
-    {
-      "artifacts": [
-        ".github/workflows/test.yml",
-        "tests/index.test.ts"
-      ],
-      "commit": "",
-      "ft": "FT-002",
-      "id": "59defa6fd78d5d15acdf31ac",
-      "line": 328,
-      "rcf": "RCF.md",
-      "sentenceSha256": "27911598ec46f5780c51f9750cae5ce11f8edc31dda8ebc78b90e24fd507b077",
-      "state": "pending",
-      "syncCommit": ""
-    },
-    {
-      "artifacts": [
-        ".github/workflows/test.yml",
-        "tests/index.test.ts"
-      ],
-      "commit": "",
-      "ft": "FT-002",
-      "id": "6ad981ba7d1cd3da6227080f",
-      "line": 330,
-      "rcf": "RCF.md",
-      "sentenceSha256": "7cf4db36b0d5ef38d4469fb0884eaac79bf54ce6a77c8beddfa1b8b7ff3e33b1",
-      "state": "pending",
-      "syncCommit": ""
-    },
-    {
-      "artifacts": [
         "constructor/build.mjs",
         "package.json",
         "src/manifest.ts",
@@ -2039,118 +2035,6 @@
       "line": 330,
       "rcf": "RCF.md",
       "sentenceSha256": "a50e0e5228934f5d0e6d2ca5daa404135ce299de78764a118c4b0567accc0c22",
-      "state": "pending",
-      "syncCommit": ""
-    },
-    {
-      "artifacts": [
-        ".github/workflows/test.yml",
-        "tests/index.test.ts"
-      ],
-      "commit": "",
-      "ft": "FT-002",
-      "id": "e96c3965488e34be2175400c",
-      "line": 332,
-      "rcf": "RCF.md",
-      "sentenceSha256": "14ca3604d5920f9ad0695d6ec660f489e3c02996532e4e3cdc39a9ff897bdf46",
-      "state": "pending",
-      "syncCommit": ""
-    },
-    {
-      "artifacts": [
-        ".github/workflows/test.yml",
-        "tests/index.test.ts"
-      ],
-      "commit": "",
-      "ft": "FT-002",
-      "id": "ac2703d3105d4deb18a9f1be",
-      "line": 334,
-      "rcf": "RCF.md",
-      "sentenceSha256": "e4ad47e20cb13085e4c79979920bbcbf15d3040ea803a29b118fc35ed1733d5c",
-      "state": "pending",
-      "syncCommit": ""
-    },
-    {
-      "artifacts": [
-        ".github/workflows/test.yml",
-        "tests/index.test.ts"
-      ],
-      "commit": "",
-      "ft": "FT-002",
-      "id": "343cb15653c6362a6279f37f",
-      "line": 336,
-      "rcf": "RCF.md",
-      "sentenceSha256": "4f55e7c4d42e6875ab5811fca44a5e5b326c15e9ffa1f5e56a02e0865e11fb51",
-      "state": "pending",
-      "syncCommit": ""
-    },
-    {
-      "artifacts": [
-        ".github/workflows/test.yml",
-        "tests/index.test.ts"
-      ],
-      "commit": "",
-      "ft": "FT-002",
-      "id": "3b00aa9c14fb4de630bbfc8d",
-      "line": 338,
-      "rcf": "RCF.md",
-      "sentenceSha256": "05fdbe510cb17cfd2cfecb060fd0f08652099d2707c2d7167bcd9c5dd354dcb6",
-      "state": "pending",
-      "syncCommit": ""
-    },
-    {
-      "artifacts": [
-        ".github/workflows/test.yml",
-        "tests/index.test.ts"
-      ],
-      "commit": "",
-      "ft": "FT-002",
-      "id": "b026543fc939166d30e94bdf",
-      "line": 340,
-      "rcf": "RCF.md",
-      "sentenceSha256": "04641f60f7bf543eccc26dbbccaf35b3f408327a4cc1e03b0f854705cb9aa3ea",
-      "state": "pending",
-      "syncCommit": ""
-    },
-    {
-      "artifacts": [
-        ".github/workflows/test.yml",
-        "tests/index.test.ts"
-      ],
-      "commit": "",
-      "ft": "FT-002",
-      "id": "1b34eece8862a076b1ff964a",
-      "line": 342,
-      "rcf": "RCF.md",
-      "sentenceSha256": "b80e647bfc1a49fb07ba1b78612359a046ce0373410a2526dcc4dbbc4dcd420b",
-      "state": "pending",
-      "syncCommit": ""
-    },
-    {
-      "artifacts": [
-        ".github/workflows/test.yml",
-        "tests/index.test.ts"
-      ],
-      "commit": "",
-      "ft": "FT-002",
-      "id": "79cba5a112bd50c280de50ad",
-      "line": 344,
-      "rcf": "RCF.md",
-      "sentenceSha256": "819dd9c14f729fc45ebaf19680029143e679d45dcae78799162b844d82cc0547",
-      "state": "pending",
-      "syncCommit": ""
-    },
-    {
-      "artifacts": [
-        ".github/workflows/test.yml",
-        "tests/index.test.ts"
-      ],
-      "commit": "",
-      "ft": "FT-002",
-      "id": "4073b1bef9f8019dcef402ce",
-      "line": 346,
-      "rcf": "RCF.md",
-      "sentenceSha256": "54f59ff129c00be5f60280108ba7e2170ff9cece822a4686f257a638d73cb95e",
       "state": "pending",
       "syncCommit": ""
     },
@@ -2198,6 +2082,36 @@
     },
     {
       "artifacts": [
+        ".github/workflows/test.yml",
+        "tests/distribution.test.mjs",
+        "tests/functions.test.mjs"
+      ],
+      "commit": "",
+      "ft": "FT-002",
+      "id": "da3df8330359132c4e1ff86f",
+      "line": 356,
+      "rcf": "RCF.md",
+      "sentenceSha256": "dad0a5fab9664d23472ccc041bd7b6a2911a98aa7e29cdd365be513cdc50e8ba",
+      "state": "pending",
+      "syncCommit": ""
+    },
+    {
+      "artifacts": [
+        ".github/workflows/test.yml",
+        "tests/distribution.test.mjs",
+        "tests/functions.test.mjs"
+      ],
+      "commit": "",
+      "ft": "FT-002",
+      "id": "59defa6fd78d5d15acdf31ac",
+      "line": 358,
+      "rcf": "RCF.md",
+      "sentenceSha256": "27911598ec46f5780c51f9750cae5ce11f8edc31dda8ebc78b90e24fd507b077",
+      "state": "pending",
+      "syncCommit": ""
+    },
+    {
+      "artifacts": [
         "docs/api/README.md",
         "src/index.ts"
       ],
@@ -2228,6 +2142,21 @@
     },
     {
       "artifacts": [
+        ".github/workflows/test.yml",
+        "tests/distribution.test.mjs",
+        "tests/functions.test.mjs"
+      ],
+      "commit": "",
+      "ft": "FT-002",
+      "id": "6ad981ba7d1cd3da6227080f",
+      "line": 362,
+      "rcf": "RCF.md",
+      "sentenceSha256": "7cf4db36b0d5ef38d4469fb0884eaac79bf54ce6a77c8beddfa1b8b7ff3e33b1",
+      "state": "pending",
+      "syncCommit": ""
+    },
+    {
+      "artifacts": [
         "package.json",
         "src/index.ts"
       ],
@@ -2237,6 +2166,126 @@
       "line": 362,
       "rcf": "RCF.md",
       "sentenceSha256": "18866b909a4a0ca62857cf34744533f1c43c7a8aeabb12a05be35432fd1d2301",
+      "state": "pending",
+      "syncCommit": ""
+    },
+    {
+      "artifacts": [
+        ".github/workflows/test.yml",
+        "tests/distribution.test.mjs",
+        "tests/functions.test.mjs"
+      ],
+      "commit": "",
+      "ft": "FT-002",
+      "id": "e96c3965488e34be2175400c",
+      "line": 364,
+      "rcf": "RCF.md",
+      "sentenceSha256": "14ca3604d5920f9ad0695d6ec660f489e3c02996532e4e3cdc39a9ff897bdf46",
+      "state": "pending",
+      "syncCommit": ""
+    },
+    {
+      "artifacts": [
+        ".github/workflows/test.yml",
+        "tests/distribution.test.mjs",
+        "tests/functions.test.mjs"
+      ],
+      "commit": "",
+      "ft": "FT-002",
+      "id": "ac2703d3105d4deb18a9f1be",
+      "line": 366,
+      "rcf": "RCF.md",
+      "sentenceSha256": "e4ad47e20cb13085e4c79979920bbcbf15d3040ea803a29b118fc35ed1733d5c",
+      "state": "pending",
+      "syncCommit": ""
+    },
+    {
+      "artifacts": [
+        ".github/workflows/test.yml",
+        "tests/distribution.test.mjs",
+        "tests/functions.test.mjs"
+      ],
+      "commit": "",
+      "ft": "FT-002",
+      "id": "343cb15653c6362a6279f37f",
+      "line": 368,
+      "rcf": "RCF.md",
+      "sentenceSha256": "4f55e7c4d42e6875ab5811fca44a5e5b326c15e9ffa1f5e56a02e0865e11fb51",
+      "state": "pending",
+      "syncCommit": ""
+    },
+    {
+      "artifacts": [
+        ".github/workflows/test.yml",
+        "tests/distribution.test.mjs",
+        "tests/functions.test.mjs"
+      ],
+      "commit": "",
+      "ft": "FT-002",
+      "id": "3b00aa9c14fb4de630bbfc8d",
+      "line": 370,
+      "rcf": "RCF.md",
+      "sentenceSha256": "05fdbe510cb17cfd2cfecb060fd0f08652099d2707c2d7167bcd9c5dd354dcb6",
+      "state": "pending",
+      "syncCommit": ""
+    },
+    {
+      "artifacts": [
+        ".github/workflows/test.yml",
+        "tests/distribution.test.mjs",
+        "tests/functions.test.mjs"
+      ],
+      "commit": "",
+      "ft": "FT-002",
+      "id": "b026543fc939166d30e94bdf",
+      "line": 372,
+      "rcf": "RCF.md",
+      "sentenceSha256": "04641f60f7bf543eccc26dbbccaf35b3f408327a4cc1e03b0f854705cb9aa3ea",
+      "state": "pending",
+      "syncCommit": ""
+    },
+    {
+      "artifacts": [
+        ".github/workflows/test.yml",
+        "tests/distribution.test.mjs",
+        "tests/functions.test.mjs"
+      ],
+      "commit": "",
+      "ft": "FT-002",
+      "id": "1b34eece8862a076b1ff964a",
+      "line": 374,
+      "rcf": "RCF.md",
+      "sentenceSha256": "b80e647bfc1a49fb07ba1b78612359a046ce0373410a2526dcc4dbbc4dcd420b",
+      "state": "pending",
+      "syncCommit": ""
+    },
+    {
+      "artifacts": [
+        ".github/workflows/test.yml",
+        "tests/distribution.test.mjs",
+        "tests/functions.test.mjs"
+      ],
+      "commit": "",
+      "ft": "FT-002",
+      "id": "79cba5a112bd50c280de50ad",
+      "line": 376,
+      "rcf": "RCF.md",
+      "sentenceSha256": "819dd9c14f729fc45ebaf19680029143e679d45dcae78799162b844d82cc0547",
+      "state": "pending",
+      "syncCommit": ""
+    },
+    {
+      "artifacts": [
+        ".github/workflows/test.yml",
+        "tests/distribution.test.mjs",
+        "tests/functions.test.mjs"
+      ],
+      "commit": "",
+      "ft": "FT-002",
+      "id": "4073b1bef9f8019dcef402ce",
+      "line": 378,
+      "rcf": "RCF.md",
+      "sentenceSha256": "54f59ff129c00be5f60280108ba7e2170ff9cece822a4686f257a638d73cb95e",
       "state": "pending",
       "syncCommit": ""
     },
