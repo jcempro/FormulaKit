@@ -10,14 +10,14 @@ Biblioteca TypeScript universal de funções utilitárias, granular por escopo e
 Após a publicação da versão `0.1.0`, a instalação será:
 
 ```sh
-npm install @jcempro/formulakit
+npm install @jeancarloem/formulakit
 ```
 
 ```ts
-import { clamp } from "@jcempro/formulakit/math/basic";
-import { factorial } from "@jcempro/formulakit/math/advanced";
-import { and, orValue } from "@jcempro/formulakit/logic";
-import { applyMask } from "@jcempro/formulakit/text";
+import { clamp } from "@jeancarloem/formulakit/math/basic";
+import { factorial } from "@jeancarloem/formulakit/math/advanced";
+import { and, orValue } from "@jeancarloem/formulakit/logic";
+import { applyMask } from "@jeancarloem/formulakit/text";
 
 clamp(15, 0, 10); // 10
 factorial(5); // 120
@@ -34,13 +34,13 @@ Os escopos disponíveis são `math`, `logic`, `text`, `statistics`, `finance`, `
 
 - `basic`: subconjunto essencial;
 - `advanced`: contém integralmente `basic` e acrescenta operações avançadas;
-- subpath sem nível, como `@jcempro/formulakit/math`: alias de `advanced`.
+- subpath sem nível, como `@jeancarloem/formulakit/math`: alias de `advanced`.
 
 Exemplo de cumulatividade:
 
 ```ts
-import { add } from "@jcempro/formulakit/math/basic";
-import { add as sameAdd, factorial } from "@jcempro/formulakit/math/advanced";
+import { add } from "@jeancarloem/formulakit/math/basic";
+import { add as sameAdd, factorial } from "@jeancarloem/formulakit/math/advanced";
 ```
 
 Bundles combinados `core`, `data` e `business`, bundle completo, builds individuais e fontes TypeScript consumíveis são gerados em `dist/`. A matriz produz `.js`, `.mjs`, `.cjs`, `.d.ts` e sourcemaps quando aplicáveis, usando target ES2024, calculado pela política normativa de dois anos antes da edição ECMAScript publicada mais recente registrada.
@@ -73,7 +73,7 @@ Cada arquivo de código, tipo ou fonte consumível gerado incorpora um bloco `Fo
 Builds de navegador registram apenas a própria assinatura em `globalThis.FormulaKit.manifests`. A consulta retorna snapshots ordenados, de protótipo nulo e profundamente congelados; registros anteriores não são substituídos e qualquer colisão de identidade falha antes de alterar o conjunto.
 
 ```js
-await import("@jcempro/formulakit/browser");
+await import("@jeancarloem/formulakit/browser");
 const manifests = globalThis.FormulaKit.manifests;
 Object.keys(manifests); // identidades em ordem determinística
 Object.isFrozen(manifests); // true
@@ -88,6 +88,12 @@ npm pack --dry-run
 ```
 
 `npm run check` compila, testa funções e distribuição, verifica equivalência das assinaturas e gera a medição determinística de tamanhos. Qualquer divergência entre fonte, `.d.ts`, exports, assinatura embutida, registro do navegador ou manifesto superior invalida o gate.
+
+## Release
+
+A primeira publicação de `@jeancarloem/formulakit` no npm é manual. Depois dela, o Trusted Publisher do npm deve apontar para a organização `jcempro`, repositório `FormulaKit` e workflow `release.yml` (nome visível: `Release do pacote FormulaKit`), sem environment.
+
+Somente após esse vínculo, `npm run release:trigger -- 0.1.0` cria o arquivo-gatilho `release`. O workflow valida e empacota uma única vez, publica ou confirma bytes idênticos no npm, cria o GitHub Release `v0.1.0`, remove o gatilho e converge `dev` em `main`.
 
 - [Referência da API](./docs/API.md)
 - [RCF](./RCF.md): contratos normativos e critérios de aceite.

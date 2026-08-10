@@ -339,6 +339,10 @@ O projeto DEVE usar SemVer: mudança incompatível de assinatura, tipo, coerçã
 
 Nome definitivo do pacote npm permanece decisão humana anterior à primeira publicação; para artefatos de navegador, o prompt da FT-004 reserva expressamente apenas `globalThis.FormulaKit.manifests` e seu protocolo interno versionado, sem autorizar outro global público.
 
+A publicação remota DEVE usar exclusivamente `.github/workflows/release.yml`, identificado como `Release do pacote FormulaKit`, acionado na branch `dev` por commit exclusivo do arquivo raiz `release`; o workflow DEVE usar Node.js 24, permissão OIDC mínima, executar os gates do produto, empacotar uma única vez, publicar ou confirmar bytes idênticos no npm, criar o GitHub Release somente depois da confirmação do registro, remover o gatilho e convergir `dev` na primária por avanço rápido. [PENDENTE-CODIGO]
+
+A primeira publicação de `@jeancarloem/formulakit` no npm DEVE ser manual; somente depois de sua confirmação e do vínculo do Trusted Publisher à organização `jcempro`, repositório `FormulaKit` e workflow `release.yml` o gatilho remoto PODE ser enviado, e versão npm preexistente só PODE ser preservada quando o workflow baixar do registro o tarball imutável, validar sua integridade e reutilizar exatamente esses bytes no GitHub Release. [PENDENTE-CODIGO]
+
 ## 19. Dependências e cadeia de suprimentos
 
 Recursos nativos adequados DEVEM ser preferidos e dependência só PODE ser adicionada por capacidade material, manutenção sustentável e custo total inferior à solução local segura. [2ad9117]

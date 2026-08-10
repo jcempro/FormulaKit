@@ -2195,6 +2195,22 @@
     },
     {
       "artifacts": [
+        ".github/workflows/release.yml",
+        "README.md",
+        "constructor/verify-package.mjs",
+        "package.json"
+      ],
+      "commit": "",
+      "ft": "FT-006",
+      "id": "71c31e190fe8d895b0b1ada3",
+      "line": 342,
+      "rcf": "RCF.md",
+      "sentenceSha256": "94c9fd244804adb480f6aafe89f21ce1564a96fbe5289f6dd1b993b1fee9dc27",
+      "state": "pending",
+      "syncCommit": ""
+    },
+    {
+      "artifacts": [
         "README.md",
         "constructor/build.mjs",
         "constructor/measure.mjs",
@@ -2211,6 +2227,22 @@
       "rcf": "RCF.md",
       "sentenceSha256": "299058b479bebecf5b0715728261b125836d392c81550168f813ed837986116b",
       "state": "synchronized",
+      "syncCommit": ""
+    },
+    {
+      "artifacts": [
+        ".github/workflows/release.yml",
+        "README.md",
+        "constructor/verify-package.mjs",
+        "package.json"
+      ],
+      "commit": "",
+      "ft": "FT-006",
+      "id": "889b692436035a074ae44f65",
+      "line": 344,
+      "rcf": "RCF.md",
+      "sentenceSha256": "47421fd2ab880d585760ac2915a9e088f9b4f7936b84bf36741153c1e8ce1cd9",
+      "state": "pending",
       "syncCommit": ""
     },
     {

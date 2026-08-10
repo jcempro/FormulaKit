@@ -21,13 +21,13 @@ Os nomes, overloads, argumentos posicionais, retornos e tipos efetivos não são
 ## Imports
 
 ```ts
-import { clamp } from "@jcempro/formulakit/math/basic";
-import { factorial } from "@jcempro/formulakit/math/advanced";
-import { compileMask } from "@jcempro/formulakit/text";
-import { regex, validate } from "@jcempro/formulakit/validation";
+import { clamp } from "@jeancarloem/formulakit/math/basic";
+import { factorial } from "@jeancarloem/formulakit/math/advanced";
+import { compileMask } from "@jeancarloem/formulakit/text";
+import { regex, validate } from "@jeancarloem/formulakit/validation";
 ```
 
-Os mesmos subpaths resolvem ESM (`.mjs`), CommonJS (`.cjs`) e tipos (`.d.ts`). Fontes TypeScript assinados são distribuídos em `dist/source/` e expostos pelo subpath `@jcempro/formulakit/source/*`; não há exposição de fontes brutos de desenvolvimento.
+Os mesmos subpaths resolvem ESM (`.mjs`), CommonJS (`.cjs`) e tipos (`.d.ts`). Fontes TypeScript assinados são distribuídos em `dist/source/` e expostos pelo subpath `@jeancarloem/formulakit/source/*`; não há exposição de fontes brutos de desenvolvimento.
 
 ## Estabilidade
 

@@ -1,0 +1,147 @@
+# Autor: JeanCarloEM.com | https://jeancarloem.com
+# Repositório: https://github.com/jcempro/FormulaKit
+# Licença: MPL-2.0 | https://www.mozilla.org/MPL/2.0/
+# RCF: ./RCF.md
+
+name: Release do pacote FormulaKit
+
+on:
+  push:
+    branches: [dev]
+    paths:
+      - "release"
+
+permissions:
+  contents: write
+  id-token: write
+
+concurrency:
+  group: formulakit-release
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+          registry-url: https://registry.npmjs.org
+
+      - name: Validar gatilho e versão
+        id: release
+        shell: bash
+        env:
+          BEFORE: ${{ github.event.before }}
+          AFTER: ${{ github.sha }}
+        run: |
+          TRIGGER="$(node .ia.rules/scenarios/release/scripts/release-workflow.js detect "$BEFORE" "$AFTER")"
+          echo "$TRIGGER"
+          TRIGGERED="$(node -e 'const value=JSON.parse(process.argv[1]); process.stdout.write(String(value.triggered === true))' "$TRIGGER")"
+          echo "triggered=$TRIGGERED" >> "$GITHUB_OUTPUT"
+          if [ "$TRIGGERED" != "true" ]; then
+            exit 0
+          fi
+          test -f release
+          VERSION="$(node -e 'const value=JSON.parse(process.argv[1]); process.stdout.write(value.version || "")' "$TRIGGER")"
+          test -n "$VERSION"
+          test "$VERSION" = "$(tr -d '\r\n' < release)"
+          test "$VERSION" = "$(node -p "require('./package.json').version")"
+          [[ "$VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+(-[0-9A-Za-z.-]+)?$ ]]
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+
+      - name: Instalar dependências
+        if: steps.release.outputs.triggered == 'true'
+        run: npm ci --ignore-scripts
+
+      - name: Validar produto
+        if: steps.release.outputs.triggered == 'true'
+        run: npm run check
+
+      - name: Validar pacote
+        if: steps.release.outputs.triggered == 'true'
+        run: npm run validate:package
+
+      - name: Resolver pacote único do release
+        if: steps.release.outputs.triggered == 'true'
+        id: pack
+        shell: bash
+        env:
+          NPM_CONFIG_IGNORE_SCRIPTS: "true"
+        run: |
+          mkdir -p .tmp/release
+          PACKAGE_NAME="$(node -p "require('./package.json').name")"
+          VERSION="${{ steps.release.outputs.version }}"
+          if REMOTE_JSON="$(npm view "$PACKAGE_NAME@$VERSION" dist.integrity --json 2>/dev/null)"; then
+            TARBALL="$(npm --ignore-scripts pack "$PACKAGE_NAME@$VERSION" --silent --pack-destination .tmp/release)"
+            SOURCE="registry"
+            EXPECTED_INTEGRITY="$(node -e 'process.stdout.write(JSON.parse(process.argv[1]))' "$REMOTE_JSON")"
+          else
+            TARBALL="$(npm --ignore-scripts pack --silent --pack-destination .tmp/release)"
+            SOURCE="workspace"
+            EXPECTED_INTEGRITY=""
+          fi
+          PACKAGE_PATH=".tmp/release/$TARBALL"
+          INTEGRITY="sha512-$(openssl dgst -sha512 -binary "$PACKAGE_PATH" | openssl base64 -A)"
+          SHA256="$(sha256sum "$PACKAGE_PATH" | cut -d ' ' -f 1)"
+          if [ -n "$EXPECTED_INTEGRITY" ]; then
+            test "$EXPECTED_INTEGRITY" = "$INTEGRITY"
+          fi
+          echo "path=$PACKAGE_PATH" >> "$GITHUB_OUTPUT"
+          echo "name=$PACKAGE_NAME" >> "$GITHUB_OUTPUT"
+          echo "integrity=$INTEGRITY" >> "$GITHUB_OUTPUT"
+          echo "sha256=$SHA256" >> "$GITHUB_OUTPUT"
+          echo "source=$SOURCE" >> "$GITHUB_OUTPUT"
+
+      - name: Publicar ou confirmar no npm
+        if: steps.release.outputs.triggered == 'true'
+        shell: bash
+        env:
+          PACKAGE_NAME: ${{ steps.pack.outputs.name }}
+          PACKAGE_PATH: ${{ steps.pack.outputs.path }}
+          LOCAL_INTEGRITY: ${{ steps.pack.outputs.integrity }}
+          PACKAGE_SOURCE: ${{ steps.pack.outputs.source }}
+          VERSION: ${{ steps.release.outputs.version }}
+          NPM_CONFIG_IGNORE_SCRIPTS: "true"
+        run: |
+          if [ "$PACKAGE_SOURCE" = "registry" ]; then
+            REMOTE_JSON="$(npm view "$PACKAGE_NAME@$VERSION" dist.integrity --json)"
+            REMOTE_INTEGRITY="$(node -e 'process.stdout.write(JSON.parse(process.argv[1]))' "$REMOTE_JSON")"
+            test "$REMOTE_INTEGRITY" = "$LOCAL_INTEGRITY"
+            echo "Versão npm já existente e idêntica; publicação preservada."
+          else
+            npm --ignore-scripts publish "$PACKAGE_PATH" --access public --provenance
+          fi
+          CONFIRMED_JSON="$(npm view "$PACKAGE_NAME@$VERSION" dist.integrity --json)"
+          CONFIRMED_INTEGRITY="$(node -e 'process.stdout.write(JSON.parse(process.argv[1]))' "$CONFIRMED_JSON")"
+          test "$CONFIRMED_INTEGRITY" = "$LOCAL_INTEGRITY"
+
+      - name: Criar GitHub Release após npm
+        if: steps.release.outputs.triggered == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PACKAGE_PATH: ${{ steps.pack.outputs.path }}
+          VERSION: ${{ steps.release.outputs.version }}
+        run: |
+          test -z "$(gh release view "v$VERSION" --json tagName --jq .tagName 2>/dev/null || true)"
+          gh release create "v$VERSION" "$PACKAGE_PATH#Pacote npm" --target "$GITHUB_SHA" --title "v$VERSION" --generate-notes
+
+      - name: Finalizar gatilho e convergir a primária
+        if: steps.release.outputs.triggered == 'true'
+        shell: bash
+        env:
+          VERSION: ${{ steps.release.outputs.version }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          node .ia.rules/scenarios/release/scripts/release-workflow.js finalize "$VERSION" release
+          git push origin HEAD:dev
+          git fetch origin main
+          git merge-base --is-ancestor origin/main HEAD
+          git push origin HEAD:main
