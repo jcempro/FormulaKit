@@ -4,7 +4,7 @@
 
 Este RCF define o contrato funcional, arquitetural e público do FormulaKit e complementa `./AGENTS.md`; processamento da IA, FTs, Git e operação do repositório permanecem sob a Norma Operacional superior.
 
-A ordem normativa do produto é `./RCF.md` → sub-RCF aplicável → manifesto público canônico → `./README.md`; implementação, tipos, build, pacote, manifesto ou documentação divergente constituem não conformidade e NÃO redefinem este RCF. [PENDENTE-CODIGO]
+A ordem normativa do produto é `./RCF.md` → sub-RCF aplicável → manifesto público canônico → `./README.md`; implementação, tipos, build, pacote, manifesto ou documentação divergente constituem não conformidade e NÃO redefinem este RCF.
 
 Aplicam-se os contratos comuns de `./.ia.rules/core/contracts.md` e a linguagem normativa de `./.ia.rules/core/concepts/microconceitos.md`, especialmente MN-2119, MN-DENS, MN-PRES, MN-REF e MN-VAL.
 
@@ -18,20 +18,20 @@ O catálogo DEVE cobrir operações generalizáveis de texto, número, matemáti
 
 Equivalência com Excel, LibreOffice ou utilitários existentes significa reproduzir a funcionalidade pretendida por contrato idiomático JS/TS; nome, erro histórico, coerção peculiar, arredondamento legado ou comportamento acidental só PODE ser preservado quando deliberado, documentado, testado e justificado por compatibilidade. [a2d98f2]
 
-Estado documental em 2026-08-09: governança, licença, RCF e plano técnico existem; catálogo, implementação, dependências de produto, testes, build, pacote npm e release do FormulaKit permanecem pendentes. Capacidade futura NÃO DEVE ser anunciada como disponível. [a2d98f2]
+Estado documental em 2026-08-09: governança, licença, RCF, catálogo, implementação, dependências de desenvolvimento, testes, build e tarball npm validado existem; publicação remota no npm e no GitHub Release permanece condicionada ao aceite de release, ambiente e credenciais, e NÃO DEVE ser anunciada como concluída antes de sua comprovação. [2ad9117]
 
 O núcleo NÃO DEVE incorporar DOM, framework, rede, armazenamento, processo, sistema de arquivos ou estado global quando a operação puder ser expressa como transformação determinística de entradas. [a2d98f2]
 
 ## 3. Taxonomia e catálogo canônico
 
-- **função pública**: operação estável exportada por entry point documentado e coberta por contrato, tipo e teste; [PENDENTE-CODIGO]
-- **família**: agrupamento por semântica e vocabulário, não por conveniência física; [PENDENTE-CODIGO]
-- **primitiva interna**: implementação compartilhada sem estabilidade pública e sem exportação acidental; [PENDENTE-CODIGO]
-- **adaptador**: integração segregada com ambiente, locale, runtime ou recurso externo; [PENDENTE-CODIGO]
-- **wrapper**: fachada mínima sobre capacidade nativa suficiente, mantida para uniformizar nome, assinatura, tipo e importação; [PENDENTE-CODIGO]
-- **build**: artefato derivado para consumidor, runtime, formato e entry point declarados; [PENDENTE-CODIGO]
-- **manifesto público**: inventário verificável de funções, contratos, estabilidade, imports e compatibilidade; [PENDENTE-CODIGO]
-- **vetor canônico**: caso offline compartilhado que fixa entrada, opções, resultado ou falha e efeitos observáveis. [PENDENTE-CODIGO]
+- **função pública**: operação estável exportada por entry point documentado e coberta por contrato, tipo e teste;
+- **família**: agrupamento por semântica e vocabulário, não por conveniência física;
+- **primitiva interna**: implementação compartilhada sem estabilidade pública e sem exportação acidental;
+- **adaptador**: integração segregada com ambiente, locale, runtime ou recurso externo;
+- **wrapper**: fachada mínima sobre capacidade nativa suficiente, mantida para uniformizar nome, assinatura, tipo e importação;
+- **build**: artefato derivado para consumidor, runtime, formato e entry point declarados;
+- **manifesto público**: inventário verificável de funções, contratos, estabilidade, imports e compatibilidade;
+- **vetor canônico**: caso offline compartilhado que fixa entrada, opções, resultado ou falha e efeitos observáveis.
 
 ### 3.1 Escopos funcionais e níveis de capacidade
 
@@ -43,11 +43,11 @@ Um terceiro nível canônico `specialized` só PODE existir quando métricas de 
 
 Escopo pequeno PODE declarar nível único; nesse caso, o nível canônico é `basic`, o import do escopo raiz é projeção equivalente e a futura adição de `advanced` NÃO DEVE alterar a semântica ou os tipos existentes. [a2d98f2]
 
-Cumulatividade significa inclusão integral de exports, assinaturas, tipos, documentação, vetores e comportamento, mas NÃO exige duplicação física: reexportação, composição de chunks e compartilhamento interno DEVEM impedir código repetido e preservar tree-shaking. [a2d98f2]
+Cumulatividade significa inclusão integral de exports, assinaturas, tipos, documentação, vetores e comportamento, mas NÃO exige duplicação física: reexportação, composição de chunks e compartilhamento interno DEVEM impedir código repetido e preservar tree-shaking. [2ad9117]
 
 O import de nível DEVE usar subpath estável equivalente a `<pacote>/<escopo>/<nível>`; `<pacote>/<escopo>` DEVE resolver ao maior nível estável declarado para o escopo, e qualquer mudança desse default exige compatibilidade SemVer e manifesto explícito. [a2d98f2]
 
-RCF, README, `exports`, `.d.ts` e manifesto público DEVEM declarar para cada escopo seus níveis, relação cumulativa, funções acrescentadas por nível, entry points, formatos, targets, bundles e estado; divergência entre essas projeções bloqueia build e publicação. [a2d98f2]
+RCF, README, `exports`, `.d.ts` e manifesto público DEVEM declarar para cada escopo seus níveis, relação cumulativa, funções acrescentadas por nível, entry points, formatos, targets, bundles e estado; divergência entre essas projeções bloqueia build e publicação. [2ad9117]
 
 Nome, casing e identidade de função DEVEM permanecer iguais entre níveis do mesmo escopo e entre import granular, bundle combinado e bundle completo; adaptação ambiental PODE alterar somente o invólucro autorizado, nunca o contrato funcional. [a2d98f2]
 
@@ -237,43 +237,43 @@ Perfis previstos são `core`, `browser`, `worker`, `node`, `server`, `build` e `
 
 ## 15. API pública, tipos e erros
 
-Cada export público DEVE constar no catálogo, possuir documentação TSDoc, tipo verificável, estabilidade e caminho de importação suportado; exportação acidental NÃO adquire estabilidade. [a2d98f2]
+Cada export público DEVE constar no catálogo, possuir documentação TSDoc, tipo verificável, estabilidade e caminho de importação suportado; exportação acidental NÃO adquire estabilidade. [2ad9117]
 
-Exports de nível superior DEVEM ser união cumulativa verificável dos níveis inferiores do mesmo escopo, e os tipos de uma função compartilhada DEVEM possuir identidade estrutural e nominal compatível em todos os subpaths e bundles. [a2d98f2]
+Exports de nível superior DEVEM ser união cumulativa verificável dos níveis inferiores do mesmo escopo, e os tipos de uma função compartilhada DEVEM possuir identidade estrutural e nominal compatível em todos os subpaths e bundles. [2ad9117]
 
-O pipeline DEVE rejeitar função presente em `advanced` e ausente em `basic` quando marcada como básica, símbolo duplicado com assinatura divergente, reexport circular, subpath sem tipos ou tipos que resolvam duas cópias incompatíveis da mesma identidade. [a2d98f2]
+O pipeline DEVE rejeitar função presente em `advanced` e ausente em `basic` quando marcada como básica, símbolo duplicado com assinatura divergente, reexport circular, subpath sem tipos ou tipos que resolvam duas cópias incompatíveis da mesma identidade. [2ad9117]
 
-O `.d.ts` DEVE representar integralmente funções, overloads, generics, parâmetros, opções, retornos, falhas tipadas e deprecações e DEVE ser validado contra exports e implementação. [a2d98f2]
+O `.d.ts` DEVE representar integralmente funções, overloads, generics, parâmetros, opções, retornos, falhas tipadas e deprecações e DEVE ser validado contra exports e implementação. [2ad9117]
 
-Se houver manifesto canônico separado, manifesto, `.d.ts` e exports reais DEVEM ter uma única autoridade derivável ou validação automática bidirecional; manutenção manual concorrente é proibida. [a2d98f2]
+Se houver manifesto canônico separado, manifesto, `.d.ts` e exports reais DEVEM ter uma única autoridade derivável ou validação automática bidirecional; manutenção manual concorrente é proibida. [2ad9117]
 
 ### 15.1 Assinatura pública individual de artefato
 
-Cada arquivo de código publicado no npm ou no GitHub Release — fonte consumível, módulo transpilado, entry point ou bundle — DEVE incorporar uma assinatura própria, exclusiva e claramente delimitada de sua superfície pública efetiva; arquivo auxiliar sem exports DEVE declarar superfície vazia ou vínculo inequívoco ao manifesto do contêiner, sem herdar exports de outro arquivo. [a2d98f2]
+Cada arquivo de código publicado no npm ou no GitHub Release — fonte consumível, módulo transpilado, entry point ou bundle — DEVE incorporar uma assinatura própria, exclusiva e claramente delimitada de sua superfície pública efetiva; arquivo auxiliar sem exports DEVE declarar superfície vazia ou vínculo inequívoco ao manifesto do contêiner, sem herdar exports de outro arquivo. [2ad9117]
 
-A assinatura compacta usa o schema versionado `FormulaKitSignature/v1` e contém somente `v` (versão do schema), `id` (identidade canônica do artefato), `x` (exports), `t` (tipos customizados indispensáveis) e `h` (SHA-256 da forma canônica de `v`, `id`, `x` e `t`, excluído o próprio `h`); chaves, exports, overloads, uniões e campos DEVEM ser ordenados deterministicamente por ponto de código Unicode, enquanto a integridade byte a byte do arquivo permanece no manifesto superior para evitar autorreferência. [a2d98f2]
+A assinatura compacta usa o schema versionado `FormulaKitSignature/v1` e contém somente `v` (versão do schema), `id` (identidade canônica do artefato), `x` (exports), `t` (tipos customizados indispensáveis) e `h` (SHA-256 da forma canônica de `v`, `id`, `x` e `t`, excluído o próprio `h`); chaves, exports, overloads, uniões e campos DEVEM ser ordenados deterministicamente por ponto de código Unicode, enquanto a integridade byte a byte do arquivo permanece no manifesto superior para evitar autorreferência. [2ad9117]
 
-Cada função em `x` DEVE representar a categoria função, sua sequência de overloads, os tipos posicionais de argumentos e o retorno, omitindo nomes de parâmetros; generics, opcionalidade, rest, `this`, construtores ou valores exportados só DEVEM aparecer quando integrarem a superfície real. [a2d98f2]
+Cada função em `x` DEVE representar a categoria função, sua sequência de overloads, os tipos posicionais de argumentos e o retorno, omitindo nomes de parâmetros; generics, opcionalidade, rest, `this`, construtores ou valores exportados só DEVEM aparecer quando integrarem a superfície real. [2ad9117]
 
-Tipos públicos DEVEM priorizar representação estrutural puramente tipada e mínima; `t` só PODE introduzir identificador ou nome de campo quando sua ausência prejudicar consumo, composição, referência recursiva, inferência, interoperabilidade ou semântica pública, e anonimização que torne dois contratos distintos indistinguíveis é proibida. [a2d98f2]
+Tipos públicos DEVEM priorizar representação estrutural puramente tipada e mínima; `t` só PODE introduzir identificador ou nome de campo quando sua ausência prejudicar consumo, composição, referência recursiva, inferência, interoperabilidade ou semântica pública, e anonimização que torne dois contratos distintos indistinguíveis é proibida. [2ad9117]
 
-A assinatura NÃO DEVE conter nomes dispensáveis de parâmetros ou tipos, documentação, descrição, exemplo, origem editorial, estabilidade repetida, path interno nem informação já disponível em camada superior; concisão NÃO autoriza omitir diferença que altere uso ou tipagem. [a2d98f2]
+A assinatura NÃO DEVE conter nomes dispensáveis de parâmetros ou tipos, documentação, descrição, exemplo, origem editorial, estabilidade repetida, path interno nem informação já disponível em camada superior; concisão NÃO autoriza omitir diferença que altere uso ou tipagem. [2ad9117]
 
-Fonte TypeScript, catálogo público e `.d.ts` canônico constituem a entrada autoritativa do gerador; a assinatura embutida, o arquivo executável e seu registro em manifesto de distribuição são derivados e DEVEM corresponder exatamente aos exports materializados naquela célula da matriz. [a2d98f2]
+Fonte TypeScript, catálogo público e `.d.ts` canônico constituem a entrada autoritativa do gerador; a assinatura embutida, o arquivo executável e seu registro em manifesto de distribuição são derivados e DEVEM corresponder exatamente aos exports materializados naquela célula da matriz. [2ad9117]
 
-Build DEVE rejeitar símbolo ausente, excedente ou com categoria, overload, argumento posicional, retorno, generic, opcionalidade ou tipo customizado divergente entre fonte, catálogo, `.d.ts`, assinatura individual e exports executáveis. [a2d98f2]
+Build DEVE rejeitar símbolo ausente, excedente ou com categoria, overload, argumento posicional, retorno, generic, opcionalidade ou tipo customizado divergente entre fonte, catálogo, `.d.ts`, assinatura individual e exports executáveis. [2ad9117]
 
-Artefato destinado a navegador DEVE registrar sua assinatura em `globalThis.FormulaKit.manifests`, namespace público único e compartilhado; `FormulaKit` e `manifests` DEVEM ser propriedades não configuráveis, e a consulta DEVE fornecer snapshot de protótipo nulo, profundamente congelado e ordenado por `id`, sem expor `Map`, setter, método de remoção ou referência ao armazenamento interno. [a2d98f2]
+Artefato destinado a navegador DEVE registrar sua assinatura em `globalThis.FormulaKit.manifests`, namespace público único e compartilhado; `FormulaKit` e `manifests` DEVEM ser propriedades não configuráveis, e a consulta DEVE fornecer snapshot de protótipo nulo, profundamente congelado e ordenado por `id`, sem expor `Map`, setter, método de remoção ou referência ao armazenamento interno. [2ad9117]
 
-O mecanismo interno de registro DEVE ser único, versionado, oculto da API pública documentada e restrito a acrescentar uma assinatura validada; cada artefato acrescenta exclusivamente seu próprio `id`, e qualquer `id` preexistente — ainda que o conteúdo pareça idêntico — DEVE lançar falha estável de colisão antes de alterar o registro. [a2d98f2]
+O mecanismo interno de registro DEVE ser único, versionado, oculto da API pública documentada e restrito a acrescentar uma assinatura validada; cada artefato acrescenta exclusivamente seu próprio `id`, e qualquer `id` preexistente — ainda que o conteúdo pareça idêntico — DEVE lançar falha estável de colisão antes de alterar o registro. [2ad9117]
 
-Registros preexistentes NÃO PODEM ser sobrescritos, removidos ou redefinidos; falha posterior DEVE conservar integralmente o snapshot anterior, e a visão resultante DEVE ser idêntica para o mesmo conjunto de artefatos independentemente da ordem de carregamento. [a2d98f2]
+Registros preexistentes NÃO PODEM ser sobrescritos, removidos ou redefinidos; falha posterior DEVE conservar integralmente o snapshot anterior, e a visão resultante DEVE ser idêntica para o mesmo conjunto de artefatos independentemente da ordem de carregamento. [2ad9117]
 
-O registro append-only de metadados no build de navegador é o único efeito global autorizado por este contrato, DEVE ser declarado granularmente para o bundler e NÃO PODE inicializar função, capturar dado do consumidor nem contaminar builds ESM/CommonJS destinados a Node, worker ou server. [a2d98f2]
+O registro append-only de metadados no build de navegador é o único efeito global autorizado por este contrato, DEVE ser declarado granularmente para o bundler e NÃO PODE inicializar função, capturar dado do consumidor nem contaminar builds ESM/CommonJS destinados a Node, worker ou server. [2ad9117]
 
-Biblioteca terceira PODE enumerar, consultar e reter snapshots das assinaturas, mas tentativa de atribuir, definir, apagar ou mutar namespace, coleção, registro ou valor aninhado DEVE falhar ou permanecer sem efeito conforme o modo ECMAScript, nunca alterar observação posterior. [a2d98f2]
+Biblioteca terceira PODE enumerar, consultar e reter snapshots das assinaturas, mas tentativa de atribuir, definir, apagar ou mutar namespace, coleção, registro ou valor aninhado DEVE falhar ou permanecer sem efeito conforme o modo ECMAScript, nunca alterar observação posterior. [2ad9117]
 
-Falhas de contrato DEVEM usar códigos estáveis e mensagens seguras, sem segredo, dado pessoal, path local ou conteúdo integral da entrada; erro interno NÃO DEVE ser apresentado como resultado válido. [a2d98f2]
+Falhas de contrato DEVEM usar códigos estáveis e mensagens seguras, sem segredo, dado pessoal, path local ou conteúdo integral da entrada; erro interno NÃO DEVE ser apresentado como resultado válido. [2ad9117]
 
 Predicados `is*` DEVEM retornar `false` para valor estruturalmente inválido dentro do domínio declarado e NÃO DEVEM ocultar erro de configuração, algoritmo ou dependência. [a2d98f2]
 
@@ -285,116 +285,116 @@ Toda função sensível a precisão DEVE declarar modelo numérico, tolerância 
 
 Locale, timezone, moeda, calendário, collation e relógio DEVEM ser entradas explícitas ou defaults canônicos documentados; configuração ambiental implícita não pode alterar semântica. [a2d98f2]
 
-Entrada é não confiável: parse, regex, recursão, alocação e iteração DEVEM possuir limites proporcionais e evitar execução dinâmica, prototype pollution, negação de serviço e exposição de dados. [a2d98f2]
+Entrada é não confiável: parse, regex, recursão, alocação e iteração DEVEM possuir limites proporcionais e evitar execução dinâmica, prototype pollution, negação de serviço e exposição de dados. [2ad9117]
 
-Expressão regular fornecida pelo consumidor DEVE ser distinguida de padrão interno; padrão interno vulnerável a backtracking catastrófico bloqueia publicação. [a2d98f2]
+Expressão regular fornecida pelo consumidor DEVE ser distinguida de padrão interno; padrão interno vulnerável a backtracking catastrófico bloqueia publicação. [2ad9117]
 
 Função pura NÃO DEVE emitir telemetria; adaptador que observe execução DEVE ser opt-in, não alterar resultado e aplicar minimização e redação de dados. [a2d98f2]
 
 ## 17. ECMAScript, build e otimização
 
-Cada build DEVE resolver `TARGET_ECMA = edição ECMAScript publicada mais recente - 2 anos`, usando ano civil UTC e uma tabela versionada de edições publicadas; a edição ainda não publicada NÃO integra o cálculo. [a2d98f2]
+Cada build DEVE resolver `TARGET_ECMA = edição ECMAScript publicada mais recente - 2 anos`, usando ano civil UTC e uma tabela versionada de edições publicadas; a edição ainda não publicada NÃO integra o cálculo. [2ad9117]
 
-Compilador TypeScript, `lib`, transpilador, bundler e demais etapas dependentes DEVEM usar o mesmo target resolvido e registrar ano, fórmula, tabela e valor efetivo em metadado determinístico. [a2d98f2]
+Compilador TypeScript, `lib`, transpilador, bundler e demais etapas dependentes DEVEM usar o mesmo target resolvido e registrar ano, fórmula, tabela e valor efetivo em metadado determinístico. [2ad9117]
 
-Toolchain que não reconheça o target calculado DEVE falhar explicitamente, sem downgrade, substituição por `latest` ou ajuste silencioso. [a2d98f2]
+Toolchain que não reconheça o target calculado DEVE falhar explicitamente, sem downgrade, substituição por `latest` ou ajuste silencioso. [2ad9117]
 
-Build DEVE declarar consumidor, runtime, formato, entry point, tipos, externalizações, carregamento, compatibilidade, minificação, source map e estabilidade; formato sem consumidor ou validação é proibido. [a2d98f2]
+Build DEVE declarar consumidor, runtime, formato, entry point, tipos, externalizações, carregamento, compatibilidade, minificação, source map e estabilidade; formato sem consumidor ou validação é proibido. [2ad9117]
 
-Otimização DEVE preservar comportamento, nomes públicos, tipos, maps e licença e favorecer tree-shaking, eliminação de código morto, deduplicação e ausência de dependência acidental; `sideEffects` DEVE refletir efeitos reais por arquivo. [a2d98f2]
+Otimização DEVE preservar comportamento, nomes públicos, tipos, maps e licença e favorecer tree-shaking, eliminação de código morto, deduplicação e ausência de dependência acidental; `sideEffects` DEVE refletir efeitos reais por arquivo. [2ad9117]
 
-Artefatos relevantes DEVEM medir tamanho bruto, minificado, gzip e Brotli de modo reproduzível; budget só PODE ser fixado após baseline real aprovado e alterado com causa, quantificação e decisão explícita. [a2d98f2]
+Artefatos relevantes DEVEM medir tamanho bruto, minificado, gzip e Brotli de modo reproduzível; budget só PODE ser fixado após baseline real aprovado e alterado com causa, quantificação e decisão explícita. [2ad9117]
 
-A matriz de transpilação DEVE cruzar escopo, nível, combinação, formato e target a partir de um grafo canônico único; duas células equivalentes NÃO DEVEM recompilar sem necessidade nem produzir conteúdo semanticamente divergente. [a2d98f2]
+A matriz de transpilação DEVE cruzar escopo, nível, combinação, formato e target a partir de um grafo canônico único; duas células equivalentes NÃO DEVEM recompilar sem necessidade nem produzir conteúdo semanticamente divergente. [2ad9117]
 
-O target primário DEVE obedecer à fórmula ECMAScript dinâmica deste RCF; target adicional só PODE existir para consumidor comprovado, DEVE ser nomeado e manifestado e NÃO PODE rebaixar silenciosamente o target primário nem introduzir API/polyfill ausente nos demais builds. [a2d98f2]
+O target primário DEVE obedecer à fórmula ECMAScript dinâmica deste RCF; target adicional só PODE existir para consumidor comprovado, DEVE ser nomeado e manifestado e NÃO PODE rebaixar silenciosamente o target primário nem introduzir API/polyfill ausente nos demais builds. [2ad9117]
 
-Cada artefato por escopo/nível DEVE preservar tree-shaking, `.d.ts`, sourcemap, banner, hash e vínculo à fonte; bundle combinado e completo DEVEM reutilizar chunks sem importar escopo alheio ao conjunto declarado. [a2d98f2]
+Cada artefato por escopo/nível DEVE preservar tree-shaking, `.d.ts`, sourcemap, banner, hash e vínculo à fonte; bundle combinado e completo DEVEM reutilizar chunks sem importar escopo alheio ao conjunto declarado. [2ad9117]
 
-O gerador de artefatos DEVE produzir e validar a assinatura individual depois da resolução exata de exports e antes de minificação/empacotamento final, preservando bloco delimitado e registro equivalente em `.js`, `.mjs`, `.cjs` ou formato executável homologado. [a2d98f2]
+O gerador de artefatos DEVE produzir e validar a assinatura individual depois da resolução exata de exports e antes de minificação/empacotamento final, preservando bloco delimitado e registro equivalente em `.js`, `.mjs`, `.cjs` ou formato executável homologado. [2ad9117]
 
 ## 18. Distribuição, consumo e versionamento
 
-FormulaKit DEVE ser distribuído por npm e GitHub Release com seleção equivalente e verificável de fontes TypeScript consumíveis, JavaScript executável, `.d.ts`, source maps apropriados, licença, metadados e manifestos. [a2d98f2]
+FormulaKit DEVE ser distribuído por npm e GitHub Release com seleção equivalente e verificável de fontes TypeScript consumíveis, JavaScript executável, `.d.ts`, source maps apropriados, licença, metadados e manifestos. [2ad9117]
 
-O GitHub Release DEVE disponibilizar, conforme a matriz aplicável e sem artefato redundante, builds individuais por escopo/nível, bundles combinados por perfil de consumidor, bundle completo e formatos/targets homologados, inclusive `.js`, `.mjs` e `.cjs` quando seus módulos correspondentes forem materialmente distintos e testados. [a2d98f2]
+O GitHub Release DEVE disponibilizar, conforme a matriz aplicável e sem artefato redundante, builds individuais por escopo/nível, bundles combinados por perfil de consumidor, bundle completo e formatos/targets homologados, inclusive `.js`, `.mjs` e `.cjs` quando seus módulos correspondentes forem materialmente distintos e testados. [2ad9117]
 
-Bundle combinado DEVE declarar lista ordenada de escopos e nível escolhido em cada um; bundle completo DEVE conter exatamente o maior nível estável de todos os escopos públicos, sem capacidades experimentais implícitas. [a2d98f2]
+Bundle combinado DEVE declarar lista ordenada de escopos e nível escolhido em cada um; bundle completo DEVE conter exatamente o maior nível estável de todos os escopos públicos, sem capacidades experimentais implícitas. [2ad9117]
 
-Diretórios PODEM organizar artefatos por escopo, nível, formato e target quando aumentarem clareza, mas path físico NÃO DEVE vazar como import público nem quebrar subpath estável; manifesto é a autoridade da projeção path→identidade. [a2d98f2]
+Diretórios PODEM organizar artefatos por escopo, nível, formato e target quando aumentarem clareza, mas path físico NÃO DEVE vazar como import público nem quebrar subpath estável; manifesto é a autoridade da projeção path→identidade. [2ad9117]
 
-O npm DEVE expor por `exports`/subpaths toda granularidade homologada, incluindo escopo raiz e nível, com condições e tipos correspondentes, permitindo consumir somente o necessário sem carregar inicialização ou código de escopo alheio. [a2d98f2]
+O npm DEVE expor por `exports`/subpaths toda granularidade homologada, incluindo escopo raiz e nível, com condições e tipos correspondentes, permitindo consumir somente o necessário sem carregar inicialização ou código de escopo alheio. [2ad9117]
 
-O manifesto DEVE enumerar inclusões cumulativas, arquivos, hashes, tamanhos, entry points, formatos, targets, condições, tipos e sourcemaps de cada artefato e provar que npm e Release representam a mesma identidade funcional. [a2d98f2]
+O manifesto DEVE enumerar inclusões cumulativas, arquivos, hashes, tamanhos, entry points, formatos, targets, condições, tipos e sourcemaps de cada artefato e provar que npm e Release representam a mesma identidade funcional. [2ad9117]
 
-O manifesto de distribuição DEVE vincular cada arquivo à sua `FormulaKitSignature/v1`, ao hash de payload e à superfície efetiva; assinatura individual não substitui o inventário superior e o inventário superior NÃO PODE ampliar implicitamente a superfície do arquivo. [a2d98f2]
+O manifesto de distribuição DEVE vincular cada arquivo à sua `FormulaKitSignature/v1`, ao hash de payload e à superfície efetiva; assinatura individual não substitui o inventário superior e o inventário superior NÃO PODE ampliar implicitamente a superfície do arquivo. [2ad9117]
 
-ESM, CommonJS, `.mjs`, `.cjs`, subpaths granulares, browser, Node e bundle otimizado PODEM integrar a distribuição somente quando consumidor, runtime e valor material forem comprovados; extensões redundantes que representem o mesmo formato sem necessidade são proibidas. [a2d98f2]
+ESM, CommonJS, `.mjs`, `.cjs`, subpaths granulares, browser, Node e bundle otimizado PODEM integrar a distribuição somente quando consumidor, runtime e valor material forem comprovados; extensões redundantes que representem o mesmo formato sem necessidade são proibidas. [2ad9117]
 
-O pacote e o Release DEVEM permitir consumo sem toolchain de desenvolvimento, sem path interno e sem importar runtime, função ou dependência não utilizada; instalação a partir de tarball local em projeto externo limpo integra o aceite. [a2d98f2]
+O pacote e o Release DEVEM permitir consumo sem toolchain de desenvolvimento, sem path interno e sem importar runtime, função ou dependência não utilizada; instalação a partir de tarball local em projeto externo limpo integra o aceite. [2ad9117]
 
-`exports`, `types`, arquivos publicados e entry points DEVEM ser allowlist positiva e impedir acesso acidental a fonte interna, testes, fixtures, cache, segredos e configuração do construtor. [a2d98f2]
+`exports`, `types`, arquivos publicados e entry points DEVEM ser allowlist positiva e impedir acesso acidental a fonte interna, testes, fixtures, cache, segredos e configuração do construtor. [2ad9117]
 
 O projeto DEVE usar SemVer: mudança incompatível de assinatura, tipo, coerção, resultado, erro, precisão, default, ordenação ou export é major; adição compatível é minor; correção preservadora é patch. [a2d98f2]
 
-Nome definitivo do pacote npm permanece decisão humana anterior à primeira publicação; para artefatos de navegador, o prompt da FT-004 reserva expressamente apenas `globalThis.FormulaKit.manifests` e seu protocolo interno versionado, sem autorizar outro global público. [PENDENTE-CODIGO]
+Nome definitivo do pacote npm permanece decisão humana anterior à primeira publicação; para artefatos de navegador, o prompt da FT-004 reserva expressamente apenas `globalThis.FormulaKit.manifests` e seu protocolo interno versionado, sem autorizar outro global público.
 
 ## 19. Dependências e cadeia de suprimentos
 
-Recursos nativos adequados DEVEM ser preferidos e dependência só PODE ser adicionada por capacidade material, manutenção sustentável e custo total inferior à solução local segura. [a2d98f2]
+Recursos nativos adequados DEVEM ser preferidos e dependência só PODE ser adicionada por capacidade material, manutenção sustentável e custo total inferior à solução local segura. [2ad9117]
 
-Dependência DEVE estar na categoria correspondente ao uso real; runtime, dev, peer e opcional NÃO são intercambiáveis. [a2d98f2]
+Dependência DEVE estar na categoria correspondente ao uso real; runtime, dev, peer e opcional NÃO são intercambiáveis. [2ad9117]
 
-Lockfile, licença, origem, integridade, proveniência, vulnerabilidades e scripts de instalação DEVEM ser auditáveis; build NÃO DEVE depender de recurso remoto não fixado. [a2d98f2]
+Lockfile, licença, origem, integridade, proveniência, vulnerabilidades e scripts de instalação DEVEM ser auditáveis; build NÃO DEVE depender de recurso remoto não fixado. [2ad9117]
 
-Segredo, credencial, token, dado pessoal ou configuração privada NÃO DEVE integrar fonte, map, pacote, log, fixture, manifesto ou Release. [a2d98f2]
+Segredo, credencial, token, dado pessoal ou configuração privada NÃO DEVE integrar fonte, map, pacote, log, fixture, manifesto ou Release. [2ad9117]
 
 Atualização de dependência DEVE comprovar compatibilidade, diff de cadeia, testes e efeito em tamanho; alerta sem exploração aplicável NÃO autoriza mudança regressiva nem dispensa registro. [a2d98f2]
 
 ## 20. Testes, CI, observabilidade e aceite
 
-Cada função pública DEVE possuir testes unitários, vetores de borda e regressão que cubram tipos, coerção, limites, Unicode, locale, nulos, `NaN`, infinidade, precisão, arredondamento, mutabilidade, determinismo e erros conforme aplicabilidade. [a2d98f2]
+Cada função pública DEVE possuir testes unitários, vetores de borda e regressão que cubram tipos, coerção, limites, Unicode, locale, nulos, `NaN`, infinidade, precisão, arredondamento, mutabilidade, determinismo e erros conforme aplicabilidade. [2ad9117]
 
-Validação DEVE comparar TypeScript, JavaScript e todos os formatos publicados, incluindo exports, `.d.ts`, browser real, worker quando suportado, Node, client/server, tree-shaking, importação granular, tamanhos, build reproduzível e consumo externo. [a2d98f2]
+Validação DEVE comparar TypeScript, JavaScript e todos os formatos publicados, incluindo exports, `.d.ts`, browser real, worker quando suportado, Node, client/server, tree-shaking, importação granular, tamanhos, build reproduzível e consumo externo. [2ad9117]
 
-Validação de distribuição DEVE extrair cada assinatura individual, comparar sua forma canônica com `.d.ts`, catálogo e exports reais, carregar em navegador todas as permutações materialmente distintas de artefatos e comprovar composição determinística, congelamento profundo, consulta externa, colisão segura e preservação dos registros anteriores. [a2d98f2]
+Validação de distribuição DEVE extrair cada assinatura individual, comparar sua forma canônica com `.d.ts`, catálogo e exports reais, carregar em navegador todas as permutações materialmente distintas de artefatos e comprovar composição determinística, congelamento profundo, consulta externa, colisão segura e preservação dos registros anteriores. [2ad9117]
 
-Testes de distribuição DEVEM verificar para cada escopo `basic ⊆ advanced ⊆ specialized` quando aplicável, equivalência do escopo raiz, ausência de escopos alheios no bundle, paridade de tipos e resultados entre build individual, combinado e completo. [a2d98f2]
+Testes de distribuição DEVEM verificar para cada escopo `basic ⊆ advanced ⊆ specialized` quando aplicável, equivalência do escopo raiz, ausência de escopos alheios no bundle, paridade de tipos e resultados entre build individual, combinado e completo. [2ad9117]
 
-Máscaras DEVEM possuir vetores de gramática, precedência, literal, classe, opcional, repetição, grupo, alternativa, prefixo/sufixo, preenchimento, transformação, diagnóstico, cache, limites e entradas adversariais. [a2d98f2]
+Máscaras DEVEM possuir vetores de gramática, precedência, literal, classe, opcional, repetição, grupo, alternativa, prefixo/sufixo, preenchimento, transformação, diagnóstico, cache, limites e entradas adversariais. [2ad9117]
 
-Validadores DEVEM testar padrões prontos, regex confiável/não confiável, composição, posição/motivo, curto-circuito e contenção de abuso; teste de segurança que dependa de isolamento inexistente DEVE bloquear a capacidade correspondente. [a2d98f2]
+Validadores DEVEM testar padrões prontos, regex confiável/não confiável, composição, posição/motivo, curto-circuito e contenção de abuso; teste de segurança que dependa de isolamento inexistente DEVE bloquear a capacidade correspondente. [2ad9117]
 
-Operadores lógicos DEVEM testar aridade zero e arbitrária, estrito, truthiness, paridade XOR, exatamente um, valores orientados, `null`, `undefined`, tipo inválido e ordem/curto-circuito eager/lazy. [a2d98f2]
+Operadores lógicos DEVEM testar aridade zero e arbitrária, estrito, truthiness, paridade XOR, exatamente um, valores orientados, `null`, `undefined`, tipo inválido e ordem/curto-circuito eager/lazy. [2ad9117]
 
-`npm test` DEVE orquestrar conjuntos determinísticos com mocks e fixtures locais; integração externa real DEVE ser opt-in e sua falha só PODE afetar o aceite quando demonstrar causa no produto. [a2d98f2]
+`npm test` DEVE orquestrar conjuntos determinísticos com mocks e fixtures locais; integração externa real DEVE ser opt-in e sua falha só PODE afetar o aceite quando demonstrar causa no produto. [2ad9117]
 
-Execução local e CI DEVEM preservar severidade, caso, duração e erro em estrutura estável; cor e animação são permitidas localmente, mas DEVEM ser desativadas em CI e nunca substituir dados parseáveis. [a2d98f2]
+Execução local e CI DEVEM preservar severidade, caso, duração e erro em estrutura estável; cor e animação são permitidas localmente, mas DEVEM ser desativadas em CI e nunca substituir dados parseáveis. [2ad9117]
 
-Workflow DEVE executar quando runtime, teste, fixture, manifesto, dependência, configuração lógica ou próprio workflow mudar; alteração exclusivamente documental NÃO DEVE disparar matriz técnica, e `workflow_dispatch` DEVE permitir execução manual. [a2d98f2]
+Workflow DEVE executar quando runtime, teste, fixture, manifesto, dependência, configuração lógica ou próprio workflow mudar; alteração exclusivamente documental NÃO DEVE disparar matriz técnica, e `workflow_dispatch` DEVE permitir execução manual. [2ad9117]
 
-Observabilidade de build DEVE registrar versões de runtime/toolchain, target ECMAScript, duração, contagem de testes, tamanhos e hashes sem segredos; métrica projetada DEVE ser distinguida de medição observada. [a2d98f2]
+Observabilidade de build DEVE registrar versões de runtime/toolchain, target ECMAScript, duração, contagem de testes, tamanhos e hashes sem segredos; métrica projetada DEVE ser distinguida de medição observada. [2ad9117]
 
-Teste não executado NÃO DEVE ser declarado aprovado; publicação exige todas as validações obrigatórias executadas no artefato efetivamente distribuído. [a2d98f2]
+Teste não executado NÃO DEVE ser declarado aprovado; publicação exige todas as validações obrigatórias executadas no artefato efetivamente distribuído. [2ad9117]
 
 ## 21. Documentação, licença e rastreabilidade
 
-README, referência da API, exemplos, manifesto e changelog DEVEM acompanhar a superfície real e diferenciar `stable`, `experimental`, `deprecated`, `planned` e `unavailable`. [a2d98f2]
+README, referência da API, exemplos, manifesto e changelog DEVEM acompanhar a superfície real e diferenciar `stable`, `experimental`, `deprecated`, `planned` e `unavailable`. [2ad9117]
 
-Documentação de função DEVE explicar finalidade, parâmetros, retorno, efeitos, falhas, precisão, locale, mutabilidade, complexidade ou restrição relevante e incluir exemplo mínimo quando reduzir ambiguidade. [a2d98f2]
+Documentação de função DEVE explicar finalidade, parâmetros, retorno, efeitos, falhas, precisão, locale, mutabilidade, complexidade ou restrição relevante e incluir exemplo mínimo quando reduzir ambiguidade. [2ad9117]
 
-Fonte humana editável e artefato comentável DEVEM manter cabeçalho conforme `./AGENTS.md` e `./.ia.rules/resources/traceability.md`; build minificado DEVE preservar banner ultrassucinto. [a2d98f2]
+Fonte humana editável e artefato comentável DEVEM manter cabeçalho conforme `./AGENTS.md` e `./.ia.rules/resources/traceability.md`; build minificado DEVE preservar banner ultrassucinto. [2ad9117]
 
 Licença do projeto: Mozilla Public License 2.0, conforme `./LICENSE`. Autor comprovado: JeanCarloEM. Repositório comprovado: `https://github.com/jcempro/FormulaKit`. Site comprovado: `https://jeancarloem.com`.
 
-Sentenças implementáveis usam `[PENDENTE-CODIGO]` até a FT técnica produzir commit causal; a sincronização futura DEVE substituir somente marcadores materializados pelo hash abreviado validado e manter mapa bidirecional sentença→FT→artefato→commit. [a2d98f2]
+Sentenças implementáveis usam `[PENDENTE-CODIGO]` até a FT técnica produzir commit causal; a sincronização futura DEVE substituir somente marcadores materializados pelo hash abreviado validado e manter mapa bidirecional sentença→FT→artefato→commit. [2ad9117]
 
 ## 22. Decisões e ordem de implementação
 
-Antes da implementação material, decisão humana DEVE aprovar o nome do pacote npm, o catálogo mínimo da primeira versão e os formatos de distribuição que possuam consumidor comprovado. [a2d98f2]
+Antes da implementação material, decisão humana DEVE aprovar o nome do pacote npm, o catálogo mínimo da primeira versão e os formatos de distribuição que possuam consumidor comprovado. [2ad9117]
 
-A implementação DEVE seguir: decisões e catálogo → schemas/manifesto/assinatura → escopos/níveis → primitivas → famílias priorizadas → máscaras/validação/lógica → API/exports/tipos → builds granulares/combinados/completo e registro global → testes multiformato → baseline/budgets → tarball consumidor → CI → publicação autorizada → sincronização causal. [a2d98f2]
+A implementação DEVE seguir: decisões e catálogo → schemas/manifesto/assinatura → escopos/níveis → primitivas → famílias priorizadas → máscaras/validação/lógica → API/exports/tipos → builds granulares/combinados/completo e registro global → testes multiformato → baseline/budgets → tarball consumidor → CI → publicação autorizada → sincronização causal. [2ad9117]
 
-Prioridade inicial DEVERIA favorecer contratos transversais e famílias com maior reutilização — texto, números, coleções, datas, validação e dígitos — antes de expandir a cobertura financeira ou equivalências extensas de planilhas. [PENDENTE-CODIGO]
+Prioridade inicial DEVERIA favorecer contratos transversais e famílias com maior reutilização — texto, números, coleções, datas, validação e dígitos — antes de expandir a cobertura financeira ou equivalências extensas de planilhas.
 
-A FT-002 está expressamente autorizada pelo prompt da FT-004 para iniciar após o commit desta ampliação normativa e prosseguir até conclusão técnica; publicação remota continua condicionada a credenciais, ambiente e validações exigidas por este RCF. [PENDENTE-CODIGO]
+A FT-002 foi expressamente autorizada pelo prompt da FT-004, alcançou conclusão técnica e mantém a publicação remota condicionada a credenciais, ambiente e validações exigidas por este RCF.

@@ -60,15 +60,21 @@
     },
     {
       "artifacts": [
-        "src/catalog/manifest.json",
-        "src/index.ts"
+        "README.md",
+        "constructor/build.mjs",
+        "constructor/measure.mjs",
+        "constructor/verify-dist.mjs",
+        "docs/API.md",
+        "package.json",
+        "src/browser.ts",
+        "tests/distribution.test.mjs"
       ],
-      "commit": "8c89028a22506f1b65ac56971636fc92ea2d98f2",
+      "commit": "5d361b0ef6f7354f575611de40bc5a6322ad9117",
       "ft": "FT-002",
-      "id": "7177c61badc677114e7e6d64",
+      "id": "952be97723558c700e7bbdaf",
       "line": 21,
       "rcf": "RCF.md",
-      "sentenceSha256": "bdee500a96872a552fceeae210aafdf8c07e7b16b4bf8b522352612745d5c365",
+      "sentenceSha256": "db92cd2606fd5443b41d7e907e7ef45e30a97016b903338ab3ebc03020c5645f",
       "state": "synchronized",
       "syncCommit": ""
     },
@@ -144,10 +150,16 @@
     },
     {
       "artifacts": [
-        "src/catalog/manifest.json",
-        "src/index.ts"
+        "README.md",
+        "constructor/build.mjs",
+        "constructor/measure.mjs",
+        "constructor/verify-dist.mjs",
+        "docs/API.md",
+        "package.json",
+        "src/browser.ts",
+        "tests/distribution.test.mjs"
       ],
-      "commit": "8c89028a22506f1b65ac56971636fc92ea2d98f2",
+      "commit": "5d361b0ef6f7354f575611de40bc5a6322ad9117",
       "ft": "FT-002",
       "id": "0dfc1ae2461bef87fd8f2647",
       "line": 46,
@@ -172,10 +184,16 @@
     },
     {
       "artifacts": [
-        "src/catalog/manifest.json",
-        "src/index.ts"
+        "README.md",
+        "constructor/build.mjs",
+        "constructor/measure.mjs",
+        "constructor/verify-dist.mjs",
+        "docs/API.md",
+        "package.json",
+        "src/browser.ts",
+        "tests/distribution.test.mjs"
       ],
-      "commit": "8c89028a22506f1b65ac56971636fc92ea2d98f2",
+      "commit": "5d361b0ef6f7354f575611de40bc5a6322ad9117",
       "ft": "FT-002",
       "id": "593b619eb2f7a593c7c65a17",
       "line": 50,
@@ -1276,10 +1294,16 @@
     },
     {
       "artifacts": [
-        "src/catalog/manifest.json",
-        "src/index.ts"
+        "README.md",
+        "constructor/build.mjs",
+        "constructor/measure.mjs",
+        "constructor/verify-dist.mjs",
+        "docs/API.md",
+        "package.json",
+        "src/browser.ts",
+        "tests/distribution.test.mjs"
       ],
-      "commit": "8c89028a22506f1b65ac56971636fc92ea2d98f2",
+      "commit": "5d361b0ef6f7354f575611de40bc5a6322ad9117",
       "ft": "FT-002",
       "id": "166d3a7eb72392a685b5bba1",
       "line": 240,
@@ -1290,10 +1314,16 @@
     },
     {
       "artifacts": [
-        "src/catalog/manifest.json",
-        "src/index.ts"
+        "README.md",
+        "constructor/build.mjs",
+        "constructor/measure.mjs",
+        "constructor/verify-dist.mjs",
+        "docs/API.md",
+        "package.json",
+        "src/browser.ts",
+        "tests/distribution.test.mjs"
       ],
-      "commit": "8c89028a22506f1b65ac56971636fc92ea2d98f2",
+      "commit": "5d361b0ef6f7354f575611de40bc5a6322ad9117",
       "ft": "FT-002",
       "id": "785811fcb50d035fe44134ca",
       "line": 242,
@@ -1304,10 +1334,16 @@
     },
     {
       "artifacts": [
-        "src/catalog/manifest.json",
-        "src/index.ts"
+        "README.md",
+        "constructor/build.mjs",
+        "constructor/measure.mjs",
+        "constructor/verify-dist.mjs",
+        "docs/API.md",
+        "package.json",
+        "src/browser.ts",
+        "tests/distribution.test.mjs"
       ],
-      "commit": "8c89028a22506f1b65ac56971636fc92ea2d98f2",
+      "commit": "5d361b0ef6f7354f575611de40bc5a6322ad9117",
       "ft": "FT-002",
       "id": "86b3e48be1061b991238a831",
       "line": 244,
@@ -1318,10 +1354,16 @@
     },
     {
       "artifacts": [
-        "src/catalog/manifest.json",
-        "src/index.ts"
+        "README.md",
+        "constructor/build.mjs",
+        "constructor/measure.mjs",
+        "constructor/verify-dist.mjs",
+        "docs/API.md",
+        "package.json",
+        "src/browser.ts",
+        "tests/distribution.test.mjs"
       ],
-      "commit": "8c89028a22506f1b65ac56971636fc92ea2d98f2",
+      "commit": "5d361b0ef6f7354f575611de40bc5a6322ad9117",
       "ft": "FT-002",
       "id": "fe70bcf517d3a773a0552de4",
       "line": 246,
@@ -1332,29 +1374,21 @@
     },
     {
       "artifacts": [
-        "src/catalog/manifest.json",
-        "src/index.ts"
+        "README.md",
+        "constructor/build.mjs",
+        "constructor/measure.mjs",
+        "constructor/verify-dist.mjs",
+        "docs/API.md",
+        "package.json",
+        "src/browser.ts",
+        "tests/distribution.test.mjs"
       ],
-      "commit": "8c89028a22506f1b65ac56971636fc92ea2d98f2",
+      "commit": "5d361b0ef6f7354f575611de40bc5a6322ad9117",
       "ft": "FT-002",
       "id": "af4d46ee53d9c6586018691e",
       "line": 248,
       "rcf": "RCF.md",
       "sentenceSha256": "2ef3b187f9888ea62da8fad1004a7f5a339eb52e3119c0f5710505d1666f7491",
-      "state": "synchronized",
-      "syncCommit": ""
-    },
-    {
-      "artifacts": [
-        "src/catalog/manifest.json",
-        "src/index.ts"
-      ],
-      "commit": "8c89028a22506f1b65ac56971636fc92ea2d98f2",
-      "ft": "FT-002",
-      "id": "da3d6b1caf3c0c6d89fdb09b",
-      "line": 250,
-      "rcf": "RCF.md",
-      "sentenceSha256": "b5cbe8f6b3978f2788638dc2671a4578b8ba8dec579b6eba1711b150cb403f16",
       "state": "synchronized",
       "syncCommit": ""
     },
@@ -1374,13 +1408,17 @@
     },
     {
       "artifacts": [
+        "README.md",
         "constructor/build.mjs",
+        "constructor/measure.mjs",
+        "constructor/verify-dist.mjs",
+        "docs/API.md",
         "package.json",
-        "src/manifest.ts",
-        "tests/distribution.test.ts"
+        "src/browser.ts",
+        "tests/distribution.test.mjs"
       ],
-      "commit": "8c89028a22506f1b65ac56971636fc92ea2d98f2",
-      "ft": "FT-004",
+      "commit": "5d361b0ef6f7354f575611de40bc5a6322ad9117",
+      "ft": "FT-002",
       "id": "4ebebbb2d8d43ee431316081",
       "line": 252,
       "rcf": "RCF.md",
@@ -1404,12 +1442,17 @@
     },
     {
       "artifacts": [
+        "README.md",
         "constructor/build.mjs",
-        "src/manifest.ts",
+        "constructor/measure.mjs",
+        "constructor/verify-dist.mjs",
+        "docs/API.md",
+        "package.json",
+        "src/browser.ts",
         "tests/distribution.test.mjs"
       ],
-      "commit": "8c89028a22506f1b65ac56971636fc92ea2d98f2",
-      "ft": "FT-004",
+      "commit": "5d361b0ef6f7354f575611de40bc5a6322ad9117",
+      "ft": "FT-002",
       "id": "5cb0f36eb7e5f0a1a4ee5651",
       "line": 254,
       "rcf": "RCF.md",
@@ -1419,13 +1462,17 @@
     },
     {
       "artifacts": [
+        "README.md",
         "constructor/build.mjs",
+        "constructor/measure.mjs",
+        "constructor/verify-dist.mjs",
+        "docs/API.md",
         "package.json",
-        "src/manifest.ts",
-        "tests/distribution.test.ts"
+        "src/browser.ts",
+        "tests/distribution.test.mjs"
       ],
-      "commit": "8c89028a22506f1b65ac56971636fc92ea2d98f2",
-      "ft": "FT-004",
+      "commit": "5d361b0ef6f7354f575611de40bc5a6322ad9117",
+      "ft": "FT-002",
       "id": "96479fc3bec553fd0ee72a11",
       "line": 256,
       "rcf": "RCF.md",
@@ -1435,13 +1482,17 @@
     },
     {
       "artifacts": [
+        "README.md",
         "constructor/build.mjs",
+        "constructor/measure.mjs",
+        "constructor/verify-dist.mjs",
+        "docs/API.md",
         "package.json",
-        "src/manifest.ts",
-        "tests/distribution.test.ts"
+        "src/browser.ts",
+        "tests/distribution.test.mjs"
       ],
-      "commit": "8c89028a22506f1b65ac56971636fc92ea2d98f2",
-      "ft": "FT-004",
+      "commit": "5d361b0ef6f7354f575611de40bc5a6322ad9117",
+      "ft": "FT-002",
       "id": "6cc7d231431aa6dae47c150b",
       "line": 258,
       "rcf": "RCF.md",
@@ -1451,13 +1502,17 @@
     },
     {
       "artifacts": [
+        "README.md",
         "constructor/build.mjs",
+        "constructor/measure.mjs",
+        "constructor/verify-dist.mjs",
+        "docs/API.md",
         "package.json",
-        "src/manifest.ts",
-        "tests/distribution.test.ts"
+        "src/browser.ts",
+        "tests/distribution.test.mjs"
       ],
-      "commit": "8c89028a22506f1b65ac56971636fc92ea2d98f2",
-      "ft": "FT-004",
+      "commit": "5d361b0ef6f7354f575611de40bc5a6322ad9117",
+      "ft": "FT-002",
       "id": "62cf2a4e9ec9494727835a1c",
       "line": 260,
       "rcf": "RCF.md",
@@ -1467,13 +1522,17 @@
     },
     {
       "artifacts": [
+        "README.md",
         "constructor/build.mjs",
+        "constructor/measure.mjs",
+        "constructor/verify-dist.mjs",
+        "docs/API.md",
         "package.json",
-        "src/manifest.ts",
-        "tests/distribution.test.ts"
+        "src/browser.ts",
+        "tests/distribution.test.mjs"
       ],
-      "commit": "8c89028a22506f1b65ac56971636fc92ea2d98f2",
-      "ft": "FT-004",
+      "commit": "5d361b0ef6f7354f575611de40bc5a6322ad9117",
+      "ft": "FT-002",
       "id": "92907304f37a066fd79e9a7a",
       "line": 262,
       "rcf": "RCF.md",
@@ -1483,13 +1542,17 @@
     },
     {
       "artifacts": [
+        "README.md",
         "constructor/build.mjs",
+        "constructor/measure.mjs",
+        "constructor/verify-dist.mjs",
+        "docs/API.md",
         "package.json",
-        "src/manifest.ts",
-        "tests/distribution.test.ts"
+        "src/browser.ts",
+        "tests/distribution.test.mjs"
       ],
-      "commit": "8c89028a22506f1b65ac56971636fc92ea2d98f2",
-      "ft": "FT-004",
+      "commit": "5d361b0ef6f7354f575611de40bc5a6322ad9117",
+      "ft": "FT-002",
       "id": "f83b24015f51570543cb579d",
       "line": 264,
       "rcf": "RCF.md",
@@ -1499,13 +1562,17 @@
     },
     {
       "artifacts": [
+        "README.md",
         "constructor/build.mjs",
+        "constructor/measure.mjs",
+        "constructor/verify-dist.mjs",
+        "docs/API.md",
         "package.json",
-        "src/manifest.ts",
-        "tests/distribution.test.ts"
+        "src/browser.ts",
+        "tests/distribution.test.mjs"
       ],
-      "commit": "8c89028a22506f1b65ac56971636fc92ea2d98f2",
-      "ft": "FT-004",
+      "commit": "5d361b0ef6f7354f575611de40bc5a6322ad9117",
+      "ft": "FT-002",
       "id": "2439a60f0b0ec5e06c8c65f2",
       "line": 266,
       "rcf": "RCF.md",
@@ -1515,13 +1582,17 @@
     },
     {
       "artifacts": [
+        "README.md",
         "constructor/build.mjs",
+        "constructor/measure.mjs",
+        "constructor/verify-dist.mjs",
+        "docs/API.md",
         "package.json",
-        "src/manifest.ts",
-        "tests/distribution.test.ts"
+        "src/browser.ts",
+        "tests/distribution.test.mjs"
       ],
-      "commit": "8c89028a22506f1b65ac56971636fc92ea2d98f2",
-      "ft": "FT-004",
+      "commit": "5d361b0ef6f7354f575611de40bc5a6322ad9117",
+      "ft": "FT-002",
       "id": "fb415a1c808dbc6e3da950d1",
       "line": 268,
       "rcf": "RCF.md",
@@ -1531,13 +1602,17 @@
     },
     {
       "artifacts": [
+        "README.md",
         "constructor/build.mjs",
+        "constructor/measure.mjs",
+        "constructor/verify-dist.mjs",
+        "docs/API.md",
         "package.json",
-        "src/manifest.ts",
-        "tests/distribution.test.ts"
+        "src/browser.ts",
+        "tests/distribution.test.mjs"
       ],
-      "commit": "8c89028a22506f1b65ac56971636fc92ea2d98f2",
-      "ft": "FT-004",
+      "commit": "5d361b0ef6f7354f575611de40bc5a6322ad9117",
+      "ft": "FT-002",
       "id": "6589ec45ec9aa6aed6ce2d32",
       "line": 270,
       "rcf": "RCF.md",
@@ -1547,13 +1622,17 @@
     },
     {
       "artifacts": [
+        "README.md",
         "constructor/build.mjs",
+        "constructor/measure.mjs",
+        "constructor/verify-dist.mjs",
+        "docs/API.md",
         "package.json",
-        "src/manifest.ts",
-        "tests/distribution.test.ts"
+        "src/browser.ts",
+        "tests/distribution.test.mjs"
       ],
-      "commit": "8c89028a22506f1b65ac56971636fc92ea2d98f2",
-      "ft": "FT-004",
+      "commit": "5d361b0ef6f7354f575611de40bc5a6322ad9117",
+      "ft": "FT-002",
       "id": "f43ebd46b2c3650d712a2bb1",
       "line": 272,
       "rcf": "RCF.md",
@@ -1563,17 +1642,41 @@
     },
     {
       "artifacts": [
+        "README.md",
         "constructor/build.mjs",
+        "constructor/measure.mjs",
+        "constructor/verify-dist.mjs",
+        "docs/API.md",
         "package.json",
-        "src/manifest.ts",
-        "tests/distribution.test.ts"
+        "src/browser.ts",
+        "tests/distribution.test.mjs"
       ],
-      "commit": "8c89028a22506f1b65ac56971636fc92ea2d98f2",
-      "ft": "FT-004",
+      "commit": "5d361b0ef6f7354f575611de40bc5a6322ad9117",
+      "ft": "FT-002",
       "id": "824bc7dedc2c8a0f69fc2309",
       "line": 274,
       "rcf": "RCF.md",
       "sentenceSha256": "d8fb8dec1ee559377d90d9399af4e0ce8890a60cfa6e8fc41385469928d40fc2",
+      "state": "synchronized",
+      "syncCommit": ""
+    },
+    {
+      "artifacts": [
+        "README.md",
+        "constructor/build.mjs",
+        "constructor/measure.mjs",
+        "constructor/verify-dist.mjs",
+        "docs/API.md",
+        "package.json",
+        "src/browser.ts",
+        "tests/distribution.test.mjs"
+      ],
+      "commit": "5d361b0ef6f7354f575611de40bc5a6322ad9117",
+      "ft": "FT-002",
+      "id": "da3d6b1caf3c0c6d89fdb09b",
+      "line": 276,
+      "rcf": "RCF.md",
+      "sentenceSha256": "b5cbe8f6b3978f2788638dc2671a4578b8ba8dec579b6eba1711b150cb403f16",
       "state": "synchronized",
       "syncCommit": ""
     },
@@ -1609,11 +1712,16 @@
     },
     {
       "artifacts": [
-        "src/datetime/advanced.ts",
-        "src/internal.ts",
-        "src/validation/advanced.ts"
+        "README.md",
+        "constructor/build.mjs",
+        "constructor/measure.mjs",
+        "constructor/verify-dist.mjs",
+        "docs/API.md",
+        "package.json",
+        "src/browser.ts",
+        "tests/distribution.test.mjs"
       ],
-      "commit": "8c89028a22506f1b65ac56971636fc92ea2d98f2",
+      "commit": "5d361b0ef6f7354f575611de40bc5a6322ad9117",
       "ft": "FT-002",
       "id": "d3a0517d7b6e84b078fa14e7",
       "line": 288,
@@ -1624,30 +1732,21 @@
     },
     {
       "artifacts": [
-        "src/datetime/advanced.ts",
-        "src/internal.ts",
-        "src/validation/advanced.ts"
+        "README.md",
+        "constructor/build.mjs",
+        "constructor/measure.mjs",
+        "constructor/verify-dist.mjs",
+        "docs/API.md",
+        "package.json",
+        "src/browser.ts",
+        "tests/distribution.test.mjs"
       ],
-      "commit": "8c89028a22506f1b65ac56971636fc92ea2d98f2",
+      "commit": "5d361b0ef6f7354f575611de40bc5a6322ad9117",
       "ft": "FT-002",
       "id": "7b97cfd6d2fc11e829a4179c",
       "line": 290,
       "rcf": "RCF.md",
       "sentenceSha256": "942100c6efd917fece5964345d08612de628db479efd2084af8ead3032de7b22",
-      "state": "synchronized",
-      "syncCommit": ""
-    },
-    {
-      "artifacts": [
-        "package.json",
-        "scripts/build.mjs"
-      ],
-      "commit": "8c89028a22506f1b65ac56971636fc92ea2d98f2",
-      "ft": "FT-002",
-      "id": "1f9d4b326584722e3be28ef1",
-      "line": 290,
-      "rcf": "RCF.md",
-      "sentenceSha256": "b285a632f4275bbc9e2be8addff0e572fff4d12959e8606c429dec9811d9f5d0",
       "state": "synchronized",
       "syncCommit": ""
     },
@@ -1668,40 +1767,16 @@
     },
     {
       "artifacts": [
-        "package.json",
-        "scripts/build.mjs"
-      ],
-      "commit": "8c89028a22506f1b65ac56971636fc92ea2d98f2",
-      "ft": "FT-002",
-      "id": "49c5f270332114d79e028d4b",
-      "line": 292,
-      "rcf": "RCF.md",
-      "sentenceSha256": "298d2243fb6e5af211517948784466e59a4a63b018b83a7f597d01e144c32cf9",
-      "state": "synchronized",
-      "syncCommit": ""
-    },
-    {
-      "artifacts": [
-        "package.json",
-        "scripts/build.mjs"
-      ],
-      "commit": "8c89028a22506f1b65ac56971636fc92ea2d98f2",
-      "ft": "FT-002",
-      "id": "204a2aafe2b8ef7156ea0882",
-      "line": 294,
-      "rcf": "RCF.md",
-      "sentenceSha256": "3958f1a19956790934a333b0d5f61149bea8fda164cbd1062bbdbe0e3b0311f0",
-      "state": "synchronized",
-      "syncCommit": ""
-    },
-    {
-      "artifacts": [
-        "config/build.json",
+        "README.md",
         "constructor/build.mjs",
         "constructor/measure.mjs",
-        "package.json"
+        "constructor/verify-dist.mjs",
+        "docs/API.md",
+        "package.json",
+        "src/browser.ts",
+        "tests/distribution.test.mjs"
       ],
-      "commit": "8c89028a22506f1b65ac56971636fc92ea2d98f2",
+      "commit": "5d361b0ef6f7354f575611de40bc5a6322ad9117",
       "ft": "FT-002",
       "id": "443d8b62eaa50a5f70a4030e",
       "line": 296,
@@ -1712,26 +1787,16 @@
     },
     {
       "artifacts": [
-        "package.json",
-        "scripts/build.mjs"
-      ],
-      "commit": "8c89028a22506f1b65ac56971636fc92ea2d98f2",
-      "ft": "FT-002",
-      "id": "52b03ed0be9069c33c5a0083",
-      "line": 296,
-      "rcf": "RCF.md",
-      "sentenceSha256": "a4e59f9d29ae2f47a79ba0468de7bd7474f0bc2bb381600d908ed8e6323af36e",
-      "state": "synchronized",
-      "syncCommit": ""
-    },
-    {
-      "artifacts": [
-        "config/build.json",
+        "README.md",
         "constructor/build.mjs",
         "constructor/measure.mjs",
-        "package.json"
+        "constructor/verify-dist.mjs",
+        "docs/API.md",
+        "package.json",
+        "src/browser.ts",
+        "tests/distribution.test.mjs"
       ],
-      "commit": "8c89028a22506f1b65ac56971636fc92ea2d98f2",
+      "commit": "5d361b0ef6f7354f575611de40bc5a6322ad9117",
       "ft": "FT-002",
       "id": "5edf46a8c6d02606542250e4",
       "line": 298,
@@ -1742,26 +1807,16 @@
     },
     {
       "artifacts": [
-        "package.json",
-        "scripts/build.mjs"
-      ],
-      "commit": "8c89028a22506f1b65ac56971636fc92ea2d98f2",
-      "ft": "FT-002",
-      "id": "6b9c9e28f2bf06994151bd80",
-      "line": 298,
-      "rcf": "RCF.md",
-      "sentenceSha256": "c774aa3050144ae4138e2e6132367541c11974bb0ca53e81f41136432ab21da1",
-      "state": "synchronized",
-      "syncCommit": ""
-    },
-    {
-      "artifacts": [
-        "config/build.json",
+        "README.md",
         "constructor/build.mjs",
         "constructor/measure.mjs",
-        "package.json"
+        "constructor/verify-dist.mjs",
+        "docs/API.md",
+        "package.json",
+        "src/browser.ts",
+        "tests/distribution.test.mjs"
       ],
-      "commit": "8c89028a22506f1b65ac56971636fc92ea2d98f2",
+      "commit": "5d361b0ef6f7354f575611de40bc5a6322ad9117",
       "ft": "FT-002",
       "id": "1f6f8c68d31ad68a877f05bf",
       "line": 300,
@@ -1772,26 +1827,16 @@
     },
     {
       "artifacts": [
-        "package.json",
-        "scripts/build.mjs"
-      ],
-      "commit": "8c89028a22506f1b65ac56971636fc92ea2d98f2",
-      "ft": "FT-002",
-      "id": "8dcbb72356850b6b287c2948",
-      "line": 300,
-      "rcf": "RCF.md",
-      "sentenceSha256": "710bb7c34d2a8b3c9c809d334084114b6291eca72c9a05420aa8f5418604a4ef",
-      "state": "synchronized",
-      "syncCommit": ""
-    },
-    {
-      "artifacts": [
-        "config/build.json",
+        "README.md",
         "constructor/build.mjs",
         "constructor/measure.mjs",
-        "package.json"
+        "constructor/verify-dist.mjs",
+        "docs/API.md",
+        "package.json",
+        "src/browser.ts",
+        "tests/distribution.test.mjs"
       ],
-      "commit": "8c89028a22506f1b65ac56971636fc92ea2d98f2",
+      "commit": "5d361b0ef6f7354f575611de40bc5a6322ad9117",
       "ft": "FT-002",
       "id": "dc3daec928b9a59950aee84d",
       "line": 302,
@@ -1802,26 +1847,16 @@
     },
     {
       "artifacts": [
-        "package.json",
-        "scripts/build.mjs"
-      ],
-      "commit": "8c89028a22506f1b65ac56971636fc92ea2d98f2",
-      "ft": "FT-002",
-      "id": "1051522e0b2d0b946c0dd843",
-      "line": 302,
-      "rcf": "RCF.md",
-      "sentenceSha256": "a8b816cfd521009e3fddbb32c36393c19a4962052eaa69317b243d5400dd4092",
-      "state": "synchronized",
-      "syncCommit": ""
-    },
-    {
-      "artifacts": [
-        "config/build.json",
+        "README.md",
         "constructor/build.mjs",
         "constructor/measure.mjs",
-        "package.json"
+        "constructor/verify-dist.mjs",
+        "docs/API.md",
+        "package.json",
+        "src/browser.ts",
+        "tests/distribution.test.mjs"
       ],
-      "commit": "8c89028a22506f1b65ac56971636fc92ea2d98f2",
+      "commit": "5d361b0ef6f7354f575611de40bc5a6322ad9117",
       "ft": "FT-002",
       "id": "b3b6585700ec1a923fa99112",
       "line": 304,
@@ -1832,26 +1867,16 @@
     },
     {
       "artifacts": [
-        "package.json",
-        "scripts/build.mjs"
-      ],
-      "commit": "8c89028a22506f1b65ac56971636fc92ea2d98f2",
-      "ft": "FT-002",
-      "id": "b34e564f5c9191a3ff9a1e3c",
-      "line": 304,
-      "rcf": "RCF.md",
-      "sentenceSha256": "795e0cf03a7c8a590cc9d826e964368d3515cf98eb2f31f147e23869105fdb44",
-      "state": "synchronized",
-      "syncCommit": ""
-    },
-    {
-      "artifacts": [
-        "config/build.json",
+        "README.md",
         "constructor/build.mjs",
         "constructor/measure.mjs",
-        "package.json"
+        "constructor/verify-dist.mjs",
+        "docs/API.md",
+        "package.json",
+        "src/browser.ts",
+        "tests/distribution.test.mjs"
       ],
-      "commit": "8c89028a22506f1b65ac56971636fc92ea2d98f2",
+      "commit": "5d361b0ef6f7354f575611de40bc5a6322ad9117",
       "ft": "FT-002",
       "id": "55fd1add37f0e3e1a03dfbbe",
       "line": 306,
@@ -1862,26 +1887,16 @@
     },
     {
       "artifacts": [
-        "package.json",
-        "scripts/build.mjs"
-      ],
-      "commit": "8c89028a22506f1b65ac56971636fc92ea2d98f2",
-      "ft": "FT-002",
-      "id": "f363bf55037bcf1639cffd94",
-      "line": 306,
-      "rcf": "RCF.md",
-      "sentenceSha256": "29646c651f36e625d9e95c5b721798e12aef6b3a122e6efb540a42b70f41e704",
-      "state": "synchronized",
-      "syncCommit": ""
-    },
-    {
-      "artifacts": [
-        "config/build.json",
+        "README.md",
         "constructor/build.mjs",
         "constructor/measure.mjs",
-        "package.json"
+        "constructor/verify-dist.mjs",
+        "docs/API.md",
+        "package.json",
+        "src/browser.ts",
+        "tests/distribution.test.mjs"
       ],
-      "commit": "8c89028a22506f1b65ac56971636fc92ea2d98f2",
+      "commit": "5d361b0ef6f7354f575611de40bc5a6322ad9117",
       "ft": "FT-002",
       "id": "e4376d817cc8b05ad6b25c75",
       "line": 308,
@@ -1906,12 +1921,16 @@
     },
     {
       "artifacts": [
-        "config/build.json",
+        "README.md",
         "constructor/build.mjs",
         "constructor/measure.mjs",
-        "package.json"
+        "constructor/verify-dist.mjs",
+        "docs/API.md",
+        "package.json",
+        "src/browser.ts",
+        "tests/distribution.test.mjs"
       ],
-      "commit": "8c89028a22506f1b65ac56971636fc92ea2d98f2",
+      "commit": "5d361b0ef6f7354f575611de40bc5a6322ad9117",
       "ft": "FT-002",
       "id": "748362cc48d1f3af96980a0b",
       "line": 310,
@@ -1922,12 +1941,16 @@
     },
     {
       "artifacts": [
-        "config/build.json",
+        "README.md",
         "constructor/build.mjs",
         "constructor/measure.mjs",
-        "package.json"
+        "constructor/verify-dist.mjs",
+        "docs/API.md",
+        "package.json",
+        "src/browser.ts",
+        "tests/distribution.test.mjs"
       ],
-      "commit": "8c89028a22506f1b65ac56971636fc92ea2d98f2",
+      "commit": "5d361b0ef6f7354f575611de40bc5a6322ad9117",
       "ft": "FT-002",
       "id": "ea1761a8a1fb5b201fd149f5",
       "line": 312,
@@ -1938,27 +1961,17 @@
     },
     {
       "artifacts": [
-        "package-lock.json",
-        "package.json"
-      ],
-      "commit": "8c89028a22506f1b65ac56971636fc92ea2d98f2",
-      "ft": "FT-002",
-      "id": "0d0c4fc50ca71404a5bab313",
-      "line": 314,
-      "rcf": "RCF.md",
-      "sentenceSha256": "299058b479bebecf5b0715728261b125836d392c81550168f813ed837986116b",
-      "state": "synchronized",
-      "syncCommit": ""
-    },
-    {
-      "artifacts": [
+        "README.md",
         "constructor/build.mjs",
+        "constructor/measure.mjs",
+        "constructor/verify-dist.mjs",
+        "docs/API.md",
         "package.json",
-        "src/manifest.ts",
-        "tests/distribution.test.ts"
+        "src/browser.ts",
+        "tests/distribution.test.mjs"
       ],
-      "commit": "8c89028a22506f1b65ac56971636fc92ea2d98f2",
-      "ft": "FT-004",
+      "commit": "5d361b0ef6f7354f575611de40bc5a6322ad9117",
+      "ft": "FT-002",
       "id": "f48d236fa553730fdff9e9c0",
       "line": 314,
       "rcf": "RCF.md",
@@ -1968,43 +1981,61 @@
     },
     {
       "artifacts": [
-        "package-lock.json",
-        "package.json"
+        "README.md",
+        "constructor/build.mjs",
+        "constructor/measure.mjs",
+        "constructor/verify-dist.mjs",
+        "docs/API.md",
+        "package.json",
+        "src/browser.ts",
+        "tests/distribution.test.mjs"
       ],
-      "commit": "8c89028a22506f1b65ac56971636fc92ea2d98f2",
+      "commit": "5d361b0ef6f7354f575611de40bc5a6322ad9117",
       "ft": "FT-002",
-      "id": "32cf76e8cb9864c6f765813a",
-      "line": 316,
-      "rcf": "RCF.md",
-      "sentenceSha256": "8b3d944ce0fc876138cd48b094cbe028ca9c20eb75bc4e9bb797c1621a7a494f",
-      "state": "synchronized",
-      "syncCommit": ""
-    },
-    {
-      "artifacts": [
-        "package-lock.json",
-        "package.json"
-      ],
-      "commit": "8c89028a22506f1b65ac56971636fc92ea2d98f2",
-      "ft": "FT-002",
-      "id": "53ef3309a684b734a542625e",
+      "id": "1f9d4b326584722e3be28ef1",
       "line": 318,
       "rcf": "RCF.md",
-      "sentenceSha256": "4de0ae41b7da3bd598246dafd64fcf96d4b5e50b9264f0a87ff5f381cb294a5c",
+      "sentenceSha256": "b285a632f4275bbc9e2be8addff0e572fff4d12959e8606c429dec9811d9f5d0",
       "state": "synchronized",
       "syncCommit": ""
     },
     {
       "artifacts": [
-        "package-lock.json",
-        "package.json"
+        "README.md",
+        "constructor/build.mjs",
+        "constructor/measure.mjs",
+        "constructor/verify-dist.mjs",
+        "docs/API.md",
+        "package.json",
+        "src/browser.ts",
+        "tests/distribution.test.mjs"
       ],
-      "commit": "8c89028a22506f1b65ac56971636fc92ea2d98f2",
+      "commit": "5d361b0ef6f7354f575611de40bc5a6322ad9117",
       "ft": "FT-002",
-      "id": "6d4b3709c0857b9887ded918",
+      "id": "49c5f270332114d79e028d4b",
       "line": 320,
       "rcf": "RCF.md",
-      "sentenceSha256": "838c0c3078eba384be62717677b873844e16facd76cf6fcb7eecb8728c465b86",
+      "sentenceSha256": "298d2243fb6e5af211517948784466e59a4a63b018b83a7f597d01e144c32cf9",
+      "state": "synchronized",
+      "syncCommit": ""
+    },
+    {
+      "artifacts": [
+        "README.md",
+        "constructor/build.mjs",
+        "constructor/measure.mjs",
+        "constructor/verify-dist.mjs",
+        "docs/API.md",
+        "package.json",
+        "src/browser.ts",
+        "tests/distribution.test.mjs"
+      ],
+      "commit": "5d361b0ef6f7354f575611de40bc5a6322ad9117",
+      "ft": "FT-002",
+      "id": "204a2aafe2b8ef7156ea0882",
+      "line": 322,
+      "rcf": "RCF.md",
+      "sentenceSha256": "3958f1a19956790934a333b0d5f61149bea8fda164cbd1062bbdbe0e3b0311f0",
       "state": "synchronized",
       "syncCommit": ""
     },
@@ -2024,13 +2055,77 @@
     },
     {
       "artifacts": [
+        "README.md",
         "constructor/build.mjs",
+        "constructor/measure.mjs",
+        "constructor/verify-dist.mjs",
+        "docs/API.md",
         "package.json",
-        "src/manifest.ts",
-        "tests/distribution.test.ts"
+        "src/browser.ts",
+        "tests/distribution.test.mjs"
       ],
-      "commit": "8c89028a22506f1b65ac56971636fc92ea2d98f2",
-      "ft": "FT-004",
+      "commit": "5d361b0ef6f7354f575611de40bc5a6322ad9117",
+      "ft": "FT-002",
+      "id": "52b03ed0be9069c33c5a0083",
+      "line": 324,
+      "rcf": "RCF.md",
+      "sentenceSha256": "a4e59f9d29ae2f47a79ba0468de7bd7474f0bc2bb381600d908ed8e6323af36e",
+      "state": "synchronized",
+      "syncCommit": ""
+    },
+    {
+      "artifacts": [
+        "README.md",
+        "constructor/build.mjs",
+        "constructor/measure.mjs",
+        "constructor/verify-dist.mjs",
+        "docs/API.md",
+        "package.json",
+        "src/browser.ts",
+        "tests/distribution.test.mjs"
+      ],
+      "commit": "5d361b0ef6f7354f575611de40bc5a6322ad9117",
+      "ft": "FT-002",
+      "id": "6b9c9e28f2bf06994151bd80",
+      "line": 326,
+      "rcf": "RCF.md",
+      "sentenceSha256": "c774aa3050144ae4138e2e6132367541c11974bb0ca53e81f41136432ab21da1",
+      "state": "synchronized",
+      "syncCommit": ""
+    },
+    {
+      "artifacts": [
+        "README.md",
+        "constructor/build.mjs",
+        "constructor/measure.mjs",
+        "constructor/verify-dist.mjs",
+        "docs/API.md",
+        "package.json",
+        "src/browser.ts",
+        "tests/distribution.test.mjs"
+      ],
+      "commit": "5d361b0ef6f7354f575611de40bc5a6322ad9117",
+      "ft": "FT-002",
+      "id": "8dcbb72356850b6b287c2948",
+      "line": 328,
+      "rcf": "RCF.md",
+      "sentenceSha256": "710bb7c34d2a8b3c9c809d334084114b6291eca72c9a05420aa8f5418604a4ef",
+      "state": "synchronized",
+      "syncCommit": ""
+    },
+    {
+      "artifacts": [
+        "README.md",
+        "constructor/build.mjs",
+        "constructor/measure.mjs",
+        "constructor/verify-dist.mjs",
+        "docs/API.md",
+        "package.json",
+        "src/browser.ts",
+        "tests/distribution.test.mjs"
+      ],
+      "commit": "5d361b0ef6f7354f575611de40bc5a6322ad9117",
+      "ft": "FT-002",
       "id": "fbfe7d1221a4808f5d9a98dc",
       "line": 330,
       "rcf": "RCF.md",
@@ -2040,53 +2135,156 @@
     },
     {
       "artifacts": [
-        "docs/api/README.md",
-        "src/index.ts"
+        "README.md",
+        "constructor/build.mjs",
+        "constructor/measure.mjs",
+        "constructor/verify-dist.mjs",
+        "docs/API.md",
+        "package.json",
+        "src/browser.ts",
+        "tests/distribution.test.mjs"
       ],
-      "commit": "8c89028a22506f1b65ac56971636fc92ea2d98f2",
+      "commit": "5d361b0ef6f7354f575611de40bc5a6322ad9117",
       "ft": "FT-002",
-      "id": "ef9439f7556ff9cd8d259e63",
+      "id": "1051522e0b2d0b946c0dd843",
+      "line": 332,
+      "rcf": "RCF.md",
+      "sentenceSha256": "a8b816cfd521009e3fddbb32c36393c19a4962052eaa69317b243d5400dd4092",
+      "state": "synchronized",
+      "syncCommit": ""
+    },
+    {
+      "artifacts": [
+        "README.md",
+        "constructor/build.mjs",
+        "constructor/measure.mjs",
+        "constructor/verify-dist.mjs",
+        "docs/API.md",
+        "package.json",
+        "src/browser.ts",
+        "tests/distribution.test.mjs"
+      ],
+      "commit": "5d361b0ef6f7354f575611de40bc5a6322ad9117",
+      "ft": "FT-002",
+      "id": "b34e564f5c9191a3ff9a1e3c",
+      "line": 334,
+      "rcf": "RCF.md",
+      "sentenceSha256": "795e0cf03a7c8a590cc9d826e964368d3515cf98eb2f31f147e23869105fdb44",
+      "state": "synchronized",
+      "syncCommit": ""
+    },
+    {
+      "artifacts": [
+        "README.md",
+        "constructor/build.mjs",
+        "constructor/measure.mjs",
+        "constructor/verify-dist.mjs",
+        "docs/API.md",
+        "package.json",
+        "src/browser.ts",
+        "tests/distribution.test.mjs"
+      ],
+      "commit": "5d361b0ef6f7354f575611de40bc5a6322ad9117",
+      "ft": "FT-002",
+      "id": "f363bf55037bcf1639cffd94",
+      "line": 336,
+      "rcf": "RCF.md",
+      "sentenceSha256": "29646c651f36e625d9e95c5b721798e12aef6b3a122e6efb540a42b70f41e704",
+      "state": "synchronized",
+      "syncCommit": ""
+    },
+    {
+      "artifacts": [
+        "README.md",
+        "constructor/build.mjs",
+        "constructor/measure.mjs",
+        "constructor/verify-dist.mjs",
+        "docs/API.md",
+        "package.json",
+        "src/browser.ts",
+        "tests/distribution.test.mjs"
+      ],
+      "commit": "5d361b0ef6f7354f575611de40bc5a6322ad9117",
+      "ft": "FT-002",
+      "id": "0d0c4fc50ca71404a5bab313",
+      "line": 344,
+      "rcf": "RCF.md",
+      "sentenceSha256": "299058b479bebecf5b0715728261b125836d392c81550168f813ed837986116b",
+      "state": "synchronized",
+      "syncCommit": ""
+    },
+    {
+      "artifacts": [
+        "README.md",
+        "constructor/build.mjs",
+        "constructor/measure.mjs",
+        "constructor/verify-dist.mjs",
+        "docs/API.md",
+        "package.json",
+        "src/browser.ts",
+        "tests/distribution.test.mjs"
+      ],
+      "commit": "5d361b0ef6f7354f575611de40bc5a6322ad9117",
+      "ft": "FT-002",
+      "id": "32cf76e8cb9864c6f765813a",
+      "line": 346,
+      "rcf": "RCF.md",
+      "sentenceSha256": "8b3d944ce0fc876138cd48b094cbe028ca9c20eb75bc4e9bb797c1621a7a494f",
+      "state": "synchronized",
+      "syncCommit": ""
+    },
+    {
+      "artifacts": [
+        "README.md",
+        "constructor/build.mjs",
+        "constructor/measure.mjs",
+        "constructor/verify-dist.mjs",
+        "docs/API.md",
+        "package.json",
+        "src/browser.ts",
+        "tests/distribution.test.mjs"
+      ],
+      "commit": "5d361b0ef6f7354f575611de40bc5a6322ad9117",
+      "ft": "FT-002",
+      "id": "53ef3309a684b734a542625e",
+      "line": 348,
+      "rcf": "RCF.md",
+      "sentenceSha256": "4de0ae41b7da3bd598246dafd64fcf96d4b5e50b9264f0a87ff5f381cb294a5c",
+      "state": "synchronized",
+      "syncCommit": ""
+    },
+    {
+      "artifacts": [
+        "README.md",
+        "constructor/build.mjs",
+        "constructor/measure.mjs",
+        "constructor/verify-dist.mjs",
+        "docs/API.md",
+        "package.json",
+        "src/browser.ts",
+        "tests/distribution.test.mjs"
+      ],
+      "commit": "5d361b0ef6f7354f575611de40bc5a6322ad9117",
+      "ft": "FT-002",
+      "id": "6d4b3709c0857b9887ded918",
       "line": 350,
       "rcf": "RCF.md",
-      "sentenceSha256": "797d6c86378c7c74936a4a6a30c0abb620c10d7e659b3561f383ec30cdb18bdc",
+      "sentenceSha256": "838c0c3078eba384be62717677b873844e16facd76cf6fcb7eecb8728c465b86",
       "state": "synchronized",
       "syncCommit": ""
     },
     {
       "artifacts": [
-        "docs/api/README.md",
-        "src/index.ts"
+        "README.md",
+        "constructor/build.mjs",
+        "constructor/measure.mjs",
+        "constructor/verify-dist.mjs",
+        "docs/API.md",
+        "package.json",
+        "src/browser.ts",
+        "tests/distribution.test.mjs"
       ],
-      "commit": "8c89028a22506f1b65ac56971636fc92ea2d98f2",
-      "ft": "FT-002",
-      "id": "9ef6f04c3d931ed7feade091",
-      "line": 352,
-      "rcf": "RCF.md",
-      "sentenceSha256": "75d028d507de3799b10e18a7f6177ee79ccb72b910ee65022d60dad7270d0a8c",
-      "state": "synchronized",
-      "syncCommit": ""
-    },
-    {
-      "artifacts": [
-        "docs/api/README.md",
-        "src/index.ts"
-      ],
-      "commit": "8c89028a22506f1b65ac56971636fc92ea2d98f2",
-      "ft": "FT-002",
-      "id": "faa9e601fa59deb090696289",
-      "line": 354,
-      "rcf": "RCF.md",
-      "sentenceSha256": "d36dc76ab0f6dd93026c591043a4fa31f050b58e3eb2ff21ec1d733aafa4208d",
-      "state": "synchronized",
-      "syncCommit": ""
-    },
-    {
-      "artifacts": [
-        ".github/workflows/test.yml",
-        "tests/distribution.test.mjs",
-        "tests/functions.test.mjs"
-      ],
-      "commit": "8c89028a22506f1b65ac56971636fc92ea2d98f2",
+      "commit": "5d361b0ef6f7354f575611de40bc5a6322ad9117",
       "ft": "FT-002",
       "id": "da3df8330359132c4e1ff86f",
       "line": 356,
@@ -2097,11 +2295,16 @@
     },
     {
       "artifacts": [
-        ".github/workflows/test.yml",
-        "tests/distribution.test.mjs",
-        "tests/functions.test.mjs"
+        "README.md",
+        "constructor/build.mjs",
+        "constructor/measure.mjs",
+        "constructor/verify-dist.mjs",
+        "docs/API.md",
+        "package.json",
+        "src/browser.ts",
+        "tests/distribution.test.mjs"
       ],
-      "commit": "8c89028a22506f1b65ac56971636fc92ea2d98f2",
+      "commit": "5d361b0ef6f7354f575611de40bc5a6322ad9117",
       "ft": "FT-002",
       "id": "59defa6fd78d5d15acdf31ac",
       "line": 358,
@@ -2112,27 +2315,17 @@
     },
     {
       "artifacts": [
-        "docs/api/README.md",
-        "src/index.ts"
-      ],
-      "commit": "8c89028a22506f1b65ac56971636fc92ea2d98f2",
-      "ft": "FT-002",
-      "id": "d9dad46358d0dafb0af974f5",
-      "line": 358,
-      "rcf": "RCF.md",
-      "sentenceSha256": "7ff86d80f6ba2f245e4ab64f87d59c7c7bf18d0348be7c5d20cc4e594a7254d1",
-      "state": "synchronized",
-      "syncCommit": ""
-    },
-    {
-      "artifacts": [
+        "README.md",
         "constructor/build.mjs",
+        "constructor/measure.mjs",
+        "constructor/verify-dist.mjs",
+        "docs/API.md",
         "package.json",
-        "src/manifest.ts",
-        "tests/distribution.test.ts"
+        "src/browser.ts",
+        "tests/distribution.test.mjs"
       ],
-      "commit": "8c89028a22506f1b65ac56971636fc92ea2d98f2",
-      "ft": "FT-004",
+      "commit": "5d361b0ef6f7354f575611de40bc5a6322ad9117",
+      "ft": "FT-002",
       "id": "97372d2503638c7dc03caaa7",
       "line": 360,
       "rcf": "RCF.md",
@@ -2142,11 +2335,16 @@
     },
     {
       "artifacts": [
-        ".github/workflows/test.yml",
-        "tests/distribution.test.mjs",
-        "tests/functions.test.mjs"
+        "README.md",
+        "constructor/build.mjs",
+        "constructor/measure.mjs",
+        "constructor/verify-dist.mjs",
+        "docs/API.md",
+        "package.json",
+        "src/browser.ts",
+        "tests/distribution.test.mjs"
       ],
-      "commit": "8c89028a22506f1b65ac56971636fc92ea2d98f2",
+      "commit": "5d361b0ef6f7354f575611de40bc5a6322ad9117",
       "ft": "FT-002",
       "id": "6ad981ba7d1cd3da6227080f",
       "line": 362,
@@ -2157,25 +2355,16 @@
     },
     {
       "artifacts": [
+        "README.md",
+        "constructor/build.mjs",
+        "constructor/measure.mjs",
+        "constructor/verify-dist.mjs",
+        "docs/API.md",
         "package.json",
-        "src/index.ts"
+        "src/browser.ts",
+        "tests/distribution.test.mjs"
       ],
-      "commit": "8c89028a22506f1b65ac56971636fc92ea2d98f2",
-      "ft": "FT-002",
-      "id": "f501d72346d15455f9eaed28",
-      "line": 362,
-      "rcf": "RCF.md",
-      "sentenceSha256": "18866b909a4a0ca62857cf34744533f1c43c7a8aeabb12a05be35432fd1d2301",
-      "state": "synchronized",
-      "syncCommit": ""
-    },
-    {
-      "artifacts": [
-        ".github/workflows/test.yml",
-        "tests/distribution.test.mjs",
-        "tests/functions.test.mjs"
-      ],
-      "commit": "8c89028a22506f1b65ac56971636fc92ea2d98f2",
+      "commit": "5d361b0ef6f7354f575611de40bc5a6322ad9117",
       "ft": "FT-002",
       "id": "e96c3965488e34be2175400c",
       "line": 364,
@@ -2186,11 +2375,16 @@
     },
     {
       "artifacts": [
-        ".github/workflows/test.yml",
-        "tests/distribution.test.mjs",
-        "tests/functions.test.mjs"
+        "README.md",
+        "constructor/build.mjs",
+        "constructor/measure.mjs",
+        "constructor/verify-dist.mjs",
+        "docs/API.md",
+        "package.json",
+        "src/browser.ts",
+        "tests/distribution.test.mjs"
       ],
-      "commit": "8c89028a22506f1b65ac56971636fc92ea2d98f2",
+      "commit": "5d361b0ef6f7354f575611de40bc5a6322ad9117",
       "ft": "FT-002",
       "id": "ac2703d3105d4deb18a9f1be",
       "line": 366,
@@ -2201,11 +2395,16 @@
     },
     {
       "artifacts": [
-        ".github/workflows/test.yml",
-        "tests/distribution.test.mjs",
-        "tests/functions.test.mjs"
+        "README.md",
+        "constructor/build.mjs",
+        "constructor/measure.mjs",
+        "constructor/verify-dist.mjs",
+        "docs/API.md",
+        "package.json",
+        "src/browser.ts",
+        "tests/distribution.test.mjs"
       ],
-      "commit": "8c89028a22506f1b65ac56971636fc92ea2d98f2",
+      "commit": "5d361b0ef6f7354f575611de40bc5a6322ad9117",
       "ft": "FT-002",
       "id": "343cb15653c6362a6279f37f",
       "line": 368,
@@ -2216,11 +2415,16 @@
     },
     {
       "artifacts": [
-        ".github/workflows/test.yml",
-        "tests/distribution.test.mjs",
-        "tests/functions.test.mjs"
+        "README.md",
+        "constructor/build.mjs",
+        "constructor/measure.mjs",
+        "constructor/verify-dist.mjs",
+        "docs/API.md",
+        "package.json",
+        "src/browser.ts",
+        "tests/distribution.test.mjs"
       ],
-      "commit": "8c89028a22506f1b65ac56971636fc92ea2d98f2",
+      "commit": "5d361b0ef6f7354f575611de40bc5a6322ad9117",
       "ft": "FT-002",
       "id": "3b00aa9c14fb4de630bbfc8d",
       "line": 370,
@@ -2231,11 +2435,16 @@
     },
     {
       "artifacts": [
-        ".github/workflows/test.yml",
-        "tests/distribution.test.mjs",
-        "tests/functions.test.mjs"
+        "README.md",
+        "constructor/build.mjs",
+        "constructor/measure.mjs",
+        "constructor/verify-dist.mjs",
+        "docs/API.md",
+        "package.json",
+        "src/browser.ts",
+        "tests/distribution.test.mjs"
       ],
-      "commit": "8c89028a22506f1b65ac56971636fc92ea2d98f2",
+      "commit": "5d361b0ef6f7354f575611de40bc5a6322ad9117",
       "ft": "FT-002",
       "id": "b026543fc939166d30e94bdf",
       "line": 372,
@@ -2246,11 +2455,16 @@
     },
     {
       "artifacts": [
-        ".github/workflows/test.yml",
-        "tests/distribution.test.mjs",
-        "tests/functions.test.mjs"
+        "README.md",
+        "constructor/build.mjs",
+        "constructor/measure.mjs",
+        "constructor/verify-dist.mjs",
+        "docs/API.md",
+        "package.json",
+        "src/browser.ts",
+        "tests/distribution.test.mjs"
       ],
-      "commit": "8c89028a22506f1b65ac56971636fc92ea2d98f2",
+      "commit": "5d361b0ef6f7354f575611de40bc5a6322ad9117",
       "ft": "FT-002",
       "id": "1b34eece8862a076b1ff964a",
       "line": 374,
@@ -2261,11 +2475,16 @@
     },
     {
       "artifacts": [
-        ".github/workflows/test.yml",
-        "tests/distribution.test.mjs",
-        "tests/functions.test.mjs"
+        "README.md",
+        "constructor/build.mjs",
+        "constructor/measure.mjs",
+        "constructor/verify-dist.mjs",
+        "docs/API.md",
+        "package.json",
+        "src/browser.ts",
+        "tests/distribution.test.mjs"
       ],
-      "commit": "8c89028a22506f1b65ac56971636fc92ea2d98f2",
+      "commit": "5d361b0ef6f7354f575611de40bc5a6322ad9117",
       "ft": "FT-002",
       "id": "79cba5a112bd50c280de50ad",
       "line": 376,
@@ -2276,11 +2495,16 @@
     },
     {
       "artifacts": [
-        ".github/workflows/test.yml",
-        "tests/distribution.test.mjs",
-        "tests/functions.test.mjs"
+        "README.md",
+        "constructor/build.mjs",
+        "constructor/measure.mjs",
+        "constructor/verify-dist.mjs",
+        "docs/API.md",
+        "package.json",
+        "src/browser.ts",
+        "tests/distribution.test.mjs"
       ],
-      "commit": "8c89028a22506f1b65ac56971636fc92ea2d98f2",
+      "commit": "5d361b0ef6f7354f575611de40bc5a6322ad9117",
       "ft": "FT-002",
       "id": "4073b1bef9f8019dcef402ce",
       "line": 378,
@@ -2291,13 +2515,117 @@
     },
     {
       "artifacts": [
+        "README.md",
         "constructor/build.mjs",
+        "constructor/measure.mjs",
+        "constructor/verify-dist.mjs",
+        "docs/API.md",
         "package.json",
-        "src/manifest.ts",
-        "tests/distribution.test.ts"
+        "src/browser.ts",
+        "tests/distribution.test.mjs"
       ],
-      "commit": "8c89028a22506f1b65ac56971636fc92ea2d98f2",
-      "ft": "FT-004",
+      "commit": "5d361b0ef6f7354f575611de40bc5a6322ad9117",
+      "ft": "FT-002",
+      "id": "ef9439f7556ff9cd8d259e63",
+      "line": 382,
+      "rcf": "RCF.md",
+      "sentenceSha256": "797d6c86378c7c74936a4a6a30c0abb620c10d7e659b3561f383ec30cdb18bdc",
+      "state": "synchronized",
+      "syncCommit": ""
+    },
+    {
+      "artifacts": [
+        "README.md",
+        "constructor/build.mjs",
+        "constructor/measure.mjs",
+        "constructor/verify-dist.mjs",
+        "docs/API.md",
+        "package.json",
+        "src/browser.ts",
+        "tests/distribution.test.mjs"
+      ],
+      "commit": "5d361b0ef6f7354f575611de40bc5a6322ad9117",
+      "ft": "FT-002",
+      "id": "9ef6f04c3d931ed7feade091",
+      "line": 384,
+      "rcf": "RCF.md",
+      "sentenceSha256": "75d028d507de3799b10e18a7f6177ee79ccb72b910ee65022d60dad7270d0a8c",
+      "state": "synchronized",
+      "syncCommit": ""
+    },
+    {
+      "artifacts": [
+        "README.md",
+        "constructor/build.mjs",
+        "constructor/measure.mjs",
+        "constructor/verify-dist.mjs",
+        "docs/API.md",
+        "package.json",
+        "src/browser.ts",
+        "tests/distribution.test.mjs"
+      ],
+      "commit": "5d361b0ef6f7354f575611de40bc5a6322ad9117",
+      "ft": "FT-002",
+      "id": "faa9e601fa59deb090696289",
+      "line": 386,
+      "rcf": "RCF.md",
+      "sentenceSha256": "d36dc76ab0f6dd93026c591043a4fa31f050b58e3eb2ff21ec1d733aafa4208d",
+      "state": "synchronized",
+      "syncCommit": ""
+    },
+    {
+      "artifacts": [
+        "README.md",
+        "constructor/build.mjs",
+        "constructor/measure.mjs",
+        "constructor/verify-dist.mjs",
+        "docs/API.md",
+        "package.json",
+        "src/browser.ts",
+        "tests/distribution.test.mjs"
+      ],
+      "commit": "5d361b0ef6f7354f575611de40bc5a6322ad9117",
+      "ft": "FT-002",
+      "id": "d9dad46358d0dafb0af974f5",
+      "line": 390,
+      "rcf": "RCF.md",
+      "sentenceSha256": "7ff86d80f6ba2f245e4ab64f87d59c7c7bf18d0348be7c5d20cc4e594a7254d1",
+      "state": "synchronized",
+      "syncCommit": ""
+    },
+    {
+      "artifacts": [
+        "README.md",
+        "constructor/build.mjs",
+        "constructor/measure.mjs",
+        "constructor/verify-dist.mjs",
+        "docs/API.md",
+        "package.json",
+        "src/browser.ts",
+        "tests/distribution.test.mjs"
+      ],
+      "commit": "5d361b0ef6f7354f575611de40bc5a6322ad9117",
+      "ft": "FT-002",
+      "id": "f501d72346d15455f9eaed28",
+      "line": 394,
+      "rcf": "RCF.md",
+      "sentenceSha256": "18866b909a4a0ca62857cf34744533f1c43c7a8aeabb12a05be35432fd1d2301",
+      "state": "synchronized",
+      "syncCommit": ""
+    },
+    {
+      "artifacts": [
+        "README.md",
+        "constructor/build.mjs",
+        "constructor/measure.mjs",
+        "constructor/verify-dist.mjs",
+        "docs/API.md",
+        "package.json",
+        "src/browser.ts",
+        "tests/distribution.test.mjs"
+      ],
+      "commit": "5d361b0ef6f7354f575611de40bc5a6322ad9117",
+      "ft": "FT-002",
       "id": "40bc62acb7a969723a77fc81",
       "line": 396,
       "rcf": "RCF.md",
