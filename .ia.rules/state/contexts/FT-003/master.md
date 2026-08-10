@@ -29,7 +29,7 @@ FT-003 executa RCF → README → mapa causal → validação → commit/push. A
 
 ## Estado e aceite
 
-- Estado: contratos e validação focada da FT-003 concluídos; commit/push em andamento; FT-002 conciliada e pendente.
+- Estado: FT-003 concluída e publicada em `origin/dev` pelo commit `674b49cf8d899869c5e8fccd38d545b8dda293b1`; FT-002 conciliada e pendente.
 - Validação focada: `agent:rcf` aprovado; mapa causal 147/147; cobertura FT-003 e links aprovados; 102/103 sentenças anteriores preservadas literalmente, com a única ordem anterior integralmente ampliada.
 - Gate global: `agent:verify` e `npm test` permanecem em `TSCONFIG_AUSENTE`, pois configuração e código TypeScript pertencem à FT-002 não iniciada.
 - Aceite: cobertura integral da fonte; relações cumulativas inequívocas; compatibilidade entre imports, bundles, tipos e manifestos; contratos seguros de máscara/validação/lógica; rastreabilidade válida; publicação comprovada.

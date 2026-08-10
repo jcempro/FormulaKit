@@ -86,7 +86,7 @@ aceite=escopos e níveis cumulativos implementados; máscaras, validação e ló
   2/3 Sincronizar assinaturas RCF com commits materiais [pendente]
   3/3 Convergir branches e concluir a FT [pendente]
 
-FT-003|nome=Escopos e níveis de capacidade|tipo=implementacao_normativa|escopo=normativo|status=em_andamento|criado_em=2026-08-09T21:31:38-03:00
+FT-003|nome=Escopos e níveis de capacidade|tipo=implementacao_normativa|escopo=normativo|status=concluido|criado_em=2026-08-09T21:31:38-03:00
 objetivo=Ampliar RCF, README e FT-002 com distribuição cumulativa por escopo/nível e contratos de máscaras, validação e lógica variádica, sem reduzir contratos anteriores.
 origem=.ia.rules/state/requests/FT-003/request.md
 origem_hash=d298f6fe933fc3f78815ff88fa13621d3faf0c2bdd78b310bd33dacb7905747e
@@ -97,6 +97,10 @@ nao_escopo=código funcional, dependências, build, testes executáveis, workflo
 aceite=RCF e README explicitam escopos, níveis cumulativos, artefatos, máscaras, validação e lógica variádica; FT-002 conciliada; rastreabilidade e validação focada aprovadas; commit e push comprovados
 validacao_focada=agent:rcf OK; rcf-trace 147/147; FT003_COVERAGE_OK; DOC_LINKS_AND_SOURCE_OK; preservação literal 102/103 e ordem de implementação anterior integralmente ampliada
 validacao_global=agent:verify e npm test bloqueados por TSCONFIG_AUSENTE; gate técnico mantido para FT-002, não aprovação global
+commit_normativo=674b49cf8d899869c5e8fccd38d545b8dda293b1
+publicacao_normativa=origin/dev confirmada em 2026-08-09
+concluido_em=2026-08-09T21:39:29-03:00
+reter_ate=2026-08-24T21:39:29-03:00
 1/4 Captura e equalização [concluído]
   1/3 Preservar fonte integral e hash [concluído]
   2/3 Triar recusas e conflitos [concluído]
@@ -109,7 +113,7 @@ validacao_global=agent:verify e npm test bloqueados por TSCONFIG_AUSENTE; gate t
   1/3 Normatizar máscaras declarativas [concluído]
   2/3 Normatizar validadores reutilizáveis e seguros [concluído]
   3/3 Normatizar operadores lógicos variádicos [concluído]
-4/4 Validação e encerramento [em andamento]
+4/4 Validação e encerramento [concluído]
   1/3 Validar preservação e cobertura origem→RCF→FT [concluído]
   2/3 Atualizar rastreabilidade e documentação [concluído]
-  3/3 Commitar, publicar dev e interromper antes do código [em andamento]
+  3/3 Commitar, publicar dev e interromper antes do código [concluído]

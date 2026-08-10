@@ -1,7 +1,7 @@
 # Subcontexto 01 — Ampliação normativa
 
 - Identidade: FT-003, etapa normativa.
-- Estado: entregáveis e validação focada concluídos; commit/push em andamento.
+- Estado: concluído e publicado em `origin/dev` pelo commit `674b49cf8d899869c5e8fccd38d545b8dda293b1`.
 - Objetivo: atualizar `RCF.md`, `README.md`, FT-002 e rastreabilidade sem implementar código.
 - Entradas: fonte FT-003, `RCF.md`, `README.md`, `.ia.rules/continue.ia`, mapa causal e normas já carregadas.
 - Dependências: FT-001 concluída; acervo de recusas vazio; branch `dev` limpa.
