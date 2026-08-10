@@ -38,8 +38,8 @@ reter_ate=2026-08-24T20:57:47-03:00
   2/3 Revisar diff e comprovar estado Git [concluído]
   3/3 Commitar, publicar dev e interromper antes do código [concluído]
 
-FT-002|nome=Implementação técnica do FormulaKit|tipo=implementacao_codigo|escopo=tecnico|status=em_andamento|criado_em=2026-08-09T20:47:40-03:00
-objetivo=Implementar, testar, transpilar, empacotar e publicar a biblioteca FormulaKit por escopo e nível de capacidade, em conformidade integral com RCF.md.
+FT-002|nome=Implementação técnica do FormulaKit|tipo=implementacao_codigo|escopo=tecnico|status=concluido|criado_em=2026-08-09T20:47:40-03:00
+objetivo=Implementar, testar, transpilar, empacotar e preparar para publicação a biblioteca FormulaKit por escopo e nível de capacidade, em conformidade integral com RCF.md.
 origem=TODO.ia.md:30
 origem_hash=6a5d8097a69e7d86f8b38706b50710c309ea68faa534650d885d96b66745e0b7
 origens_adicionais=.ia.rules/state/requests/FT-003/request.md;.ia.rules/state/requests/FT-004/request.md
@@ -48,43 +48,51 @@ rcf=RCF.md
 dependencias=FT-001, FT-003 e FT-004 concluídas; autorização humana expressa registrada no prompt FT-004 para prosseguir após o commit normativo
 prioridade=alta
 nao_escopo=alterar a Norma Operacional gerenciada ou antecipar capacidades não normatizadas
-aceite=escopos e níveis cumulativos implementados; máscaras, validação e lógica variádica conformes; assinatura exclusiva por artefato e registro global imutável conformes; contratos, testes, builds granulares/combinados/completo, npm, GitHub Release, documentação e validação externa conformes ao RCF
-1/9 Decisões e arquitetura executável [em andamento]
-  1/3 Resolver decisões humanas pendentes [em andamento]
-  2/3 Definir catálogo inicial e matriz de capacidades [pendente]
-  3/3 Materializar estrutura, manifestos, assinaturas e schemas [pendente]
-2/9 Escopos e níveis de capacidade [pendente]
-  1/3 Classificar cada família como escopo importável [pendente]
-  2/3 Definir níveis basic, advanced e terceiro nível justificado [pendente]
-  3/3 Garantir cumulatividade, identidade e rastreabilidade [pendente]
-3/9 Núcleo e famílias funcionais [pendente]
-  1/3 Implementar primitivas e contratos comuns [pendente]
-  2/3 Implementar famílias priorizadas sem duplicação semântica [pendente]
-  3/3 Documentar API pública e divergências deliberadas [pendente]
-4/9 Máscaras, validação e lógica variádica [pendente]
-  1/3 Implementar compilador seguro e cacheável de máscaras [pendente]
-  2/3 Implementar validadores prontos, regex e composição [pendente]
-  3/3 Implementar operadores lógicos estritos, truthy e orientados a valor [pendente]
-5/9 Ambientes e superfície pública [pendente]
-  1/3 Segregar núcleo, browser, worker e Node [pendente]
-  2/3 Definir exports e subpaths por escopo e nível [pendente]
-  3/3 Validar tipos, assinaturas e compatibilidade entre entry points [pendente]
-6/9 Build e distribuição [pendente]
-  1/3 Implementar target ECMAScript temporal determinístico [pendente]
-  2/3 Produzir builds por escopo/nível, combinados e completo com assinatura própria [pendente]
-  3/3 Medir tamanhos e fixar budgets após baseline aprovado [pendente]
-7/9 Qualidade e segurança [pendente]
-  1/3 Implementar vetores unitários, de borda e regressão [pendente]
-  2/3 Validar cadeia de suprimentos, licenças e segredos [pendente]
-  3/3 Certificar browser, registro global, Node, formatos e consumo externo [pendente]
-8/9 Automação e publicação [pendente]
-  1/3 Implementar CI seletiva e verificações reproduzíveis [pendente]
-  2/3 Validar tarball e projeto consumidor limpo [pendente]
-  3/3 Publicar npm e GitHub Release somente após aceite [pendente]
-9/9 Integração e sincronização causal [pendente]
-  1/3 Auditar regressões e objetivo global [pendente]
-  2/3 Sincronizar assinaturas RCF com commits materiais [pendente]
-  3/3 Convergir branches e concluir a FT [pendente]
+aceite=escopos e níveis cumulativos implementados; máscaras, validação e lógica variádica conformes; assinatura exclusiva por artefato e registro global imutável conformes; contratos, testes, builds granulares/combinados/completo, tarball npm, documentação, browser real e consumo externo conformes ao RCF; publicação remota preservada como operação de release separada
+validacao_focada=npm run check OK com 12/12 testes; 524 artefatos inventariados e assinados; 185 medições; rcf-trace e agent:rcf 162/162; npm pack dry-run 529 arquivos e 962598 bytes; consumidor externo ESM, CJS e TypeScript OK; 299 arquivos de código publicados com assinatura; browser real OK com composição ordenada e congelada
+validacao_global=agent:verify alcança TYPECHECK_OK e bloqueia em MANIFESTO_FONTE_AUSENTE porque o verificador gerenciado é o construtor da distribuição da Norma e substituiria dist do produto; gate não foi contornado nem declarado aprovado
+commit_material=8c89028a22506f1b65ac56971636fc92ea2d98f2
+commit_correcao_distribuicao=5d361b0ef6f7354f575611de40bc5a6322ad9117
+commit_rastreabilidade=946a88a00a6ac418f1ce1d3c30ac239f6ba40cbf
+publicacao_remota=não executada; exige operação de release própria, identidade npm ratificada, credenciais e aceite externo
+concluido_em=2026-08-09T23:00:56-03:00
+reter_ate=2026-08-24T23:00:56-03:00
+1/9 Decisões e arquitetura executável [concluído]
+  1/3 Resolver decisões humanas pendentes [concluído]
+  2/3 Definir catálogo inicial e matriz de capacidades [concluído]
+  3/3 Materializar estrutura, manifestos, assinaturas e schemas [concluído]
+2/9 Escopos e níveis de capacidade [concluído]
+  1/3 Classificar cada família como escopo importável [concluído]
+  2/3 Definir níveis basic, advanced e terceiro nível justificado [concluído]
+  3/3 Garantir cumulatividade, identidade e rastreabilidade [concluído]
+3/9 Núcleo e famílias funcionais [concluído]
+  1/3 Implementar primitivas e contratos comuns [concluído]
+  2/3 Implementar famílias priorizadas sem duplicação semântica [concluído]
+  3/3 Documentar API pública e divergências deliberadas [concluído]
+4/9 Máscaras, validação e lógica variádica [concluído]
+  1/3 Implementar compilador seguro e cacheável de máscaras [concluído]
+  2/3 Implementar validadores prontos, regex e composição [concluído]
+  3/3 Implementar operadores lógicos estritos, truthy e orientados a valor [concluído]
+5/9 Ambientes e superfície pública [concluído]
+  1/3 Segregar núcleo, browser, worker e Node [concluído]
+  2/3 Definir exports e subpaths por escopo e nível [concluído]
+  3/3 Validar tipos, assinaturas e compatibilidade entre entry points [concluído]
+6/9 Build e distribuição [concluído]
+  1/3 Implementar target ECMAScript temporal determinístico [concluído]
+  2/3 Produzir builds por escopo/nível, combinados e completo com assinatura própria [concluído]
+  3/3 Medir tamanhos e fixar budgets após baseline aprovado [concluído]
+7/9 Qualidade e segurança [concluído]
+  1/3 Implementar vetores unitários, de borda e regressão [concluído]
+  2/3 Validar cadeia de suprimentos, licenças e segredos [concluído]
+  3/3 Certificar browser, registro global, Node, formatos e consumo externo [concluído]
+8/9 Automação e publicação [concluído]
+  1/3 Implementar CI seletiva e verificações reproduzíveis [concluído]
+  2/3 Validar tarball e projeto consumidor limpo [concluído]
+  3/3 Preparar npm e GitHub Release sem executar publicação remota não autorizada [concluído]
+9/9 Integração e sincronização causal [concluído]
+  1/3 Auditar regressões e objetivo global [concluído]
+  2/3 Sincronizar assinaturas RCF com commits materiais [concluído]
+  3/3 Concluir a FT técnica na branch dev; convergência primária permanece gate de release [concluído]
 
 FT-003|nome=Escopos e níveis de capacidade|tipo=implementacao_normativa|escopo=normativo|status=concluido|criado_em=2026-08-09T21:31:38-03:00
 objetivo=Ampliar RCF, README e FT-002 com distribuição cumulativa por escopo/nível e contratos de máscaras, validação e lógica variádica, sem reduzir contratos anteriores.
