@@ -92,6 +92,7 @@ for (const scope of config.scopes) {
   entries.push({ key: scope, source: `${scope}/index.ts`, scope, level: "advanced" });
 }
 entries.push({ key: "index", source: "index.ts", scope: "full", level: "advanced" });
+entries.push({ key: "provenance", source: "provenance.ts", scope: "provenance", level: "single" });
 
 /** Constrói um módulo ou bundle em formato declarado e incorpora assinatura exclusiva. */
 async function bundle(entry, outfile, format, browser = false) {

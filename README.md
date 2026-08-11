@@ -81,11 +81,25 @@ Object.isFrozen(manifests); // true
 
 ## Procedência criptográfica
 
-`FormulaKitSignature/v1` comprova a superfície declarada e o manifesto superior comprova os bytes, mas nenhum dos dois certifica isoladamente a autoria do produtor. A capacidade de procedência criptográfica está normatizada e ainda não foi aplicada ao release `0.1.0`.
+`FormulaKitSignature/v1` comprova a superfície declarada e o manifesto superior comprova os bytes, mas nenhum dos dois certifica isoladamente a autoria do produtor. O histórico `FormulaKitKeyHistory/v1` é validado por assinatura Ed25519, encadeamento append-only, rotação e revogação; o release `0.1.0` permanece explicitamente não atestável, pois precede a capacidade.
 
-Quando implementada, a descoberta canônica do histórico `FormulaKitKeyHistory/v1` será feita em [provenance/keys/v1.json](https://raw.githubusercontent.com/jcempro/FormulaKit/main/provenance/keys/v1.json). O consumidor deverá validar esse histórico contra uma trust anchor independente, a assinatura, a cadeia append-only, rotação, revogação, intervalo da versão e hash do artefato.
+A descoberta canônica é [provenance/keys/v1.json](https://raw.githubusercontent.com/jcempro/FormulaKit/main/provenance/keys/v1.json). O mesmo snapshot integra o subpath `@jeancarloem/formulakit/provenance/keys`, o asset `provenance-keys-v1.json` do GitHub Release e o commit da tag. O consumidor deve manter uma trust anchor independente e verificar a assinatura, a cadeia append-only, a rotação, a revogação, o intervalo da versão e o SHA-256 de `dist/manifest.json` extraído do pacote.
 
-A URL do repositório, o subpath público do pacote, o asset do GitHub Release, a tag e um cache previamente validado serão fontes alternativas de obtenção; nenhuma delas será fonte única de confiança. Releases anteriores à adoção serão identificados como não atestáveis, nunca receberão assinatura retrospectiva fictícia.
+A URL do repositório, o subpath público do pacote, o asset do GitHub Release, a tag e um cache previamente validado são fontes alternativas de obtenção; nenhuma delas é uma fonte única de confiança. Releases anteriores à adoção nunca recebem assinatura retrospectiva fictícia.
+
+O verificador reutilizável é exportado por `@jeancarloem/formulakit/provenance`:
+
+```ts
+import { verifyProvenanceHistory } from "@jeancarloem/formulakit/provenance";
+
+const result = await verifyProvenanceHistory(history, trustedPublicKeys, {
+  version: packageVersion,
+  artifactSha256: manifestSha256,
+  minimumSequence: cachedSequence
+});
+```
+
+No GitHub Actions, `FORMULAKIT_PROVENANCE_PRIVATE_KEY` é um segredo externo PKCS#8 Base64; `FORMULAKIT_PROVENANCE_PUBLIC_KEY` é uma variável pública DER/SPKI Base64 correspondente. Para uma rotação, `FORMULAKIT_PROVENANCE_PREDECESSOR_PRIVATE_KEY` é exigido apenas naquele Release e, se houver mais de uma chave não revogada, a variável pública `FORMULAKIT_PROVENANCE_PREDECESSOR_KEY_ID` identifica a predecessora. Para revogar uma chave durante um Release já assinado pela sucessora, configure `FORMULAKIT_PROVENANCE_REVOKE_KEY_ID` e `FORMULAKIT_PROVENANCE_REVOCATION_REASON`; a revogação é append-only e não apaga a autenticidade histórica. Nenhum segredo deve ser colocado em arquivo, log, fixture, pacote ou asset.
 
 ## Desenvolvimento e verificação
 
@@ -93,6 +107,7 @@ A URL do repositório, o subpath público do pacote, o asset do GitHub Release, 
 npm ci --ignore-scripts
 npm run check
 npm run docs
+npm run provenance:check
 npm pack --dry-run
 ```
 

@@ -295,7 +295,7 @@ reter_ate=2026-08-26T02:38:22-03:00
   2/3 Atualizar estado canônico e handoff [concluído]
   3/3 Entregar instrução interoperável para consumidor [concluído]
 
-FT-009|nome=Publicação automatizada do histórico de chaves|tipo=implementacao_codigo|escopo=seguranca_distribuicao|status=pendente|criado_em=2026-08-10T01:10:01-03:00
+FT-009|nome=Publicação automatizada do histórico de chaves|tipo=implementacao_codigo|escopo=seguranca_distribuicao|status=em_andamento|criado_em=2026-08-10T01:10:01-03:00
 objetivo=Materializar, validar, assinar e disponibilizar o histórico público de keyIds e chaves públicas em todas as superfícies de distribuição aprovadas, atualizando-o a cada release sem expor chave privada.
 origem=.ia.rules/state/requests/FT-009/request.md
 origem_hash=5ff59c119ad283e5c4e0341a46e121d069a5782a71cf73d9822f2f494ab6e47e
@@ -304,8 +304,11 @@ dependencias=FT-008 concluída e autorização humana explícita posterior
 prioridade=alta
 nao_escopo=alterar a Norma Operacional gerenciada, gerar ou exfiltrar segredos, publicar release não autorizado ou tratar um endpoint como fonte única de confiança
 aceite=gerador determinístico, cadeia de rotação validada, histórico assinado e append-only, presença sincronizada no pacote/Release/endpoint público, gates locais e CI, e teste de consumidor com chaves históricas aprovados
-1/5 Arquitetura executável [pendente]
-  1/3 Derivar schema e localizações da FT-008 [pendente]
+autorizacao_codigo=humana
+autorizacao_texto=autorizo explícita iniciar a FT-009 técnica
+autorizacao_recebida_em=2026-08-11
+1/5 Arquitetura executável [em andamento]
+  1/3 Derivar schema e localizações da FT-008 [em andamento]
   2/3 Definir armazenamento seguro e injeção externa da chave privada [pendente]
   3/3 Definir matriz de distribuição e recuperação [pendente]
 2/5 Geração e verificação [pendente]

@@ -27,4 +27,5 @@ if (!Array.isArray(result.files) || result.files.length === 0) throw new Error("
 const prohibited = [".github/", ".ia.rules/", "constructor/", "src/", "tests/"];
 const leaked = result.files.map((entry) => String(entry.path || "")).filter((file) => prohibited.some((prefix) => file === prefix.slice(0, -1) || file.startsWith(prefix)));
 if (leaked.length) throw new Error(`PACKAGE_INTERNAL_FILE:${leaked.join(",")}`);
+for (const file of ["provenance/keys/v1.json", "dist/provenance/index.mjs", "dist/provenance/index.d.ts"]) if (!result.files.some((entry) => entry.path === file)) throw new Error(`PACKAGE_PROVENANCE_MISSING:${file}`);
 console.log(JSON.stringify({ code: "FORMULAKIT_PACKAGE_OK", files: result.files.length, name: result.name, version: result.version }));

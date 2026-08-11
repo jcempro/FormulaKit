@@ -1,0 +1,20 @@
+{
+  "keys": [],
+  "previous": null,
+  "releases": [
+    {
+      "status": "not-attestable",
+      "version": "0.1.0"
+    }
+  ],
+  "schema": "FormulaKitKeyHistory/v1",
+  "sequence": 0,
+  "signatures": [],
+  "x_formulakit_signature": {
+    "h": "908ad41e2863a8242b3b0a09f11e907dad290b67381d695b54616898620b2e3d",
+    "id": "@jeancarloem/formulakit@0.1.0/provenance/keys/v1.json#json:es2024",
+    "t": {},
+    "v": 1,
+    "x": {}
+  }
+}

@@ -4,6 +4,7 @@
   "files": [
     "dist/",
     "docs/",
+    "provenance/",
     "README.md",
     "LICENSE"
   ],
@@ -27,6 +28,12 @@
       "types": "./dist/browser/index.d.ts",
       "import": "./dist/browser/index.mjs"
     },
+    "./provenance": {
+      "types": "./dist/provenance/index.d.ts",
+      "import": "./dist/provenance/index.mjs",
+      "require": "./dist/provenance/index.cjs"
+    },
+    "./provenance/keys": "./provenance/keys/v1.json",
     "./browser/combinations/*": {
       "types": "./dist/combinations/*.d.ts",
       "import": "./dist/browser/combinations/*.mjs"
@@ -97,7 +104,7 @@
   "scripts": {
     "build": "node constructor/build.mjs",
     "clean": "node constructor/clean.mjs",
-    "check": "npm run lint && npm run docs:check && npm test && npm run verify:dist && npm run size",
+    "check": "npm run lint && npm run provenance:check && npm run docs:check && npm test && npm run verify:dist && npm run size",
     "docs": "node constructor/documentation.mjs build",
     "docs:check": "node constructor/documentation.mjs check",
     "docs:normalize": "node constructor/documentation.mjs normalize",
@@ -106,6 +113,8 @@
     "prepare": "npm run build",
     "prepack": "npm run check",
     "verify:dist": "node constructor/verify-dist.mjs",
+    "provenance:prepare": "node constructor/provenance.mjs prepare",
+    "provenance:check": "node constructor/provenance.mjs check",
     "validate:package": "node constructor/verify-package.mjs",
     "size": "node constructor/measure.mjs",
     "release": "npm run shared:lifecycle:release --",
