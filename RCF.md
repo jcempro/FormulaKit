@@ -275,6 +275,30 @@ Biblioteca terceira PODE enumerar, consultar e reter snapshots das assinaturas, 
 
 Falhas de contrato DEVEM usar códigos estáveis e mensagens seguras, sem segredo, dado pessoal, path local ou conteúdo integral da entrada; erro interno NÃO DEVE ser apresentado como resultado válido. [2ad9117]
 
+### 15.2 Procedência criptográfica e histórico de chaves
+
+`FormulaKitSignature/v1` descreve integridade e superfície pública do artefato, mas NÃO comprova a autoria de quem o produziu; procedência criptográfica DEVE ser uma camada independente, verificável antes da aceitação do artefato. [PENDENTE-CODIGO]
+
+O histórico canônico de descoberta DEVE residir em `provenance/keys/v1.json`, acessível diretamente no repositório pela URL `https://raw.githubusercontent.com/jcempro/FormulaKit/main/provenance/keys/v1.json`, e a automação de cada Release DEVE publicar sua extensão válida sem depender do site de documentação. [PENDENTE-CODIGO]
+
+O documento DEVE usar `FormulaKitKeyHistory/v1`, conter `schema`, `sequence`, `previous`, `keys` e `signatures`, rejeitar chave JSON duplicada ou campo desconhecido crítico e declarar em cada chave ao menos `keyId`, `algorithm`, chave pública, estado, primeiro Release aplicável, último Release aplicável quando existente, sucessora ou predecessora quando existente e revogação quando existente. [PENDENTE-CODIGO]
+
+`keyId` DEVE identificar unicamente a chave pública e algoritmo normalizados, `algorithm` inicial DEVE ser `Ed25519`, conteúdo assinado DEVE usar serialização UTF-8 canônica com chaves ordenadas por ponto de código Unicode e `previous` DEVE ser o SHA-256 do documento canônico anterior sem ambiguidade de encoding. [PENDENTE-CODIGO]
+
+Consumidor DEVE iniciar por trust anchor independente e previamente autenticada, fornecida por configuração, dependência pinada, artefato de Release validado ou outro canal explicitamente confiado; URL, pacote npm, GitHub, manifesto de navegador e cache NÃO criam nem substituem essa confiança. [PENDENTE-CODIGO]
+
+Introdução de chave sucessora DEVE conter declaração de rotação assinada por chave previamente confiada ou procedimento explícito de recuperação da trust anchor; remoção, alteração ou reutilização de `keyId`, reordenação de histórico e extensão sem vínculo `previous` válido DEVEM falhar. [PENDENTE-CODIGO]
+
+Revogação DEVE impedir aceite de novas assinaturas da chave revogada e informar motivo, sequência e marco de eficácia; verificação de Release histórico DEVE distinguir autenticidade no momento de publicação de aceitabilidade atual, sem declarar automaticamente seguro artefato associado a chave posteriormente comprometida. [PENDENTE-CODIGO]
+
+Além da localização canônica, o mesmo histórico ou snapshot prefixal verificável DEVE estar disponível por subpath público do pacote, asset do GitHub Release, path da tag e cache local já validado; fontes em sequências distintas NÃO precisam ter bytes idênticos, mas DEVEM compartilhar prefixo append-only, schema e cadeia de assinaturas válidos. [PENDENTE-CODIGO]
+
+O consumidor DEVE verificar schema, assinatura, keyId assinante, continuidade `sequence` e `previous`, rotação, revogação, intervalo de Release, hash do artefato e política anti-downgrade antes de aceitar a procedência; ausência ou falha de qualquer evidência invalida a certificação e nunca deve cair silenciosamente para manifestação declarativa. [PENDENTE-CODIGO]
+
+Releases anteriores à adoção desta capacidade DEVEM ser declarados explicitamente como não atestáveis por esta cadeia, sem inventar assinatura retrospectiva; a primeira publicação com procedência criptográfica DEVE introduzir a trust anchor e o histórico inicial de modo auditável. [PENDENTE-CODIGO]
+
+Chave privada, material de recuperação e segredo de assinatura NÃO DEVEM integrar repositório, pacote, Release, manifesto, map, fixture, cache ou log; a automação DEVE recebê-los exclusivamente por mecanismo externo autorizado, produzir o mesmo snapshot no pacote, asset do Release e caminho canônico e bloquear a conclusão do Release quando a convergência falhar. [PENDENTE-CODIGO]
+
 Predicados `is*` DEVEM retornar `false` para valor estruturalmente inválido dentro do domínio declarado e NÃO DEVEM ocultar erro de configuração, algoritmo ou dependência. [a2d98f2]
 
 Depreciação DEVE indicar substituto, motivo, versão de início e versão mínima de remoção; remoção ou mudança incompatível exige versão major. [a2d98f2]

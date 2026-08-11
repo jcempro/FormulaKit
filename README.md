@@ -79,6 +79,14 @@ Object.keys(manifests); // identidades em ordem determinística
 Object.isFrozen(manifests); // true
 ```
 
+## Procedência criptográfica
+
+`FormulaKitSignature/v1` comprova a superfície declarada e o manifesto superior comprova os bytes, mas nenhum dos dois certifica isoladamente a autoria do produtor. A capacidade de procedência criptográfica está normatizada e ainda não foi aplicada ao release `0.1.0`.
+
+Quando implementada, a descoberta canônica do histórico `FormulaKitKeyHistory/v1` será feita em [provenance/keys/v1.json](https://raw.githubusercontent.com/jcempro/FormulaKit/main/provenance/keys/v1.json). O consumidor deverá validar esse histórico contra uma trust anchor independente, a assinatura, a cadeia append-only, rotação, revogação, intervalo da versão e hash do artefato.
+
+A URL do repositório, o subpath público do pacote, o asset do GitHub Release, a tag e um cache previamente validado serão fontes alternativas de obtenção; nenhuma delas será fonte única de confiança. Releases anteriores à adoção serão identificados como não atestáveis, nunca receberão assinatura retrospectiva fictícia.
+
 ## Desenvolvimento e verificação
 
 ```sh
