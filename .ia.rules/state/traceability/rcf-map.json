@@ -1704,13 +1704,13 @@
         "provenance/keys/v1.json",
         "tests/provenance.test.mjs"
       ],
-      "commit": "",
+      "commit": "dd5e74f40754d18396a7bc8c2c56728182d58a15",
       "ft": "FT-009",
       "id": "61152e5b510f41c207b7c3f0",
       "line": 280,
       "rcf": "RCF.md",
       "sentenceSha256": "cacb543e27cd7604ffa0326847cdac92e484a8b5414be44a3ce28bad6a313d6c",
-      "state": "pending",
+      "state": "synchronized",
       "syncCommit": ""
     },
     {
@@ -1722,13 +1722,13 @@
         "provenance/keys/v1.json",
         "tests/provenance.test.mjs"
       ],
-      "commit": "",
+      "commit": "dd5e74f40754d18396a7bc8c2c56728182d58a15",
       "ft": "FT-009",
       "id": "2429009a3e8f34d257e18256",
       "line": 282,
       "rcf": "RCF.md",
       "sentenceSha256": "980531f4566b47064843ca766cb3fdbf2bfbd1696964f12f44b5018dff0b01f5",
-      "state": "pending",
+      "state": "synchronized",
       "syncCommit": ""
     },
     {
@@ -1755,13 +1755,13 @@
         "provenance/keys/v1.json",
         "tests/provenance.test.mjs"
       ],
-      "commit": "",
+      "commit": "dd5e74f40754d18396a7bc8c2c56728182d58a15",
       "ft": "FT-009",
       "id": "f3d8c1fe743d8c4aaabb8a42",
       "line": 284,
       "rcf": "RCF.md",
       "sentenceSha256": "dc9adb8b7d5b2dbd9fd03f3027fd856cab260b3b614eebac379d33f0cccc60d9",
-      "state": "pending",
+      "state": "synchronized",
       "syncCommit": ""
     },
     {
@@ -1788,13 +1788,13 @@
         "provenance/keys/v1.json",
         "tests/provenance.test.mjs"
       ],
-      "commit": "",
+      "commit": "dd5e74f40754d18396a7bc8c2c56728182d58a15",
       "ft": "FT-009",
       "id": "a125ee77dc9f85ff92d68190",
       "line": 286,
       "rcf": "RCF.md",
       "sentenceSha256": "c852db67210bf6b2414b6ccbf64898ff694901e1d0563a59d3a88945cd95818f",
-      "state": "pending",
+      "state": "synchronized",
       "syncCommit": ""
     },
     {
@@ -1826,13 +1826,13 @@
         "provenance/keys/v1.json",
         "tests/provenance.test.mjs"
       ],
-      "commit": "",
+      "commit": "dd5e74f40754d18396a7bc8c2c56728182d58a15",
       "ft": "FT-009",
       "id": "c067babca08110bbb82b6ff0",
       "line": 288,
       "rcf": "RCF.md",
       "sentenceSha256": "6c00d4b965a5f179c154080f2e9902a008894e04a90e7ae9248f15217ae0269a",
-      "state": "pending",
+      "state": "synchronized",
       "syncCommit": ""
     },
     {
@@ -1864,13 +1864,13 @@
         "provenance/keys/v1.json",
         "tests/provenance.test.mjs"
       ],
-      "commit": "",
+      "commit": "dd5e74f40754d18396a7bc8c2c56728182d58a15",
       "ft": "FT-009",
       "id": "b1aebebabf1ed3f2dd011060",
       "line": 290,
       "rcf": "RCF.md",
       "sentenceSha256": "e57c25b155980ab9a0d339d04faf713d2e57bfc3951b1a14ae2f597b6f708567",
-      "state": "pending",
+      "state": "synchronized",
       "syncCommit": ""
     },
     {
@@ -1897,13 +1897,13 @@
         "provenance/keys/v1.json",
         "tests/provenance.test.mjs"
       ],
-      "commit": "",
+      "commit": "dd5e74f40754d18396a7bc8c2c56728182d58a15",
       "ft": "FT-009",
       "id": "7aaef4fee1cea400cea06622",
       "line": 292,
       "rcf": "RCF.md",
       "sentenceSha256": "0d7896a85c6421553518145c2ee4061cb8eb4f8c036dcf66091435aef5cdf8b3",
-      "state": "pending",
+      "state": "synchronized",
       "syncCommit": ""
     },
     {
@@ -1915,13 +1915,13 @@
         "provenance/keys/v1.json",
         "tests/provenance.test.mjs"
       ],
-      "commit": "",
+      "commit": "dd5e74f40754d18396a7bc8c2c56728182d58a15",
       "ft": "FT-009",
       "id": "c3dedb0813c79e7aac7d047f",
       "line": 294,
       "rcf": "RCF.md",
       "sentenceSha256": "d23bac6e437f7d1959fd783f4963de7145a69120643bd652b665b1bacbf0974a",
-      "state": "pending",
+      "state": "synchronized",
       "syncCommit": ""
     },
     {
@@ -1953,13 +1953,13 @@
         "provenance/keys/v1.json",
         "tests/provenance.test.mjs"
       ],
-      "commit": "",
+      "commit": "dd5e74f40754d18396a7bc8c2c56728182d58a15",
       "ft": "FT-009",
       "id": "87acd7decd62a50775e307e2",
       "line": 296,
       "rcf": "RCF.md",
       "sentenceSha256": "663850a5fa069d7fd882dd6202ac81fabed445574100ccd1adf399256dc791bf",
-      "state": "pending",
+      "state": "synchronized",
       "syncCommit": ""
     },
     {
@@ -1991,13 +1991,13 @@
         "provenance/keys/v1.json",
         "tests/provenance.test.mjs"
       ],
-      "commit": "",
+      "commit": "dd5e74f40754d18396a7bc8c2c56728182d58a15",
       "ft": "FT-009",
       "id": "9b3252cc3d113049efb28dbb",
       "line": 298,
       "rcf": "RCF.md",
       "sentenceSha256": "53fbb2242147f0d82276181c35ff9d2dc29815d7d4bd05053b9440a4cc8179fb",
-      "state": "pending",
+      "state": "synchronized",
       "syncCommit": ""
     },
     {
@@ -2029,13 +2029,13 @@
         "provenance/keys/v1.json",
         "tests/provenance.test.mjs"
       ],
-      "commit": "",
+      "commit": "dd5e74f40754d18396a7bc8c2c56728182d58a15",
       "ft": "FT-009",
       "id": "c4c2e9b21525c8051d51e94f",
       "line": 300,
       "rcf": "RCF.md",
       "sentenceSha256": "8c03e1774d756527926060a1ff75fd2c084ba8befb1da76944966dd2fdfbabca",
-      "state": "pending",
+      "state": "synchronized",
       "syncCommit": ""
     },
     {
